@@ -51,6 +51,8 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100%;
     }
 
     body {
@@ -5307,6 +5309,10 @@
       animation: cartBounce 0.4s ease;
     }
 
+    .mob-cart-btn.bounce {
+      animation: cartBounce 0.4s ease;
+    }
+
     /* ---- STOCK BADGE on product cards ---- */
     .stock-badge {
       display: inline-flex;
@@ -5333,6 +5339,7 @@
     /* ---- MOBILE STICKY ORDER BAR ---- */
     .mobile-order-bar {
       display: none;
+      align-items: center;
       position: fixed;
       bottom: 0;
       left: 0;
@@ -5369,6 +5376,22 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+    }
+
+    .mob-cart-btn {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-muted));
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      color: #fff;
     }
 
     @media (max-width: 640px) {
@@ -5785,6 +5808,10 @@
 
   <!-- MOBILE STICKY ORDER BAR -->
   <div class="mobile-order-bar" id="mobileOrderBar">
+    <button class="mob-cart-btn" id="mobCartBtn" onclick="openCart()">
+      🫙
+      <span class="cart-float-badge" id="cartBadgeMobile">0</span>
+    </button>
     <button class="mob-order-btn" onclick="openQuickOrder()">ᯓ➤ Order Now — Fast Delivery</button>
     <a href="https://wa.me/919817612848" class="mob-wa-btn" target="_blank">
       <svg width="22" height="22" viewBox="0 0 20 20" fill="white">
@@ -5877,6 +5904,12 @@
       badge.textContent = count;
       badge.classList.toggle('show', count > 0);
 
+      const badgeMobile = document.getElementById('cartBadgeMobile');
+      if (badgeMobile) {
+        badgeMobile.textContent = count;
+        badgeMobile.classList.toggle('show', count > 0);
+      }
+
       const container = document.getElementById('cartItems');
       const foot = document.getElementById('cartFoot');
 
@@ -5961,6 +5994,12 @@
       const btn = document.getElementById('cartFloat');
       btn.classList.add('bounce');
       setTimeout(() => btn.classList.remove('bounce'), 400);
+
+      const mobBtn = document.getElementById('mobCartBtn');
+      if (mobBtn) {
+        mobBtn.classList.add('bounce');
+        setTimeout(() => mobBtn.classList.remove('bounce'), 400);
+      }
     }
 
     async function checkoutFromCart() {
