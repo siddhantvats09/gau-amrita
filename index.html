@@ -346,7 +346,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 32px;
+      gap: 28px;
+      padding: 80px 24px 40px;
     }
 
     .mobile-menu.active {
@@ -360,10 +361,44 @@
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
+      text-align: center;
+      width: 100%;
+      display: block;
     }
 
     .mobile-menu a:hover {
       color: var(--gold);
+    }
+
+    /* Order Now link in mobile menu */
+    .mobile-menu a[style*="color:var(--gold)"] {
+      color: var(--gold) !important;
+      font-style: italic;
+    }
+
+    /* WhatsApp button in mobile menu */
+    .mobile-menu .whatsapp-btnnav {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: auto;
+      min-width: 220px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 500;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+      margin-top: 4px;
+    }
+
+    .mobile-menu .whatsapp-btnnav svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
     }
 
     .close-menu {
@@ -3193,6 +3228,7 @@
     <a href="#stores" onclick="toggleMenu()">Stores</a>
     <!-- <a href="#contact" onclick="toggleMenu()">Contact</a> -->
     <a href="#contact" onclick="toggleMenu()" style="color:var(--gold)">Order Now →</a>
+    <div style="width:48px;height:1px;background:rgba(196,154,60,0.25);margin:4px 0"></div>
     <a href="https://wa.me/919817612848" class="whatsapp-btnnav">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
         <path
@@ -5545,6 +5581,74 @@
       max-width: 320px;
       line-height: 1.7;
     }
+
+    /* CANCEL ORDER — WhatsApp + 2-day self-service button */
+    .qo-cancel-alt {
+      width: 100%;
+      margin-top: 10px;
+      background: none;
+      border: 1.5px solid #e0a83c;
+      color: #b8762a;
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .qo-cancel-alt:hover {
+      background: #e0a83c;
+      color: white;
+    }
+
+    .cancel-float {
+      position: fixed;
+      bottom: 28px;
+      left: 24px;
+      z-index: 1099;
+      background: var(--warm-white);
+      color: var(--text-mid);
+      border: 1.5px solid rgba(196, 154, 60, 0.35);
+      border-radius: 50px;
+      padding: 10px 18px 10px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px var(--shadow-warm);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cancel-float.show {
+      display: flex;
+    }
+
+    .cancel-float:hover {
+      transform: scale(1.04);
+      color: var(--text-dark);
+      box-shadow: 0 10px 28px var(--shadow-deep);
+    }
+
+    .cancel-float-icon {
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .cancel-float {
+        left: 16px;
+        bottom: 92px;
+        font-size: 0.75rem;
+        padding: 9px 14px 9px 12px;
+      }
+    }
   </style>
 
   <!-- URGENCY BANNER -->
@@ -5604,6 +5708,7 @@
         <div style="font-weight:600;color:var(--text-dark);font-size:0.95rem;margin-bottom:4px">Order Placed!</div>
         <div style="font-size:0.8rem;color:var(--text-light);line-height:1.5">Shukriya! We'll call you within 2 hours to
           confirm.</div>
+        <a href="https://wa.me/919817612848" id="cartCancelLink" target="_blank" class="qo-cancel-alt">↩ Need to cancel? Tap here</a>
       </div>
       <a id="cartWaBtn" href="#" class="cart-wa-btn">
         <svg width="18" height="18" viewBox="0 0 20 20" fill="white">
@@ -5614,6 +5719,12 @@
       </a>
     </div>
   </div>
+
+  <!-- CANCEL ORDER FLOATING BUTTON (auto-shows for 2 days after an order is placed; opens WhatsApp pre-filled) -->
+  <a href="#" id="cancelOrderFloat" class="cancel-float" target="_blank" rel="noopener">
+    <span class="cancel-float-icon">↩</span>
+    <span>Cancel Order</span>
+  </a>
 
   <!-- FLOATING CART BUTTON -->
   <button class="cart-float" id="cartFloat" onclick="openCart()">
@@ -5800,6 +5911,7 @@
         <p>Shukriya! We've received your order and will call you within 2 hours to confirm delivery.</p>
         <a href="https://wa.me/919817612848" style="margin-top:8px" class="qo-wa-alt">Chat on WhatsApp for faster
           updates</a>
+        <a href="https://wa.me/919817612848" id="qoCancelLink" target="_blank" class="qo-cancel-alt">↩ Need to cancel? Tap here</a>
         <button onclick="closeQuickOrder()"
           style="margin-top:8px;background:none;border:1.5px solid rgba(196,154,60,0.3);border-radius:50px;padding:10px 24px;cursor:pointer;color:var(--text-light);font-size:0.85rem">Close</button>
       </div>
@@ -5847,6 +5959,61 @@
     // ── QO MODAL STATE ─────────────────────────────────────────
     // qoQtys[id] = quantity selected in modal
     const qoQtys = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+
+    // ────────────────────────────────────────────────────────────
+    // CANCEL ORDER (WhatsApp + 2-day self-service, no login)
+    // ────────────────────────────────────────────────────────────
+    const CANCEL_ORDER_KEY = 'gauAmritaActiveOrder';
+    const CANCEL_WINDOW_MS = 2 * 24 * 60 * 60 * 1000; // 2 days
+
+    // Build the WhatsApp message used to request a cancellation
+    function buildCancelWaText(order) {
+      return 'Hello, I want to CANCEL my order.\n' +
+        'Name: ' + order.name + '\n' +
+        'Phone: ' + order.phone + '\n' +
+        'Order: ' + order.ghee + ' (' + order.qty + ')\n' +
+        'Placed on: ' + order.timestamp;
+    }
+
+    // Persist the just-placed order so the cancel option survives a page reload for 2 days
+    function saveActiveOrderForCancel(payload) {
+      const record = {
+        name: payload.name,
+        phone: payload.phone,
+        ghee: payload.ghee,
+        qty: payload.qty,
+        timestamp: payload.timestamp,
+        expiresAt: Date.now() + CANCEL_WINDOW_MS
+      };
+      try {
+        localStorage.setItem(CANCEL_ORDER_KEY, JSON.stringify(record));
+      } catch (e) { /* localStorage unavailable — WhatsApp link on success screen still works */ }
+      refreshCancelFloatButton(record);
+    }
+
+    // Show/hide + wire up the floating "Cancel Order" button based on stored order + 2-day window
+    function refreshCancelFloatButton(order) {
+      const floatBtn = document.getElementById('cancelOrderFloat');
+      if (!floatBtn) return;
+
+      if (!order) {
+        try { order = JSON.parse(localStorage.getItem(CANCEL_ORDER_KEY)); } catch (e) { order = null; }
+      }
+
+      if (order && order.expiresAt && Date.now() < order.expiresAt) {
+        const waLink = 'https://wa.me/919817612848?text=' + encodeURIComponent(buildCancelWaText(order));
+        floatBtn.href = waLink;
+        floatBtn.classList.add('show');
+        // Also keep the in-modal success-screen cancel links in sync
+        const qoLink = document.getElementById('qoCancelLink');
+        if (qoLink) qoLink.href = waLink;
+        const cartLink = document.getElementById('cartCancelLink');
+        if (cartLink) cartLink.href = waLink;
+      } else {
+        floatBtn.classList.remove('show');
+        try { localStorage.removeItem(CANCEL_ORDER_KEY); } catch (e) { }
+      }
+    }
 
     // ────────────────────────────────────────────────────────────
     // URGENCY BANNER
@@ -6049,6 +6216,7 @@
       document.querySelector('.cart-fields').style.display = 'none';
       btn.style.display = 'none';
       document.getElementById('cartSuccess').style.display = 'block';
+      saveActiveOrderForCancel(payload);
 
       // Clear cart after 3s and close
       setTimeout(() => {
@@ -6249,6 +6417,7 @@
 
       document.getElementById('qoBody').style.display = 'none';
       document.getElementById('qoSuccess').classList.add('show');
+      saveActiveOrderForCancel(payload);
     });
 
     function showQOError(msg) {
@@ -6340,6 +6509,7 @@
       });
 
       renderCart();
+      refreshCancelFloatButton();
     });
   </script>
 </body>
