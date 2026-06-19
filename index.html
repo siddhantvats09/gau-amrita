@@ -3627,7 +3627,7 @@
       <div class="product-card cream reveal">
         <div class="product-badge" style="background:linear-gradient(135deg,#B8923A,#8C6A28)">Classic Cream</div>
         <div class="product-img">
-          <img src="cream1000.webp" alt="Gau Amrita Cream Ghee 500g" class="product-jar-image" />
+          <img src="desighee1000.webp" alt="Gau Amrita Cream Ghee 500g" class="product-jar-image" />
           <div class="product-img-label">1kg Economy Jar</div>
         </div>
         <div class="product-info">
@@ -3660,7 +3660,7 @@
       <div class="product-card cream reveal">
         <div class="product-badge" style="background:linear-gradient(135deg,#B8923A,#8C6A28)">Economy Pack</div>
         <div class="product-img">
-          <img src="cream1000.webp" alt="Gau Amrita Cream Ghee 1kg" class="product-jar-image" />
+          <img src="desighee1000.webp" alt="Gau Amrita Cream Ghee 1kg" class="product-jar-image" />
           <div class="product-img-label">1kg Economy Jar</div>
         </div>
         <div class="product-info">
@@ -5655,7 +5655,7 @@
   <div class="urgency-banner" id="urgencyBanner">
     <span class="ub-dot"></span>
     <span>🔥 <strong>Limited Stock</strong> — Only <strong id="stockCount">23</strong> jars left this week &nbsp;|&nbsp;
-      Free delivery above ₹999</span>
+      Free delivery above ₹1999</span>
     <button class="ub-close" onclick="closeBanner()">✕</button>
   </div>
 
@@ -5739,7 +5739,7 @@
         <button class="qo-close" onclick="closeQuickOrder()">✕</button>
         <div class="qo-badge"><span class="ub-dot"></span> Limited Stock Available</div>
         <h2>Order Pure Ghee<br>— Direct from Farm ⚱️</h2>
-        <p>Delivered to your door in 2–4 days · Free above ₹999</p>
+        <p>Delivered to your door in 2–4 days · Free above ₹1999</p>
       </div>
 
       <div class="qo-body" id="qoBody">
@@ -5826,7 +5826,7 @@
 
           <div class="qo-product" data-id="4" data-name="Buffalo Desi Ghee" data-size="1kg Buffalo Desi Ghee"
             data-price="699">
-            <div class="qo-product-img"><img src="cream1000.webp" alt="Buffalo Ghee"
+            <div class="qo-product-img"><img src="desighee1000.webp" alt="Buffalo Ghee"
                 onerror="this.parentNode.innerHTML='🐃'"></div>
             <div class="qo-product-info">
               <div class="qo-product-name">Buffalo Desi Ghee — 1kg</div>
@@ -5843,7 +5843,7 @@
           </div>
 
           <div class="qo-product" data-id="5" data-name="Cow Desi Ghee" data-size="1kg Cow Desi Ghee" data-price="899">
-            <div class="qo-product-img"><img src="cream1000.webp" alt="Cow Ghee"
+            <div class="qo-product-img"><img src="desighee1000.webp" alt="Cow Ghee"
                 onerror="this.parentNode.innerHTML='🐄'"></div>
             <div class="qo-product-info">
               <div class="qo-product-name">Cow Desi Ghee — 1kg</div>
@@ -5898,7 +5898,7 @@
           <div class="qo-trust">
             <div class="qo-trust-item">✓ FSSAI Certified</div>
             <div class="qo-trust-item">✓ 100% Pure</div>
-            <div class="qo-trust-item">✓ Free Delivery ₹999+</div>
+            <div class="qo-trust-item">✓ Free Delivery ₹1999+</div>
             <div class="qo-trust-item">✓ Secure Payment</div>
           </div>
         </div>
@@ -5949,8 +5949,8 @@
       { id: 1, name: 'A2 Cow Ghee — 1kg', size: '1kg A2 Cow Ghee', price: 1650, img: 'a2cow1000.webp' },
       { id: 2, name: 'A2 Buffalo Ghee — 500gm', size: '500gm A2 Buffalo Ghee', price: 699, img: 'a2buffalo500.webp' },
       { id: 3, name: 'A2 Buffalo Ghee — 1kg', size: '1kg A2 Buffalo Ghee', price: 1399, img: 'a2buffalo1000.webp' },
-      { id: 4, name: 'Buffalo Desi Ghee', size: '1kg Buffalo Desi Ghee', price: 699, img: 'cream1000.webp' },
-      { id: 5, name: 'Cow Desi Ghee', size: '1kg Cow Desi Ghee', price: 899, img: 'cream1000.webp' },
+      { id: 4, name: 'Buffalo Desi Ghee', size: '1kg Buffalo Desi Ghee', price: 699, img: 'desighee1000.webp' },
+      { id: 5, name: 'Cow Desi Ghee', size: '1kg Cow Desi Ghee', price: 899, img: 'desighee1000.webp' },
     ];
 
     // ── CART STATE ─────────────────────────────────────────────
@@ -6114,7 +6114,7 @@
     </div>
   `).join('');
 
-      const cartDelivery = total >= 999 ? 0 : (total > 0 ? 49 : 0);
+      const cartDelivery = total >= 1999 ? 0 : (total > 0 ? 49 : 0);
       const cartGrand = total + cartDelivery;
       document.getElementById('cartSubtotal').textContent = '₹' + total.toLocaleString('en-IN');
       // Update delivery line
@@ -6123,7 +6123,7 @@
         if (cartDelivery === 0 && total > 0) {
           delivLine.innerHTML = '<span style="color:#2d9e4a;font-weight:500">⛟ Free Delivery</span><span style="color:#2d9e4a">₹0</span>';
         } else if (cartDelivery > 0) {
-          const rem = 999 - total;
+          const rem = 1999 - total;
           delivLine.innerHTML = `<span style="color:var(--text-light)">⛟ Delivery</span><span>₹49</span>`;
           const freeHint = document.getElementById('cartFreeHint');
           if (freeHint) { freeHint.textContent = `Add ₹${rem} more for free delivery`; freeHint.style.display = 'block'; }
@@ -6188,7 +6188,7 @@
       btn.querySelector('span').textContent = '⏳ Placing Order...';
 
       const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-      const delivery = subtotal >= 999 ? 0 : 49;
+      const delivery = subtotal >= 1999 ? 0 : 49;
       const grandTotal = subtotal + delivery;
 
       const orderLines = cart.map(i => `${i.name} × ${i.qty} (${i.size}) = ₹${i.price * i.qty}`).join(' | ');
@@ -6260,7 +6260,7 @@
     }
 
     const DELIVERY_CHARGE = 49;
-    const FREE_DELIVERY_THRESHOLD = 999;
+    const FREE_DELIVERY_THRESHOLD = 1999;
 
     function updateQOSummary() {
       let subtotal = 0;
@@ -6384,7 +6384,7 @@
       btn.disabled = true;
 
       const subtotal = selectedItems.reduce((s, pd) => s + pd.price * qoQtys[pd.id], 0);
-      const delivery = subtotal >= 999 ? 0 : 49;
+      const delivery = subtotal >= 1999 ? 0 : 49;
       const totalAmt = subtotal + delivery;
       const orderLines = selectedItems.map(pd =>
         `${pd.name} × ${qoQtys[pd.id]} (${pd.size}) = ₹${pd.price * qoQtys[pd.id]}`
@@ -6448,8 +6448,8 @@
         { id: 1, name: 'A2 Cow Ghee — 1kg', size: '1kg A2 Cow Ghee', price: 1650, img: 'a2cow1000.webp' },
         { id: 2, name: 'A2 Buffalo Ghee — 500gm', size: '500gm A2 Buffalo Ghee', price: 699, img: 'a2buffalo500.webp' },
         { id: 3, name: 'A2 Buffalo Ghee — 1kg', size: '1kg A2 Buffalo Ghee', price: 1399, img: 'a2buffalo1000.webp' },
-        { id: 4, name: 'Buffalo Desi Ghee', size: '1kg Buffalo Desi Ghee', price: 699, img: 'cream1000.webp' },
-        { id: 5, name: 'Cow Desi Ghee', size: '1kg Cow Desi Ghee', price: 899, img: 'cream1000.webp' },
+        { id: 4, name: 'Buffalo Desi Ghee', size: '1kg Buffalo Desi Ghee', price: 699, img: 'desighee1000.webp' },
+        { id: 5, name: 'Cow Desi Ghee', size: '1kg Cow Desi Ghee', price: 899, img: 'desighee1000.webp' },
       ];
 
       const stockNums = [18, 25, 14, 17, 18, 21];
