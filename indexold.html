@@ -814,10 +814,9 @@
     /* Trust Banner */
     #trust {
       background: linear-gradient(135deg, var(--brown) 0%, var(--text-dark) 100%);
-      padding: 28px 0;
+      padding: 28px 5%;
       position: relative;
       overflow: hidden;
-      width: 100%;
     }
 
     #trust::before {
@@ -1366,7 +1365,7 @@
 
     /* ===== PRODUCTS SECTION ===== */
     #products {
-      padding: 120px 8%;
+      padding: 120px 8% 140px;
       background: linear-gradient(180deg, var(--cream) 0%, var(--beige) 50%, var(--cream) 100%);
       position: relative;
       overflow: hidden;
@@ -1600,9 +1599,9 @@
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1320px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -1625,7 +1624,7 @@
 
     .product-card {
       background: white;
-      border-radius: 20px;
+      border-radius: 28px;
       overflow: hidden;
       border: 1px solid rgba(196, 154, 60, 0.12);
       box-shadow: 0 8px 36px var(--shadow-warm);
@@ -1647,7 +1646,7 @@
       right: 0;
       height: 4px;
       background: linear-gradient(90deg, #F0C84A, #C49A3C);
-      border-radius: 20px 20px 0 0;
+      border-radius: 28px 28px 0 0;
     }
 
     .product-card.buffalo::before {
@@ -1658,7 +1657,7 @@
       right: 0;
       height: 4px;
       background: linear-gradient(90deg, #7B9EBE, #3D6B99);
-      border-radius: 20px 20px 0 0;
+      border-radius: 28px 28px 0 0;
     }
 
     .product-card.cream::before {
@@ -1669,7 +1668,7 @@
       right: 0;
       height: 4px;
       background: linear-gradient(90deg, #E8D5B0, #C4A86C);
-      border-radius: 20px 20px 0 0;
+      border-radius: 28px 28px 0 0;
     }
 
     .product-badge {
@@ -1743,19 +1742,19 @@
     }
 
     .product-info {
-      padding: 16px 16px 18px;
+      padding: 24px 24px 26px;
     }
 
     .product-cat-tag {
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      font-size: 0.6rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 6px;
-      padding: 3px 9px;
+      margin-bottom: 8px;
+      padding: 3px 10px;
       border-radius: 50px;
     }
 
@@ -1776,16 +1775,16 @@
 
     .product-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: var(--text-dark);
-      margin-bottom: 2px;
-      line-height: 1.25;
+      margin-bottom: 3px;
+      line-height: 1.3;
     }
 
     .product-hindi {
       font-family: 'Noto Serif Devanagari', serif;
-      font-size: 0.68rem;
+      font-size: 0.78rem;
       color: var(--text-light);
       margin-bottom: 10px;
       font-weight: 400;
@@ -1821,9 +1820,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
+      margin-bottom: 14px;
     }
 
     .product-price {
@@ -1839,119 +1836,6 @@
       color: var(--text-light);
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
-    }
-
-    /* ---- Minimal card: discount / delivery badges on image ---- */
-    .badge-off {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 3;
-      background: linear-gradient(135deg, #e85454, #c73c3c);
-      color: #fff;
-      font-size: 0.6rem;
-      font-weight: 700;
-      padding: 3px 9px;
-      border-radius: 50px;
-      letter-spacing: 0.02em;
-      box-shadow: 0 4px 12px rgba(199, 60, 60, 0.35);
-    }
-
-    .badge-free-del {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 3;
-      background: rgba(45, 158, 74, 0.95);
-      color: #fff;
-      font-size: 0.52rem;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 50px;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(45, 158, 74, 0.3);
-    }
-
-    /* ---- Minimal card: process / advantage pills ---- */
-    .product-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin: 4px 0 8px;
-    }
-
-    .pill {
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      padding: 3px 10px;
-      border-radius: 50px;
-      background: rgba(196, 154, 60, 0.09);
-      border: 1px solid rgba(196, 154, 60, 0.22);
-      color: var(--text-mid);
-      white-space: nowrap;
-    }
-
-    .product-adv {
-      font-size: 0.7rem;
-      color: #2d9e4a;
-      font-weight: 500;
-      margin-bottom: 12px;
-      line-height: 1.4;
-    }
-
-    /* ---- Minimal card: price block (MRP struck-through + discounted price) ---- */
-    .product-price-block {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .price-old {
-      font-size: 0.72rem;
-      color: var(--text-light);
-      text-decoration: line-through;
-      text-decoration-color: rgba(107, 76, 42, 0.5);
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .price-new {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--gold-muted);
-      line-height: 1;
-    }
-
-    .price-qty {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.64rem;
-      font-weight: 500;
-      color: var(--text-light);
-      margin-left: 1px;
-    }
-
-    .price-save {
-      font-size: 0.58rem;
-      font-weight: 700;
-      color: #2d9e4a;
-      background: rgba(45, 158, 74, 0.09);
-      padding: 2px 8px;
-      border-radius: 50px;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-
-    .product-sku {
-      font-size: 0.56rem;
-      color: var(--text-light);
-      letter-spacing: 0.02em;
-      margin-bottom: 10px;
-      opacity: 0.75;
-      font-family: 'DM Sans', sans-serif;
     }
 
     .qty-selector {
@@ -1993,12 +1877,12 @@
       background: linear-gradient(135deg, var(--gold), var(--gold-muted));
       color: white;
       border: none;
-      padding: 10px 8px;
-      border-radius: 12px;
-      font-size: 0.72rem;
+      padding: 13px;
+      border-radius: 14px;
+      font-size: 0.85rem;
       font-weight: 500;
       cursor: pointer;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.04em;
       transition: all 0.3s;
       box-shadow: 0 4px 16px rgba(196, 154, 60, 0.35);
     }
@@ -2888,8 +2772,7 @@
 
     @media (max-width: 1024px) {
       .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .cat-tabs {
@@ -3022,31 +2905,9 @@
       }
 
       .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 560px;
-        gap: 14px;
+        grid-template-columns: 1fr;
+        max-width: 400px;
         margin: 0 auto;
-      }
-
-      .product-img {
-        height: 140px;
-      }
-
-      .product-info {
-        padding: 12px 12px 14px;
-      }
-
-      .product-name {
-        font-size: 0.92rem;
-      }
-
-      .price-new {
-        font-size: 1.25rem;
-      }
-
-      .btn-buy {
-        font-size: 0.64rem;
-        padding: 9px 6px;
       }
 
       .cat-tab {
@@ -3110,9 +2971,7 @@
 
     @media (max-width: 480px) {
       .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        max-width: 100%;
+        grid-template-columns: 1fr;
       }
 
       #hero {
@@ -3240,9 +3099,9 @@
     .product-img {
       position: relative;
       width: 100%;
-      height: 190px;
+      height: 300px;
       overflow: hidden;
-      border-radius: 20px 20px 0 0;
+      border-radius: 24px 24px 0 0;
       padding: 0;
       background: none;
     }
@@ -3260,12 +3119,11 @@
       left: 50%;
       transform: translateX(-50%);
       background: rgba(255, 255, 255, 1);
-      padding: 4px 9px;
+      padding: 6px 10px;
       border-radius: 999px;
       font-weight: 500;
-      font-size: 0.6rem;
+      font-size: 14px;
       color: #6b4c2a;
-      white-space: nowrap;
     }
 
     .product-badge {
@@ -3310,22 +3168,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    .trust-item.highlight {
-      border: 1.5px solid #ffae57;
-      background: #a36c31;
-      border-radius: 6px;
-      padding: 4px 12px;
-    }
-
-    .trust-item.highlight .trust-text {
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .trust-item.highlight .trust-icon {
-      color: #fff;
     }
   </style>
 </head>
@@ -3543,9 +3385,6 @@
         <div class="trust-item">
           <div class="trust-icon">𓄀</div><span class="trust-text">Desi Buffalo Milk</span>
         </div>
-        <div class="trust-item">
-          <div class="trust-icon">✺</div><span class="trust-text">5% Off · First Order</span>
-        </div>
         <!-- Duplicate for seamless loop -->
         <div class="trust-item">
           <div class="trust-icon">✓</div><span class="trust-text">100% Pure</span>
@@ -3573,9 +3412,6 @@
         </div>
         <div class="trust-item">
           <div class="trust-icon">𓄀</div><span class="trust-text">Desi Buffalo Milk</span>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">✺</div><span class="trust-text">5% Off · First Order</span>
         </div>
       </div>
     </div>
@@ -3646,595 +3482,197 @@
         हमारा संग्रह · Hamara Collection
       </div>
       <h2 class="section-h2">Choose Your<br><em>Golden Ghee</em></h2>
-      <p class="section-body">तीन अनोखी श्रेणियाँ — हर परिवार के लिए एक खास घी।<br>Three categories, four sizes each —
-        crafted for every
+      <p class="section-body">तीन अनोखी श्रेणियाँ — हर परिवार के लिए एक खास घी।<br>Three categories, crafted for every
         family's need.</p>
     </div>
 
     <div class="products-grid">
 
-      <!-- GA-A2COW-500 -->
-      <div class="product-card cow reveal" data-id="0" data-sku="GA-A2COW-500">
-        <div class="product-img cow-bg">
-          <span class="badge-off">9% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="cow500.webp" alt="A2 Cow Ghee — 500gm" class="product-jar-image" />
+
+      <!-- Card 1 -->
+      <div class="product-card cow reveal">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img">
+          <img src="cow500.webp" alt="A2 Cow Ghee 500gm" class="product-jar-image" />
           <div class="product-img-label">500gm A2 Cow Ghee</div>
         </div>
         <div class="product-info">
           <div class="product-cat-tag cow">🐄 A2 Cow Ghee</div>
           <div class="product-name">A2 Cow Ghee — 500gm</div>
           <div class="product-hindi">गाय का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹1,099</span>
-              <span class="price-new">₹999<span class="price-qty">/500gm</span></span>
-            </div>
-            <span class="price-save">Save ₹100</span>
+          <div class="product-desc">
+            Traditional Bilona-made A2 Cow Ghee prepared from premium A2 cow milk. Rich aroma, authentic taste, and
+            perfect for daily cooking.
           </div>
-          <!-- <div class="product-sku">SKU: GA-A2COW-500</div> -->
-          <button class="btn-buy" type="button" data-id="0">अभी खरीदें · Add to Cart ➤</button>
+          <div class="product-tags"></div>
+          <div class="product-price-row">
+            <div class="product-price">₹899 <span>/ 500gm</span></div>
+          </div>
+          <a href="#contact"><button class="btn-buy">अभी खरीदें · Add to Cart ➤</button></a>
         </div>
       </div>
 
-      <!-- GA-A2COW-1KG -->
-      <div class="product-card cow reveal" data-id="1" data-sku="GA-A2COW-1KG">
-        <div class="product-img cow-bg">
-          <span class="badge-off">15% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="cow1000.webp" alt="A2 Cow Ghee — 1kg" class="product-jar-image" />
+      <!-- Card 2 -->
+      <div class="product-card cow reveal">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img">
+          <img src="cow1000.webp" alt="A2 Cow Ghee 1kg" class="product-jar-image" />
           <div class="product-img-label">1kg A2 Cow Ghee</div>
         </div>
         <div class="product-info">
           <div class="product-cat-tag cow">🐄 A2 Cow Ghee</div>
           <div class="product-name">A2 Cow Ghee — 1kg</div>
           <div class="product-hindi">गाय का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹1,999</span>
-              <span class="price-new">₹1,699<span class="price-qty">/1kg</span></span>
-            </div>
-            <span class="price-save">Save ₹300</span>
+          <div class="product-desc">
+            Traditional Bilona-made A2 Cow Ghee prepared from premium A2 cow milk. Rich aroma, authentic taste, and
+            perfect for daily cooking.
           </div>
-          <!-- <div class="product-sku">SKU: GA-A2COW-1KG</div> -->
-          <button class="btn-buy" type="button" data-id="1">अभी खरीदें · Add to Cart ➤</button>
+          <div class="product-tags"></div>
+          <div class="product-price-row">
+            <div class="product-price">₹1650 <span>/ 1kg</span></div>
+          </div>
+          <a href="#contact"><button class="btn-buy">अभी खरीदें · Add to Cart ➤</button></a>
         </div>
       </div>
 
-      <!-- GA-COW-500 -->
-      <div class="product-card cream reveal" data-id="2" data-sku="GA-COW-500">
-        <div class="product-img cream-bg">
-          <span class="badge-off">11% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="dcow500.webp" alt="Cow Ghee — 500gm" class="product-jar-image" />
-          <div class="product-img-label">500gm Desi Cow Ghee</div>
+      <!-- Card 3 -->
+      <div class="product-card cow reveal">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img">
+          <img src="buf500.webp" alt="A2 Buffalo Ghee 500gm" class="product-jar-image" />
+          <div class="product-img-label">500gm A2 Buffalo Ghee</div>
         </div>
         <div class="product-info">
-          <div class="product-cat-tag cream">🥛 Desi Cow Ghee</div>
-          <div class="product-name">Cow Ghee — 500gm</div>
-          <div class="product-hindi">गाय का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹899</span>
-              <span class="price-new">₹799<span class="price-qty">/500gm</span></span>
-            </div>
-            <span class="price-save">Save ₹100</span>
-          </div>
-          <!-- <div class="product-sku">SKU: GA-COW-500</div> -->
-          <button class="btn-buy" type="button" data-id="2">अभी खरीदें · Add to Cart ➤</button>
-        </div>
-      </div>
-
-      <!-- GA-COW-1KG -->
-      <div class="product-card cream reveal" data-id="3" data-sku="GA-COW-1KG">
-        <div class="product-img cream-bg">
-          <span class="badge-off">6% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="dcow1000.webp" alt="Cow Ghee — 1kg" class="product-jar-image" />
-          <div class="product-img-label">1kg Desi Cow Ghee</div>
-        </div>
-        <div class="product-info">
-          <div class="product-cat-tag cream">🥛 Desi Cow Ghee</div>
-          <div class="product-name">Cow Ghee — 1kg</div>
-          <div class="product-hindi">गाय का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹1,699</span>
-              <span class="price-new">₹1,600<span class="price-qty">/1kg</span></span>
-            </div>
-            <span class="price-save">Save ₹99</span>
-          </div>
-          <!-- <div class="product-sku">SKU: GA-COW-1KG</div> -->
-          <button class="btn-buy" type="button" data-id="3">अभी खरीदें · Add to Cart ➤</button>
-        </div>
-      </div>
-
-      <div id="trust">
-        <div class="trust-overflow">
-
-          <!-- Row 1 -->
-          <!-- <div class="trust-scroll">
-      <div class="trust-item highlight"><div class="trust-icon">%</div><span class="trust-text">5% Off First Order</span></div>
-      <div class="trust-item"><div class="trust-icon">🐄</div><span class="trust-text">A2 Cow Ghee</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">🚚</div><span class="trust-text">Free First Delivery</span></div>
-      <div class="trust-item"><div class="trust-icon">✪</div><span class="trust-text">Bilona Method</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">%</div><span class="trust-text">5% Off First Order</span></div>
-      <div class="trust-item"><div class="trust-icon">🐄</div><span class="trust-text">A2 Cow Ghee</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">🚚</div><span class="trust-text">Free First Delivery</span></div>
-      <div class="trust-item"><div class="trust-icon">✪</div><span class="trust-text">Bilona Method</span></div>
-    </div>
-    </br> -->
-
-          <!-- Row 2 -->
-          <div class="trust-scroll">
-            <div class="trust-item">
-              <div class="trust-icon">⚗</div><span class="trust-text">Lab Tested</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">📦</div><span class="trust-text">Ghee Yearly Package Available</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">📜</div><span class="trust-text">Traditional Method</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">✕</div><span class="trust-text">No Chemicals</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">⚗</div><span class="trust-text">Lab Tested</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">📦</div><span class="trust-text">Ghee Yearly Package Available</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">📜</div><span class="trust-text">Traditional Method</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">✕</div><span class="trust-text">No Chemicals</span>
-            </div>
-          </div>
-          </br></br>
-
-          <!-- Row 3 -->
-          <!-- <div class="trust-scroll">
-      <div class="trust-item"><div class="trust-icon">🐄</div><span class="trust-text">Desi Cow Ghee</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">🚚</div><span class="trust-text">Free Delivery</span></div>
-      <div class="trust-item"><div class="trust-icon">🏠</div><span class="trust-text">Homemade</span></div>
-      <div class="trust-item"><div class="trust-icon">🌾</div><span class="trust-text">Straight from Our Farms</span></div>
-      <div class="trust-item"><div class="trust-icon">🐄</div><span class="trust-text">Desi Cow Ghee</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">🚚</div><span class="trust-text">Free Delivery</span></div>
-      <div class="trust-item"><div class="trust-icon">🏠</div><span class="trust-text">Homemade</span></div>
-      <div class="trust-item"><div class="trust-icon">🌾</div><span class="trust-text">Straight from Our Farms</span></div>
-    </div>
-    </br></br> -->
-
-          <!-- Row 4 -->
-          <div class="trust-scroll">
-            <div class="trust-item">
-              <div class="trust-icon">🐃</div><span class="trust-text">Buffalo Ghee</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">📦</div><span class="trust-text">Yearly Ghee Package Available</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🔁</div><span class="trust-text">Ghee Subscription</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">%</div><span class="trust-text">5% Off on First Order</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🐃</div><span class="trust-text">Buffalo Ghee</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">📦</div><span class="trust-text">Yearly Ghee Package Available</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🔁</div><span class="trust-text">Ghee Subscription</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">%</div><span class="trust-text">5% Off on First Order</span>
-            </div>
-          </div>
-          </br></br>
-
-          <!-- Row 5 -->
-          <div class="trust-scroll">
-            <div class="trust-item">
-              <div class="trust-icon">☑</div><span class="trust-text">FSSAI Certified</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🌿</div><span class="trust-text">Farm Fresh</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">🚚</div><span class="trust-text">Free First Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">♡</div><span class="trust-text">Family Heritage Recipe</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">☑</div><span class="trust-text">FSSAI Certified</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🌿</div><span class="trust-text">Farm Fresh</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">🚚</div><span class="trust-text">Free First Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">♡</div><span class="trust-text">Family Heritage Recipe</span>
-            </div>
-          </div>
-          </br></br>
-
-          <!-- Row 6 -->
-          <div class="trust-scroll">
-            <div class="trust-item highlight">
-              <div class="trust-icon">%</div><span class="trust-text">5% Off Your First Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">✕</div><span class="trust-text">No Preservatives</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">📦</div><span class="trust-text">Ghee Yearly Package Available</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">♡</div><span class="trust-text">Made with Love</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">%</div><span class="trust-text">5% Off Your First Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">✕</div><span class="trust-text">No Preservatives</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">📦</div><span class="trust-text">Ghee Yearly Package Available</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">♡</div><span class="trust-text">Made with Love</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- GA-BUF-500 -->
-      <div class="product-card buffalo reveal" data-id="4" data-sku="GA-BUF-500">
-        <div class="product-img buffalo-bg">
-          <span class="badge-off">6% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="buf500.webp" alt="Buffalo Ghee — 500gm" class="product-jar-image" />
-          <div class="product-img-label">500gm Buffalo Desi Ghee</div>
-        </div>
-        <div class="product-info">
-          <div class="product-cat-tag buffalo">🐃 Buffalo Desi Ghee</div>
-          <div class="product-name">Buffalo Ghee — 500gm</div>
+          <div class="product-cat-tag cow">🐃 A2 Buffalo Ghee</div>
+          <div class="product-name">A2 Buffalo Ghee — 500gm</div>
           <div class="product-hindi">भैंस का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹799</span>
-              <span class="price-new">₹750<span class="price-qty">/500gm</span></span>
-            </div>
-            <span class="price-save">Save ₹49</span>
+          <div class="product-desc">
+            Authentic Bilona-crafted A2 Buffalo Ghee made from premium buffalo milk. Creamy texture, rich flavor, and
+            ideal for traditional recipes.
           </div>
-          <!-- <div class="product-sku">SKU: GA-BUF-500</div> -->
-          <button class="btn-buy" type="button" data-id="4">अभी खरीदें · Add to Cart ➤</button>
+          <div class="product-tags"></div>
+          <div class="product-price-row">
+            <div class="product-price">₹799 <span>/ 500gm</span></div>
+          </div>
+          <a href="#contact"><button class="btn-buy">अभी खरीदें · Add to Cart ➤</button></a>
         </div>
       </div>
 
-      <!-- GA-BUF-1KG -->
-      <div class="product-card buffalo reveal" data-id="5" data-sku="GA-BUF-1KG">
-        <div class="product-img buffalo-bg">
-          <span class="badge-off">7% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="buf1000.webp" alt="Buffalo Ghee — 1kg" class="product-jar-image" />
-          <div class="product-img-label">1kg Buffalo Desi Ghee</div>
+      <!-- Card 4 -->
+      <div class="product-card cow reveal">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img">
+          <img src="buf1000.webp" alt="A2 Buffalo Ghee 1kg" class="product-jar-image" />
+          <div class="product-img-label">1kg A2 Buffalo Ghee</div>
         </div>
         <div class="product-info">
-          <div class="product-cat-tag buffalo">🐃 Buffalo Desi Ghee</div>
-          <div class="product-name">Buffalo Ghee — 1kg</div>
+          <div class="product-cat-tag cow">🐃 A2 Buffalo Ghee</div>
+          <div class="product-name">A2 Buffalo Ghee — 1kg</div>
           <div class="product-hindi">भैंस का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹1,500</span>
-              <span class="price-new">₹1,399<span class="price-qty">/1kg</span></span>
-            </div>
-            <span class="price-save">Save ₹101</span>
+          <div class="product-desc">
+            Authentic Bilona-crafted A2 Buffalo Ghee made from premium buffalo milk. Creamy texture, rich flavor, and
+            ideal for traditional recipes.
           </div>
-          <!-- <div class="product-sku">SKU: GA-BUF-1KG</div> -->
-          <button class="btn-buy" type="button" data-id="5">अभी खरीदें · Add to Cart ➤</button>
+          <div class="product-tags"></div>
+          <div class="product-price-row">
+            <div class="product-price">₹1450 <span>/ 1kg</span></div>
+          </div>
+          <a href="#contact"><button class="btn-buy">अभी खरीदें · Add to Cart ➤</button></a>
         </div>
       </div>
 
-      <!-- GA-A2COW-2KG -->
-      <div class="product-card cow reveal" data-id="6" data-sku="GA-A2COW-2KG">
-        <div class="product-img cow-bg">
-          <span class="badge-off">5% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="cow2000.webp" alt="A2 Cow Ghee — 2kg" class="product-jar-image" />
+      <!-- Card 5 -->
+      <div class="product-card cow reveal">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img">
+          <img src="cow2000.webp" alt="A2 Cow Ghee 2kg" class="product-jar-image" />
           <div class="product-img-label">2kg A2 Cow Ghee</div>
         </div>
         <div class="product-info">
           <div class="product-cat-tag cow">🐄 A2 Cow Ghee</div>
           <div class="product-name">A2 Cow Ghee — 2kg</div>
           <div class="product-hindi">गाय का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹3,999</span>
-              <span class="price-new">₹3,800<span class="price-qty">/2kg</span></span>
-            </div>
-            <span class="price-save">Save ₹199</span>
+          <div class="product-desc">
+            Traditional Bilona-made A2 Cow Ghee prepared from premium A2 cow milk. Rich aroma, authentic taste, and
+            perfect for families.
           </div>
-          <!-- <div class="product-sku">SKU: GA-A2COW-2KG</div> -->
-          <button class="btn-buy" type="button" data-id="6">अभी खरीदें · Add to Cart ➤</button>
+          <div class="product-tags"></div>
+          <div class="product-price-row">
+            <div class="product-price">₹3199 <span>/ 2kg</span></div>
+          </div>
+          <a href="#contact"><button class="btn-buy">अभी खरीदें · Add to Cart ➤</button></a>
         </div>
       </div>
 
-      <!-- GA-BUF-2KG -->
-      <div class="product-card buffalo reveal" data-id="8" data-sku="GA-BUF-2KG">
-        <div class="product-img buffalo-bg">
-          <span class="badge-off">7% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="buf2000.webp" alt="Buffalo Ghee — 2kg" class="product-jar-image" />
-          <div class="product-img-label">2kg Buffalo Desi Ghee</div>
+      <!-- Card 6 -->
+      <div class="product-card cow reveal">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img">
+          <img src="buf2000.webp" alt="A2 Buffalo Ghee 2kg" class="product-jar-image" />
+          <div class="product-img-label">2kg A2 Buffalo Ghee</div>
         </div>
         <div class="product-info">
-          <div class="product-cat-tag buffalo">🐃 Buffalo Desi Ghee</div>
-          <div class="product-name">Buffalo Ghee — 2kg</div>
+          <div class="product-cat-tag cow">🐃 A2 Buffalo Ghee</div>
+          <div class="product-name">A2 Buffalo Ghee — 2kg</div>
           <div class="product-hindi">भैंस का शुद्ध बिलोना घी</div>
+          <div class="product-desc">
+            Authentic Bilona-crafted A2 Buffalo Ghee made from premium buffalo milk. Creamy texture, rich flavor, and
+            ideal for larger families.
+          </div>
+          <div class="product-tags"></div>
           <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹2,999</span>
-              <span class="price-new">₹2,799<span class="price-qty">/2kg</span></span>
-            </div>
-            <span class="price-save">Save ₹200</span>
+            <div class="product-price">₹2799 <span>/ 2kg</span></div>
           </div>
-          <!-- <div class="product-sku">SKU: GA-BUF-2KG</div> -->
-          <button class="btn-buy" type="button" data-id="8">अभी खरीदें · Add to Cart ➤</button>
+          <a href="#contact"><button class="btn-buy">अभी खरीदें · Add to Cart ➤</button></a>
         </div>
       </div>
 
-      <div id="trust">
-        <div class="trust-overflow">
-
-          <!-- Row 1 -->
-          <div class="trust-scroll">
-            <div class="trust-item highlight">
-              <div class="trust-icon">%</div><span class="trust-text">5% Off First Order</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🐄</div><span class="trust-text">A2 Cow Ghee</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">🚚</div><span class="trust-text">Free First Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">✪</div><span class="trust-text">Bilona Method</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">%</div><span class="trust-text">5% Off First Order</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🐄</div><span class="trust-text">A2 Cow Ghee</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">🚚</div><span class="trust-text">Free First Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">✪</div><span class="trust-text">Bilona Method</span>
-            </div>
-          </div>
-          </br>
-          </br>
-
-          <!-- Row 2 -->
-          <!-- <div class="trust-scroll">
-      <div class="trust-item"><div class="trust-icon">⚗</div><span class="trust-text">Lab Tested</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">📦</div><span class="trust-text">Ghee Yearly Package Available</span></div>
-      <div class="trust-item"><div class="trust-icon">📜</div><span class="trust-text">Traditional Method</span></div>
-      <div class="trust-item"><div class="trust-icon">✕</div><span class="trust-text">No Chemicals</span></div>
-      <div class="trust-item"><div class="trust-icon">⚗</div><span class="trust-text">Lab Tested</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">📦</div><span class="trust-text">Ghee Yearly Package Available</span></div>
-      <div class="trust-item"><div class="trust-icon">📜</div><span class="trust-text">Traditional Method</span></div>
-      <div class="trust-item"><div class="trust-icon">✕</div><span class="trust-text">No Chemicals</span></div>
-    </div>
-    </br></br> -->
-
-          <!-- Row 3 -->
-          <div class="trust-scroll">
-            <div class="trust-item">
-              <div class="trust-icon">🐄</div><span class="trust-text">Desi Cow Ghee</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">🚚</div><span class="trust-text">Free Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🏠</div><span class="trust-text">Homemade</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🌾</div><span class="trust-text">Straight from Our Farms</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🐄</div><span class="trust-text">Desi Cow Ghee</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">🚚</div><span class="trust-text">Free Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🏠</div><span class="trust-text">Homemade</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🌾</div><span class="trust-text">Straight from Our Farms</span>
-            </div>
-          </div>
-          </br></br>
-
-          <!-- Row 4 -->
-          <div class="trust-scroll">
-            <div class="trust-item">
-              <div class="trust-icon">🐃</div><span class="trust-text">Buffalo Ghee</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">📦</div><span class="trust-text">Yearly Ghee Package Available</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🔁</div><span class="trust-text">Ghee Subscription</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">%</div><span class="trust-text">5% Off on First Order</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🐃</div><span class="trust-text">Buffalo Ghee</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">📦</div><span class="trust-text">Yearly Ghee Package Available</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🔁</div><span class="trust-text">Ghee Subscription</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">%</div><span class="trust-text">5% Off on First Order</span>
-            </div>
-          </div>
-          </br></br>
-
-          <!-- Row 5 -->
-          <div class="trust-scroll">
-            <div class="trust-item">
-              <div class="trust-icon">☑</div><span class="trust-text">FSSAI Certified</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🌿</div><span class="trust-text">Farm Fresh</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">🚚</div><span class="trust-text">Free First Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">♡</div><span class="trust-text">Family Heritage Recipe</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">☑</div><span class="trust-text">FSSAI Certified</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">🌿</div><span class="trust-text">Farm Fresh</span>
-            </div>
-            <div class="trust-item highlight">
-              <div class="trust-icon">🚚</div><span class="trust-text">Free First Delivery</span>
-            </div>
-            <div class="trust-item">
-              <div class="trust-icon">♡</div><span class="trust-text">Family Heritage Recipe</span>
-            </div>
-          </div>
-
-
-          <!-- Row 6 -->
-          <!-- <div class="trust-scroll">
-      <div class="trust-item highlight"><div class="trust-icon">%</div><span class="trust-text">5% Off Your First Delivery</span></div>
-      <div class="trust-item"><div class="trust-icon">✕</div><span class="trust-text">No Preservatives</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">📦</div><span class="trust-text">Ghee Yearly Package Available</span></div>
-      <div class="trust-item"><div class="trust-icon">♡</div><span class="trust-text">Made with Love</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">%</div><span class="trust-text">5% Off Your First Delivery</span></div>
-      <div class="trust-item"><div class="trust-icon">✕</div><span class="trust-text">No Preservatives</span></div>
-      <div class="trust-item highlight"><div class="trust-icon">📦</div><span class="trust-text">Ghee Yearly Package Available</span></div>
-      <div class="trust-item"><div class="trust-icon">♡</div><span class="trust-text">Made with Love</span></div>
-    </div> -->
-
-        </div>
-      </div>
-
-      <!-- GA-COW-2KG -->
-      <div class="product-card cream reveal" data-id="7" data-sku="GA-COW-2KG">
-        <div class="product-img cream-bg">
-          <span class="badge-off">9% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="dcow2000.webp" alt="Cow Ghee — 2kg" class="product-jar-image" />
-          <div class="product-img-label">2kg Desi Cow Ghee</div>
-        </div>
-        <div class="product-info">
-          <div class="product-cat-tag cream">🥛 Desi Cow Ghee</div>
-          <div class="product-name">Cow Ghee — 2kg</div>
-          <div class="product-hindi">गाय का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹3,400</span>
-              <span class="price-new">₹3,099<span class="price-qty">/2kg</span></span>
-            </div>
-            <span class="price-save">Save ₹301</span>
-          </div>
-          <!-- <div class="product-sku">SKU: GA-COW-2KG</div> -->
-          <button class="btn-buy" type="button" data-id="7">अभी खरीदें · Add to Cart ➤</button>
-        </div>
-      </div>
-
-      <!-- GA-A2COW-5KG -->
-      <div class="product-card cow reveal" data-id="10" data-sku="GA-A2COW-5KG">
-        <div class="product-img cow-bg">
-          <span class="badge-off">11% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="cow5000.webp" alt="A2 Cow Ghee — 5kg" class="product-jar-image" />
+      <!-- Card 7 -->
+      <div class="product-card cow reveal">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img">
+          <img src="cow5000.webp" alt="A2 Cow Ghee 5kg" class="product-jar-image" />
           <div class="product-img-label">5kg A2 Cow Ghee</div>
         </div>
         <div class="product-info">
           <div class="product-cat-tag cow">🐄 A2 Cow Ghee</div>
           <div class="product-name">A2 Cow Ghee — 5kg</div>
           <div class="product-hindi">गाय का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹9,999</span>
-              <span class="price-new">₹8,900<span class="price-qty">/5kg</span></span>
-            </div>
-            <span class="price-save">Save ₹1,099</span>
+          <div class="product-desc">
+            Traditional Bilona-made A2 Cow Ghee prepared from premium A2 cow milk. Economical bulk pack for homes,
+            restaurants, and catering.
           </div>
-          <!-- <div class="product-sku">SKU: GA-A2COW-5KG</div> -->
-          <button class="btn-buy" type="button" data-id="10">अभी खरीदें · Add to Cart ➤</button>
+          <div class="product-tags"></div>
+          <div class="product-price-row">
+            <div class="product-price">₹7999 <span>/ 5kg</span></div>
+          </div>
+          <a href="#contact"><button class="btn-buy">अभी खरीदें · Add to Cart ➤</button></a>
         </div>
       </div>
 
-      <!-- GA-BUF-5KG -->
-      <div class="product-card buffalo reveal" data-id="11" data-sku="GA-BUF-5KG">
-        <div class="product-img buffalo-bg">
-          <span class="badge-off">5% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="buf5000.webp" alt="Buffalo Ghee — 5kg" class="product-jar-image" />
-          <div class="product-img-label">5kg Buffalo Desi Ghee</div>
+      <!-- Card 8 -->
+      <div class="product-card cow reveal">
+        <div class="product-badge">Best Seller</div>
+        <div class="product-img">
+          <img src="buf5000.webp" alt="A2 Buffalo Ghee 5kg" class="product-jar-image" />
+          <div class="product-img-label">5kg A2 Buffalo Ghee</div>
         </div>
         <div class="product-info">
-          <div class="product-cat-tag buffalo">🐃 Buffalo Desi Ghee</div>
-          <div class="product-name">Buffalo Ghee — 5kg</div>
+          <div class="product-cat-tag cow">🐃 A2 Buffalo Ghee</div>
+          <div class="product-name">A2 Buffalo Ghee — 5kg</div>
           <div class="product-hindi">भैंस का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹7,500</span>
-              <span class="price-new">₹7,100<span class="price-qty">/5kg</span></span>
-            </div>
-            <span class="price-save">Save ₹400</span>
+          <div class="product-desc">
+            Authentic Bilona-crafted A2 Buffalo Ghee made from premium buffalo milk. Rich, creamy, and ideal for
+            commercial and family use.
           </div>
-          <!-- <div class="product-sku">SKU: GA-BUF-5KG</div> -->
-          <button class="btn-buy" type="button" data-id="11">अभी खरीदें · Add to Cart ➤</button>
+          <div class="product-tags"></div>
+          <div class="product-price-row">
+            <div class="product-price">₹6999 <span>/ 5kg</span></div>
+          </div>
+          <a href="#contact"><button class="btn-buy">अभी खरीदें · Add to Cart ➤</button></a>
         </div>
       </div>
 
-      <!-- GA-COW-5KG -->
-      <div class="product-card cream reveal" data-id="9" data-sku="GA-COW-5KG">
-        <div class="product-img cream-bg">
-          <span class="badge-off">6% OFF</span>
-          <span class="badge-free-del">🚚 Free Delivery</span>
-          <img src="dcow5000.webp" alt="Cow Ghee — 5kg" class="product-jar-image" />
-          <div class="product-img-label">5kg Desi Cow Ghee</div>
-        </div>
-        <div class="product-info">
-          <div class="product-cat-tag cream">🥛 Desi Cow Ghee</div>
-          <div class="product-name">Cow Ghee — 5kg</div>
-          <div class="product-hindi">गाय का शुद्ध बिलोना घी</div>
-          <div class="product-price-row">
-            <div class="product-price-block">
-              <span class="price-old">₹8,500</span>
-              <span class="price-new">₹7,999<span class="price-qty">/5kg</span></span>
-            </div>
-            <span class="price-save">Save ₹501</span>
-          </div>
-          <!-- <div class="product-sku">SKU: GA-COW-5KG</div> -->
-          <button class="btn-buy" type="button" data-id="9">अभी खरीदें · Add to Cart ➤</button>
-        </div>
-      </div>
     </div>
   </section>
   <!-- Stores -->
@@ -4623,9 +4061,9 @@
           <label class="form-label">Ghee Type *</label>
           <select class="form-select" id="f_ghee" required>
             <option value="">Select ghee type...</option>
-            <option value="A2 Cow Ghee (GA-A2COW)">A2 Cow Ghee — Bilona · A2 Cow Milk</option>
-            <option value="Desi Cow Ghee (GA-COW)">Desi Cow Ghee — Bilona · Desi Cow Milk</option>
-            <option value="Buffalo Desi Ghee (GA-BUF)">Buffalo Desi Ghee — Bilona · Buffalo Milk</option>
+            <option value="A2 Cow Ghee">A2 Cow Ghee</option>
+            <option value="A2 Buffalo Ghee">A2 Buffalo Ghee</option>
+            <option value="Cream Ghee">Cream Ghee</option>
           </select>
         </div>
         <div class="form-group">
@@ -4633,9 +4071,9 @@
           <select class="form-select" id="f_qty" required>
             <option value="">Select quantity...</option>
             <option value="500gm">500gm</option>
-            <option value="1kg">1kg</option>
-            <option value="2kg">2kg</option>
-            <option value="5kg">5kg</option>
+            <option value="1 kg">1 kg</option>
+            <option value="2kg Economy Pack">2kg Economy Pack</option>
+            <option value="5kg Family Pack">5kg Family Pack</option>
           </select>
         </div>
         <div class="form-group">
@@ -4668,7 +4106,7 @@
           <div class="contact-icon">✆</div>
           <div>
             <h4>Call / WhatsApp</h4>
-            <p>+91 79886 18771<br>Mon–Sat, 9 AM – 7 PM</p>
+            <p>+91 98176 12848<br>Mon–Sat, 9 AM – 7 PM</p>
           </div>
         </div>
 
@@ -4688,7 +4126,7 @@
           </div>
         </div>
 
-        <a href="https://wa.me/917988618771" class="whatsapp-btn">
+        <a href="https://wa.me/919817612848" class="whatsapp-btn">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
             <path
               d="M10 1C5.03 1 1 5.03 1 10c0 1.6.42 3.1 1.14 4.42L1 19l4.7-1.23A9 9 0 1010 1zm0 16.2a7.18 7.18 0 01-3.88-1.14l-.28-.17-2.79.73.74-2.72-.18-.28A7.2 7.2 0 1110 17.2zM7.53 6.77c-.18-.04-.42 0-.63.2l-.52.6c-.2.22-.76.74-.76 1.8s.78 2.1 1.38 2.82c.28.35 1.7 2.7 4.16 3.6 2.06.75 2.47.6 2.92.56.44-.04 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78z" />
@@ -4738,7 +4176,7 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:+917988618771">+91 79886 18771</a></li>
+          <li><a href="tel:+919817612848">+91 98176 12848</a></li>
           <li><a href="mailto:siddhantvats840@gmail.com">siddhantvats840@gmail.com</a></li>
           <li><a href="#stores">Pataudi Store</a></li>
           <li><a href="#stores">Uccha Majra Store</a></li>
@@ -5098,18 +4536,10 @@
       const btn = document.getElementById('submitBtn');
       const status = document.getElementById('formStatus');
 
-      const gheeVal = document.getElementById('f_ghee').value;
-      const qtyVal = document.getElementById('f_qty').value;
-      // Build a full SKU like GA-A2COW-500 from the "(GA-A2COW)" code embedded in the ghee option + selected size
-      const codeMatch = gheeVal.match(/\(([^)]+)\)/);
-      const sizeCode = qtyVal ? qtyVal.replace('kg', 'KG').replace('gm', '') : '';
-      const derivedSku = codeMatch ? `${codeMatch[1]}-${sizeCode}` : '';
-
       const payload = {
         name: document.getElementById('f_name').value.trim(),
-        ghee: gheeVal,
-        sku: derivedSku,
-        qty: qtyVal,
+        ghee: document.getElementById('f_ghee').value,
+        qty: document.getElementById('f_qty').value,
         phone: document.getElementById('f_phone').value.trim(),
         address: document.getElementById('f_address').value.trim(),
         message: document.getElementById('f_message').value.trim(),
@@ -5731,7 +5161,7 @@
 
     .qo-product-price {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--gold-muted);
       flex-shrink: 0;
@@ -6203,9 +5633,8 @@
 
   <!-- URGENCY BANNER -->
   <div class="urgency-banner" id="urgencyBanner">
-    <!-- <span class="ub-dot"></span> -->
-    <span>🔥 <strong>Limited Stock</strong> — Only For First 2000 Customers <strong id="stockCount">5% </strong> off on
-      first delivery &nbsp;|&nbsp;
+    <span class="ub-dot"></span>
+    <span>🔥 <strong>Limited Stock</strong> — Only <strong id="stockCount">23</strong> jars left this week &nbsp;|&nbsp;
       Free delivery above ₹1999</span>
     <button class="ub-close" onclick="closeBanner()">✕</button>
   </div>
@@ -6302,22 +5731,17 @@
         <div class="qo-products" id="qoProducts">
 
           <div class="qo-product" data-id="0" data-name="A2 Cow Ghee — 500gm" data-size="500gm A2 Cow Ghee"
-            data-price="999" data-sku="GA-A2COW-500">
+            data-price="899">
             <div class="qo-product-img">
-              <img src="cow500.webp" alt="A2 Cow Ghee — 500gm">
+              <img src="cow500.webp" alt="A2 Cow Ghee 500gm" onerror="this.parentNode.innerHTML='🐄'">
             </div>
             <div class="qo-product-info">
               <div class="qo-product-name">A2 Cow Ghee — 500gm</div>
-              <div class="qo-product-sub">Bilona Method · A2 Cow Milk ·</div>
+              <div class="qo-product-sub">Bilona Method · A2 Cow Milk</div>
               <div class="qo-stock">🔥 Only 18 left</div>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹1,099</span>
-                <span style="font-size:1.3rem">₹999</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/500gm</span>
-              </div>
+              <div class="qo-product-price">₹899</div>
               <div class="qo-qty-ctrl">
                 <button class="qo-qty-btn qo-qty-minus" data-id="0">−</button>
                 <span class="qo-qty-val" data-id="0">0</span>
@@ -6327,22 +5751,17 @@
           </div>
 
           <div class="qo-product" data-id="1" data-name="A2 Cow Ghee — 1kg" data-size="1kg A2 Cow Ghee"
-            data-price="1699" data-sku="GA-A2COW-1KG">
+            data-price="1650">
             <div class="qo-product-img">
-              <img src="cow1000.webp" alt="A2 Cow Ghee — 1kg">
+              <img src="cow1000.webp" alt="A2 Cow Ghee 1kg" onerror="this.parentNode.innerHTML='🐄'">
             </div>
             <div class="qo-product-info">
               <div class="qo-product-name">A2 Cow Ghee — 1kg</div>
-              <div class="qo-product-sub">Bilona Method · A2 Cow Milk ·</div>
+              <div class="qo-product-sub">Bilona Method · A2 Cow Milk</div>
               <div class="qo-stock">🔥 Only 27 left</div>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹1,999</span>
-                <span style="font-size:1.3rem">₹1,699</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/1kg</span>
-              </div>
+              <div class="qo-product-price">₹1,650</div>
               <div class="qo-qty-ctrl">
                 <button class="qo-qty-btn qo-qty-minus" data-id="1">−</button>
                 <span class="qo-qty-val" data-id="1">0</span>
@@ -6351,23 +5770,18 @@
             </div>
           </div>
 
-          <div class="qo-product" data-id="2" data-name="Cow Ghee — 500gm" data-size="500gm Desi Cow Ghee"
-            data-price="799" data-sku="GA-COW-500">
+          <div class="qo-product" data-id="2" data-name="A2 Buffalo Ghee — 500gm" data-size="500gm A2 Buffalo Ghee"
+            data-price="799">
             <div class="qo-product-img">
-              <img src="cow500.webp" alt="Cow Ghee — 500gm">
+              <img src="buf500.webp" alt="A2 Buffalo Ghee 500gm" onerror="this.parentNode.innerHTML='🐃'">
             </div>
             <div class="qo-product-info">
-              <div class="qo-product-name">Cow Ghee — 500gm</div>
-              <div class="qo-product-sub">Bilona Method · Desi Cow Milk ·</div>
-              <div class="qo-stock">🔥 Only 19 left</div>
+              <div class="qo-product-name">A2 Buffalo Ghee — 500gm</div>
+              <div class="qo-product-sub">Bilona Method · A2 Buffalo Milk</div>
+              <div class="qo-stock">🔥 Only 15 left</div>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹899</span>
-                <span style="font-size:1.3rem">₹799</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/500gm</span>
-              </div>
+              <div class="qo-product-price">₹799</div>
               <div class="qo-qty-ctrl">
                 <button class="qo-qty-btn qo-qty-minus" data-id="2">−</button>
                 <span class="qo-qty-val" data-id="2">0</span>
@@ -6376,23 +5790,18 @@
             </div>
           </div>
 
-          <div class="qo-product" data-id="3" data-name="Cow Ghee — 1kg" data-size="1kg Desi Cow Ghee" data-price="1600"
-            data-sku="GA-COW-1KG">
+          <div class="qo-product" data-id="3" data-name="A2 Buffalo Ghee — 1kg" data-size="1kg A2 Buffalo Ghee"
+            data-price="1450">
             <div class="qo-product-img">
-              <img src="cow1000.webp" alt="Cow Ghee — 1kg">
+              <img src="buf1000.webp" alt="A2 Buffalo Ghee 1kg" onerror="this.parentNode.innerHTML='🐃'">
             </div>
             <div class="qo-product-info">
-              <div class="qo-product-name">Cow Ghee — 1kg</div>
-              <div class="qo-product-sub">Bilona Method · Desi Cow Milk ·</div>
-              <div class="qo-stock">🔥 Only 24 left</div>
+              <div class="qo-product-name">A2 Buffalo Ghee — 1kg</div>
+              <div class="qo-product-sub">Bilona Method · A2 Buffalo Milk</div>
+              <div class="qo-stock">🔥 Only 22 left</div>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹1,699</span>
-                <span style="font-size:1.3rem">₹1,600</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/1kg</span>
-              </div>
+              <div class="qo-product-price">₹1,450</div>
               <div class="qo-qty-ctrl">
                 <button class="qo-qty-btn qo-qty-minus" data-id="3">−</button>
                 <span class="qo-qty-val" data-id="3">0</span>
@@ -6401,23 +5810,18 @@
             </div>
           </div>
 
-          <div class="qo-product" data-id="4" data-name="Buffalo Ghee — 500gm" data-size="500gm Buffalo Desi Ghee"
-            data-price="750" data-sku="GA-BUF-500">
+          <div class="qo-product" data-id="4" data-name="A2 Cow Ghee — 2kg" data-size="2kg A2 Cow Ghee"
+            data-price="3199">
             <div class="qo-product-img">
-              <img src="buf500.webp" alt="Buffalo Ghee — 500gm">
+              <img src="cow2000.webp" alt="A2 Cow Ghee 2kg" onerror="this.parentNode.innerHTML='🐄'">
             </div>
             <div class="qo-product-info">
-              <div class="qo-product-name">Buffalo Ghee — 500gm</div>
-              <div class="qo-product-sub">Bilona Method · Desi Buffalo Milk ·</div>
-              <div class="qo-stock">🔥 Only 15 left</div>
+              <div class="qo-product-name">A2 Cow Ghee — 2kg</div>
+              <div class="qo-product-sub">Bilona Method · A2 Cow Milk</div>
+              <div class="qo-stock">🔥 Only 17 left</div>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹799</span>
-                <span style="font-size:1.3rem">₹750</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/500gm</span>
-              </div>
+              <div class="qo-product-price">₹3,199</div>
               <div class="qo-qty-ctrl">
                 <button class="qo-qty-btn qo-qty-minus" data-id="4">−</button>
                 <span class="qo-qty-val" data-id="4">0</span>
@@ -6426,23 +5830,18 @@
             </div>
           </div>
 
-          <div class="qo-product" data-id="5" data-name="Buffalo Ghee — 1kg" data-size="1kg Buffalo Desi Ghee"
-            data-price="1399" data-sku="GA-BUF-1KG">
+          <div class="qo-product" data-id="5" data-name="A2 Buffalo Ghee — 2kg" data-size="2kg A2 Buffalo Ghee"
+            data-price="2799">
             <div class="qo-product-img">
-              <img src="buf1000.webp" alt="Buffalo Ghee — 1kg">
+              <img src="buf2000.webp" alt="A2 Buffalo Ghee 2kg" onerror="this.parentNode.innerHTML='🐃'">
             </div>
             <div class="qo-product-info">
-              <div class="qo-product-name">Buffalo Ghee — 1kg</div>
-              <div class="qo-product-sub">Bilona Method · Desi Buffalo Milk ·</div>
-              <div class="qo-stock">🔥 Only 22 left</div>
+              <div class="qo-product-name">A2 Buffalo Ghee — 2kg</div>
+              <div class="qo-product-sub">Bilona Method · A2 Buffalo Milk</div>
+              <div class="qo-stock">🔥 Only 21 left</div>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹1,500</span>
-                <span style="font-size:1.3rem">₹1,399</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/1kg</span>
-              </div>
+              <div class="qo-product-price">₹2,799</div>
               <div class="qo-qty-ctrl">
                 <button class="qo-qty-btn qo-qty-minus" data-id="5">−</button>
                 <span class="qo-qty-val" data-id="5">0</span>
@@ -6451,23 +5850,18 @@
             </div>
           </div>
 
-          <div class="qo-product" data-id="6" data-name="A2 Cow Ghee — 2kg" data-size="2kg A2 Cow Ghee"
-            data-price="3800" data-sku="GA-A2COW-2KG">
+          <div class="qo-product" data-id="6" data-name="A2 Cow Ghee — 5kg" data-size="5kg A2 Cow Ghee"
+            data-price="7999">
             <div class="qo-product-img">
-              <img src="cow2000.webp" alt="A2 Cow Ghee — 2kg">
+              <img src="cow5000.webp" alt="A2 Cow Ghee 5kg" onerror="this.parentNode.innerHTML='🐄'">
             </div>
             <div class="qo-product-info">
-              <div class="qo-product-name">A2 Cow Ghee — 2kg</div>
-              <div class="qo-product-sub">Bilona Method · A2 Cow Milk ·</div>
-              <div class="qo-stock">🔥 Only 17 left</div>
+              <div class="qo-product-name">A2 Cow Ghee — 5kg</div>
+              <div class="qo-product-sub">Bilona Method · A2 Cow Milk</div>
+              <div class="qo-stock">🔥 Only 18 left</div>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹3,999</span>
-                <span style="font-size:1.3rem">₹3,800</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/2kg</span>
-              </div>
+              <div class="qo-product-price">₹7,999</div>
               <div class="qo-qty-ctrl">
                 <button class="qo-qty-btn qo-qty-minus" data-id="6">−</button>
                 <span class="qo-qty-val" data-id="6">0</span>
@@ -6476,48 +5870,18 @@
             </div>
           </div>
 
-          <div class="qo-product" data-id="8" data-name="Buffalo Ghee — 2kg" data-size="2kg Buffalo Desi Ghee"
-            data-price="2799" data-sku="GA-BUF-2KG">
+          <div class="qo-product" data-id="7" data-name="A2 Buffalo Ghee — 5kg" data-size="5kg A2 Buffalo Ghee"
+            data-price="6999">
             <div class="qo-product-img">
-              <img src="buf2000.webp" alt="Buffalo Ghee — 2kg">
+              <img src="buf5000.webp" alt="A2 Buffalo Ghee 5kg" onerror="this.parentNode.innerHTML='🐃'">
             </div>
             <div class="qo-product-info">
-              <div class="qo-product-name">Buffalo Ghee — 2kg</div>
-              <div class="qo-product-sub">Bilona Method · Desi Buffalo Milk ·</div>
-              <div class="qo-stock">🔥 Only 21 left</div>
+              <div class="qo-product-name">A2 Buffalo Ghee — 5kg</div>
+              <div class="qo-product-sub">Bilona Method · A2 Buffalo Milk</div>
+              <div class="qo-stock">🔥 Only 8 left</div>
             </div>
             <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹2,999</span>
-                <span style="font-size:1.3rem">₹2,799</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/2kg</span>
-              </div>
-              <div class="qo-qty-ctrl">
-                <button class="qo-qty-btn qo-qty-minus" data-id="8">−</button>
-                <span class="qo-qty-val" data-id="8">0</span>
-                <button class="qo-qty-btn qo-qty-plus" data-id="8">+</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="qo-product" data-id="7" data-name="Cow Ghee — 2kg" data-size="2kg Desi Cow Ghee" data-price="3099"
-            data-sku="GA-COW-2KG">
-            <div class="qo-product-img">
-              <img src="cow2000.webp" alt="Cow Ghee — 2kg">
-            </div>
-            <div class="qo-product-info">
-              <div class="qo-product-name">Cow Ghee — 2kg</div>
-              <div class="qo-product-sub">Bilona Method · Desi Cow Milk ·</div>
-              <div class="qo-stock">🔥 Only 20 left</div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹3,400</span>
-                <span style="font-size:1.3rem">₹3,099</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/2kg</span>
-              </div>
+              <div class="qo-product-price">₹6,999</div>
               <div class="qo-qty-ctrl">
                 <button class="qo-qty-btn qo-qty-minus" data-id="7">−</button>
                 <span class="qo-qty-val" data-id="7">0</span>
@@ -6525,83 +5889,6 @@
               </div>
             </div>
           </div>
-
-          <div class="qo-product" data-id="10" data-name="A2 Cow Ghee — 5kg" data-size="5kg A2 Cow Ghee"
-            data-price="8900" data-sku="GA-A2COW-5KG">
-            <div class="qo-product-img">
-              <img src="cow5000.webp" alt="A2 Cow Ghee — 5kg">
-            </div>
-            <div class="qo-product-info">
-              <div class="qo-product-name">A2 Cow Ghee — 5kg</div>
-              <div class="qo-product-sub">Bilona Method · A2 Cow Milk ·</div>
-              <div class="qo-stock">🔥 Only 9 left</div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹9,999</span>
-                <span style="font-size:1.3rem">₹8,900</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/5kg</span>
-              </div>
-              <div class="qo-qty-ctrl">
-                <button class="qo-qty-btn qo-qty-minus" data-id="10">−</button>
-                <span class="qo-qty-val" data-id="10">0</span>
-                <button class="qo-qty-btn qo-qty-plus" data-id="10">+</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="qo-product" data-id="11" data-name="Buffalo Ghee — 5kg" data-size="5kg Buffalo Desi Ghee"
-            data-price="7100" data-sku="GA-BUF-5KG">
-            <div class="qo-product-img">
-              <img src="buf5000.webp" alt="Buffalo Ghee — 5kg">
-            </div>
-            <div class="qo-product-info">
-              <div class="qo-product-name">Buffalo Ghee — 5kg</div>
-              <div class="qo-product-sub">Bilona Method · Desi Buffalo Milk ·</div>
-              <div class="qo-stock">🔥 Only 8 left</div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹7,500</span>
-                <span style="font-size:1.3rem">₹7,100</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/5kg</span>
-              </div>
-              <div class="qo-qty-ctrl">
-                <button class="qo-qty-btn qo-qty-minus" data-id="11">−</button>
-                <span class="qo-qty-val" data-id="11">0</span>
-                <button class="qo-qty-btn qo-qty-plus" data-id="11">+</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="qo-product" data-id="9" data-name="Cow Ghee — 5kg" data-size="5kg Desi Cow Ghee" data-price="7999"
-            data-sku="GA-COW-5KG">
-            <div class="qo-product-img">
-              <img src="cow5000.webp" alt="Cow Ghee — 5kg">
-            </div>
-            <div class="qo-product-info">
-              <div class="qo-product-name">Cow Ghee — 5kg</div>
-              <div class="qo-product-sub">Bilona Method · Desi Cow Milk ·</div>
-              <div class="qo-stock">🔥 Only 12 left</div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0">
-              <div class="qo-product-price">
-                <span
-                  style="text-decoration:line-through;opacity:0.5;font-size:0.68rem;font-weight:500;display:block;color:var(--text-light)">₹8,500</span>
-                <span style="font-size:1.3rem">₹7,999</span><span
-                  style="font-size:0.62rem;font-weight:500;color:var(--text-light)">/5kg</span>
-              </div>
-              <div class="qo-qty-ctrl">
-                <button class="qo-qty-btn qo-qty-minus" data-id="9">−</button>
-                <span class="qo-qty-val" data-id="9">0</span>
-                <button class="qo-qty-btn qo-qty-plus" data-id="9">+</button>
-              </div>
-            </div>
-          </div>
-
-
 
         </div>
 
@@ -6687,30 +5974,24 @@
     const SHEET_URL_EC = (typeof SHEET_URL !== 'undefined') ? SHEET_URL :
       'https://script.google.com/macros/s/AKfycbzES7JWjLsS2aJqoVpMIOO9s-D2jslsbPwly3bq5cyMjiG90R7Kau6eEp5yrfdzx3_hbw/exec';
 
-    // ── PRODUCT CATALOGUE (price = selling/discounted price actually charged) ──
+    // ── PRODUCT CATALOGUE ──────────────────────────────────────
     const PRODUCTS = [
-      { id: 0, sku: 'GA-A2COW-500', category: 'cow', catLabel: 'A2 Cow Ghee', name: 'A2 Cow Ghee — 500gm', size: '500gm A2 Cow Ghee', price: 999, mrp: 1099, save: 100, off: 9, img: 'cow500.webp', process: 'Bilona Method', milk: 'A2 Cow Milk' },
-      { id: 1, sku: 'GA-A2COW-1KG', category: 'cow', catLabel: 'A2 Cow Ghee', name: 'A2 Cow Ghee — 1kg', size: '1kg A2 Cow Ghee', price: 1699, mrp: 1999, save: 300, off: 15, img: 'cow1000.webp', process: 'Bilona Method', milk: 'A2 Cow Milk' },
-      { id: 2, sku: 'GA-COW-500', category: 'cream', catLabel: 'Desi Cow Ghee', name: 'Cow Ghee — 500gm', size: '500gm Desi Cow Ghee', price: 799, mrp: 899, save: 100, off: 11, img: 'dcow500.webp', process: 'Bilona Method', milk: 'Desi Cow Milk' },
-      { id: 3, sku: 'GA-COW-1KG', category: 'cream', catLabel: 'Desi Cow Ghee', name: 'Cow Ghee — 1kg', size: '1kg Desi Cow Ghee', price: 1600, mrp: 1699, save: 99, off: 6, img: 'dcow1000.webp', process: 'Bilona Method', milk: 'Desi Cow Milk' },
-      { id: 4, sku: 'GA-BUF-500', category: 'buffalo', catLabel: 'Buffalo Desi Ghee', name: 'Buffalo Ghee — 500gm', size: '500gm Buffalo Desi Ghee', price: 750, mrp: 799, save: 49, off: 6, img: 'buf500.webp', process: 'Bilona Method', milk: 'Desi Buffalo Milk' },
-      { id: 5, sku: 'GA-BUF-1KG', category: 'buffalo', catLabel: 'Buffalo Desi Ghee', name: 'Buffalo Ghee — 1kg', size: '1kg Buffalo Desi Ghee', price: 1399, mrp: 1500, save: 101, off: 7, img: 'buf1000.webp', process: 'Bilona Method', milk: 'Desi Buffalo Milk' },
-      { id: 6, sku: 'GA-A2COW-2KG', category: 'cow', catLabel: 'A2 Cow Ghee', name: 'A2 Cow Ghee — 2kg', size: '2kg A2 Cow Ghee', price: 3800, mrp: 3999, save: 199, off: 5, img: 'cow2000.webp', process: 'Bilona Method', milk: 'A2 Cow Milk' },
-      { id: 7, sku: 'GA-COW-2KG', category: 'cream', catLabel: 'Desi Cow Ghee', name: 'Cow Ghee — 2kg', size: '2kg Desi Cow Ghee', price: 3099, mrp: 3400, save: 301, off: 9, img: 'dcow2000.webp', process: 'Bilona Method', milk: 'Desi Cow Milk' },
-      { id: 8, sku: 'GA-BUF-2KG', category: 'buffalo', catLabel: 'Buffalo Desi Ghee', name: 'Buffalo Ghee — 2kg', size: '2kg Buffalo Desi Ghee', price: 2799, mrp: 2999, save: 200, off: 7, img: 'buf2000.webp', process: 'Bilona Method', milk: 'Desi Buffalo Milk' },
-      { id: 9, sku: 'GA-COW-5KG', category: 'cream', catLabel: 'Desi Cow Ghee', name: 'Cow Ghee — 5kg', size: '5kg Desi Cow Ghee', price: 7999, mrp: 8500, save: 501, off: 6, img: 'cow5000.webp', process: 'Bilona Method', milk: 'Desi Cow Milk' },
-      { id: 10, sku: 'GA-A2COW-5KG', category: 'cow', catLabel: 'A2 Cow Ghee', name: 'A2 Cow Ghee — 5kg', size: '5kg A2 Cow Ghee', price: 8900, mrp: 9999, save: 1099, off: 11, img: 'cow5000.webp', process: 'Bilona Method', milk: 'A2 Cow Milk' },
-      { id: 11, sku: 'GA-BUF-5KG', category: 'buffalo', catLabel: 'Buffalo Desi Ghee', name: 'Buffalo Ghee — 5kg', size: '5kg Buffalo Desi Ghee', price: 7100, mrp: 7500, save: 400, off: 5, img: 'buf5000.webp', process: 'Bilona Method', milk: 'Desi Buffalo Milk' },
+      { id: 0, name: 'A2 Cow Ghee — 500gm', size: '500gm A2 Cow Ghee', price: 899, img: 'cow500.webp' },
+      { id: 1, name: 'A2 Cow Ghee — 1kg', size: '1kg A2 Cow Ghee', price: 1699, img: 'cow1000.webp' },
+      { id: 2, name: 'A2 Buffalo Ghee — 500gm', size: '500gm A2 Buffalo Ghee', price: 799, img: 'buf500.webp' },
+      { id: 3, name: 'A2 Buffalo Ghee — 1kg', size: '1kg A2 Buffalo Ghee', price: 1450, img: 'buf1000.webp' },
+      { id: 4, name: 'A2 Cow Ghee — 2kg', size: '2kg A2 Cow Ghee', price: 3400, img: 'cow2000.webp' },
+      { id: 5, name: 'A2 Buffalo Ghee — 2kg', size: '2 kg A2 Buffalo Ghee', price: 2850, img: 'buf2000.webp' },
+      { id: 6, name: 'A2 Cow Ghee — 5kg', size: '5kg A2 Cow Ghee', price: 8500, img: 'cow5000.webp' },
+      { id: 7, name: 'A2 Buffalo Ghee — 5kg', size: '5kg A2 Buffalo Ghee', price: 6999, img: 'buf5000.webp' },
     ];
-    const PRODUCT_COUNT = PRODUCTS.length;
 
     // ── CART STATE ─────────────────────────────────────────────
-    let cart = []; // [{id, sku, name, size, price, img, qty}]
+    let cart = []; // [{id, name, size, price, img, qty}]
 
     // ── QO MODAL STATE ─────────────────────────────────────────
     // qoQtys[id] = quantity selected in modal
-    const qoQtys = {};
-    PRODUCTS.forEach(p => { qoQtys[p.id] = 0; });
+    const qoQtys = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
 
     // ────────────────────────────────────────────────────────────
     // CANCEL ORDER (WhatsApp + 2-day self-service, no login)
@@ -6852,7 +6133,7 @@
       </div>
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-sub">${item.size} · SKU: ${item.sku || '—'}</div>
+        <div class="cart-item-sub">${item.size}</div>
         <div class="cart-item-qty">
           <button class="cart-qty-minus" data-idx="${idx}" type="button">−</button>
           <span>${item.qty}</span>
@@ -6883,7 +6164,7 @@
       }
       document.getElementById('cartTotal').textContent = '₹' + cartGrand.toLocaleString('en-IN');
 
-      const waMsg = cart.map(i => `${i.name} [SKU: ${i.sku}] x${i.qty} (₹${i.price * i.qty})`).join(', ') + ` | Total: ₹${total}`;
+      const waMsg = cart.map(i => `${i.name} x${i.qty} (₹${i.price * i.qty})`).join(', ') + ` | Total: ₹${total}`;
       document.getElementById('cartWaBtn').href =
         'https://wa.me/919817612848?text=' + encodeURIComponent('Hello! I want to order: ' + waMsg);
     }
@@ -6943,12 +6224,11 @@
       const delivery = subtotal >= 1999 ? 0 : 49;
       const grandTotal = subtotal + delivery;
 
-      const orderLines = cart.map(i => `${i.name} [SKU: ${i.sku}] × ${i.qty} (${i.size}) = ₹${i.price * i.qty}`).join(' | ');
+      const orderLines = cart.map(i => `${i.name} × ${i.qty} (${i.size}) = ₹${i.price * i.qty}`).join(' | ');
 
       const payload = {
         name, phone, address,
         ghee: cart.map(i => i.name).join(', '),
-        sku: cart.map(i => i.sku).join(', '),
         qty: cart.map(i => `${i.size} x${i.qty}`).join(', '),
         price: `₹${subtotal.toLocaleString('en-IN')} + ₹${delivery} delivery = ₹${grandTotal.toLocaleString('en-IN')}`,
         message: `Cart Order: ${orderLines} | Delivery: ₹${delivery} | Total: ₹${grandTotal}`,
@@ -7003,7 +6283,7 @@
 
     function syncQODisplay() {
       // Update all qty displays and highlight selected products
-      for (let id = 0; id < PRODUCT_COUNT; id++) {
+      for (let id = 0; id < 8; id++) {
         const valEl = document.querySelector('.qo-qty-val[data-id="' + id + '"]');
         const cardEl = document.querySelector('.qo-product[data-id="' + id + '"]');
         if (valEl) valEl.textContent = qoQtys[id];
@@ -7018,13 +6298,13 @@
     function updateQOSummary() {
       let subtotal = 0;
       let lines = '';
-      for (let id = 0; id < PRODUCT_COUNT; id++) {
+      for (let id = 0; id < 8; id++) {
         const q = qoQtys[id];
         if (q > 0) {
           const pd = PRODUCTS[id];
           const lineTotal = pd.price * q;
           subtotal += lineTotal;
-          lines += `<div style="display:flex;justify-content:space-between"><span>${pd.name} <span style="opacity:0.55;font-size:0.7em">[${pd.sku}]</span> × ${q}</span><strong>₹${lineTotal.toLocaleString('en-IN')}</strong></div>`;
+          lines += `<div style="display:flex;justify-content:space-between"><span>${pd.name} × ${q}</span><strong>₹${lineTotal.toLocaleString('en-IN')}</strong></div>`;
         }
       }
       const summary = document.getElementById('qoOrderSummary');
@@ -7052,7 +6332,7 @@
         // Update WhatsApp link with delivery info
         const waMsg = Object.entries(qoQtys)
           .filter(([, q]) => q > 0)
-          .map(([id, q]) => `${PRODUCTS[id].name} [SKU: ${PRODUCTS[id].sku}] x${q} (₹${PRODUCTS[id].price * q})`)
+          .map(([id, q]) => `${PRODUCTS[id].name} x${q} (₹${PRODUCTS[id].price * q})`)
           .join(', ') + ` | Delivery: ₹${delivery} | Total: ₹${grandTotal}`;
         const waEl = document.getElementById('qoWaLink');
         if (waEl) waEl.href = 'https://wa.me/919817612848?text=' + encodeURIComponent('Hello! I want to order: ' + waMsg);
@@ -7140,13 +6420,12 @@
       const delivery = subtotal >= 1999 ? 0 : 49;
       const totalAmt = subtotal + delivery;
       const orderLines = selectedItems.map(pd =>
-        `${pd.name} [SKU: ${pd.sku}] × ${qoQtys[pd.id]} (${pd.size}) = ₹${pd.price * qoQtys[pd.id]}`
+        `${pd.name} × ${qoQtys[pd.id]} (${pd.size}) = ₹${pd.price * qoQtys[pd.id]}`
       ).join(' | ');
 
       const payload = {
         name, phone, address,
         ghee: selectedItems.map(pd => pd.name).join(', '),
-        sku: selectedItems.map(pd => pd.sku).join(', '),
         qty: selectedItems.map(pd => `${pd.size} x${qoQtys[pd.id]}`).join(', '),
         price: `₹${subtotal.toLocaleString('en-IN')} + ₹${delivery} delivery = ₹${totalAmt.toLocaleString('en-IN')}`,
         message: `Order: ${orderLines} | Delivery: ₹${delivery} | Total: ₹${totalAmt}`,
@@ -7197,24 +6476,51 @@
     // ────────────────────────────────────────────────────────────
     document.addEventListener('DOMContentLoaded', () => {
 
-      // Product cards now carry data-id (matching PRODUCTS catalogue above)
-      document.querySelectorAll('.product-card[data-id]').forEach((card) => {
-        const id = parseInt(card.dataset.id, 10);
-        const pd = PRODUCTS.find(p => p.id === id);
-        const btn = card.querySelector('.btn-buy');
-        if (btn && pd) {
-          const originalLabel = btn.textContent;
-          btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            addToCart(pd.id, 1);
-            btn.classList.add('adding');
-            btn.textContent = '✓ Added!';
-            setTimeout(() => {
-              btn.classList.remove('adding');
-              btn.textContent = originalLabel;
-            }, 1400);
-          });
+      const CARD_PRODUCTS = [
+      { id: 0, name: 'A2 Cow Ghee — 500gm', size: '500gm A2 Cow Ghee', price: 899, img: 'cow500.webp' },
+      { id: 1, name: 'A2 Cow Ghee — 1kg', size: '1kg A2 Cow Ghee', price: 1699, img: 'cow1000.webp' },
+      { id: 2, name: 'A2 Buffalo Ghee — 500gm', size: '500gm A2 Buffalo Ghee', price: 799, img: 'buf500.webp' },
+      { id: 3, name: 'A2 Buffalo Ghee — 1kg', size: '1kg A2 Buffalo Ghee', price: 1450, img: 'buf1000.webp' },
+      { id: 4, name: 'A2 Cow Ghee — 2kg', size: '2kg A2 Cow Ghee', price: 3400, img: 'cow2000.webp' },
+      { id: 5, name: 'A2 Buffalo Ghee — 2kg', size: '2 kg A2 Buffalo Ghee', price: 2850, img: 'buf2000.webp' },
+      { id: 6, name: 'A2 Cow Ghee — 5kg', size: '5kg A2 Cow Ghee', price: 8500, img: 'cow5000.webp' },
+      { id: 7, name: 'A2 Buffalo Ghee — 5kg', size: '5kg A2 Buffalo Ghee', price: 6999, img: 'buf5000.webp' },
+    ];
+
+      const stockNums = [18, 25, 14, 17, 18, 21, 14, 19];
+
+      document.querySelectorAll('.product-card').forEach((card, i) => {
+        // Insert stock badge
+        const priceRow = card.querySelector('.product-price-row');
+        if (priceRow && stockNums[i]) {
+          const badge = document.createElement('div');
+          badge.className = 'stock-badge';
+          badge.innerHTML = `<span class="stock-dot"></span>Only ${stockNums[i]} jars left`;
+          priceRow.parentNode.insertBefore(badge, priceRow);
+        }
+
+        // Patch buy button
+        const buyLink = card.querySelector('a[href="#contact"]');
+        if (buyLink) {
+          const pd = CARD_PRODUCTS[i];
+          const btn = buyLink.querySelector('.btn-buy');
+          if (btn && pd) {
+            btn.textContent = 'ᯓ➤ Add to Cart';
+            btn.type = 'button';
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              addToCart(pd.id, 1);
+              btn.classList.add('adding');
+              btn.textContent = '✓ Added!';
+              setTimeout(() => {
+                btn.classList.remove('adding');
+                btn.textContent = 'ᯓ➤ Add to Cart';
+              }, 1400);
+            });
+          }
+          buyLink.removeAttribute('href');
+          buyLink.style.cursor = 'default';
         }
       });
 
