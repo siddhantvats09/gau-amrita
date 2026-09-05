@@ -8,7 +8,51 @@
   <link rel="icon" href="img4/favicon.ico" />
   <meta name="description"
     content="Gau Amrita - 100% pure A2 desi ghee made with traditional bilona method. Lab tested, FSSAI certified, farm fresh. Har spoon mein maa ke haathon wali shuddhta." />
+<!-- ============================================================
+       META PIXEL - GAU AMRITA
+       Pixel ID: 1791861965143770
+       ============================================================ -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
+    fbq('init', '1791861965143770');
+    fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1791861965143770&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- ============================================================
+       END META PIXEL
+       ============================================================ -->
+  <!-- ============================================================
+       META PIXEL EVENT HELPERS
+       ============================================================ -->
+  <script>
+    function trackMeta(eventName, params) {
+      try {
+        if (typeof fbq === "function") {
+          if (params && Object.keys(params).length) fbq("track", eventName, params);
+          else fbq("track", eventName);
+        }
+      } catch (e) {
+        console.warn("Meta Pixel event error:", eventName, e);
+      }
+    }
+  </script>
+  
   <!-- ============ 2. FONTS ============ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -5265,6 +5309,10 @@
         activeQty = 1; $("qtyVal").textContent = 1;
         lastFocus = trigger;
         fillModal(p);
+        trackMeta("ViewContent", {
+          content_ids: [p.sku], content_name: p.name, content_type: "product",
+          value: Number(p.price) || 0, currency: "INR"
+        });
         showModal(modal);
         setTimeout(() => $("modalClose").focus(), 60);
       }
@@ -5333,6 +5381,11 @@
         const key = product.sku;
         const ex = cart.find(i => i.key === key);
         if (ex) ex.qty += qty; else cart.push({ key, id: product.id, qty });
+        trackMeta("AddToCart", {
+          content_ids: [product.sku], content_name: product.name, content_type: "product",
+          contents: [{ id: product.sku, quantity: qty }],
+          value: (Number(product.price) || 0) * qty, currency: "INR"
+        });
         saveCart(); renderCart(); syncBagCount(true);
       }
 
@@ -5408,6 +5461,10 @@
       $("buyNow").addEventListener("click", () => {
         if (!activeProduct) return;
         addToCart(activeProduct, activeQty);
+        trackMeta("InitiateCheckout", {
+          content_ids: [activeProduct.sku], content_name: activeProduct.name, content_type: "product",
+          value: (Number(activeProduct.price) || 0) * activeQty, currency: "INR"
+        });
         hideModals();
         openDrawer();
       });
@@ -5440,6 +5497,12 @@
         btn.querySelector("span").textContent = "⏳ Placing Order...";
 
         const t = cartTotals();
+        trackMeta("InitiateCheckout", {
+          content_ids: cart.map(i => byId(i.id).sku),
+          contents: cart.map(i => ({ id: byId(i.id).sku, quantity: i.qty })),
+          content_type: "product", num_items: cart.reduce((sum, i) => sum + i.qty, 0),
+          value: t.grand, currency: "INR"
+        });
         const orderLines = cart.map(i => { const p = byId(i.id); return `${p.name} [SKU: ${p.sku}] × ${i.qty} (${p.size}) = ₹${(p.price * i.qty).toLocaleString("en-IN")}`; }).join(" | ");
 
         const payload = {
@@ -5454,11 +5517,27 @@
           timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         };
 
-        try { await postToSheet(payload); } catch (e) { console.log("Cart order error:", e); }
-        finally {
+        let orderSubmitted = false;
+        try {
+          await postToSheet(payload);
+          orderSubmitted = true;
+          trackMeta("Purchase", {
+            content_ids: cart.map(i => byId(i.id).sku),
+            contents: cart.map(i => ({ id: byId(i.id).sku, quantity: i.qty })),
+            content_type: "product", num_items: cart.reduce((sum, i) => sum + i.qty, 0),
+            value: t.grand, currency: "INR"
+          });
+        } catch (e) {
+          console.log("Cart order error:", e);
+          errEl.style.display = "block";
+          errEl.textContent = "Order submit nahi hua. Please try again or use WhatsApp.";
+          setTimeout(() => { errEl.style.display = "none"; }, 5000);
+        } finally {
           btn.disabled = false;
           btn.querySelector("span").textContent = "Place Order →";
         }
+
+        if (!orderSubmitted) return;
 
         $("cartFields").style.display = "none";
         btn.style.display = "none";
@@ -5586,6 +5665,12 @@
         btn.querySelector("span").textContent = "⏳ Placing Order...";
 
         const t = qoTotals();
+        trackMeta("InitiateCheckout", {
+          content_ids: selected.map(p => p.sku),
+          contents: selected.map(p => ({ id: p.sku, quantity: qoQtys[p.id] })),
+          content_type: "product", num_items: selected.reduce((sum, p) => sum + qoQtys[p.id], 0),
+          value: t.grand, currency: "INR"
+        });
         const orderLines = selected.map(p => `${p.name} [SKU: ${p.sku}] × ${qoQtys[p.id]} (${p.size}) = ₹${(p.price * qoQtys[p.id]).toLocaleString("en-IN")}`).join(" | ");
 
         const payload = {
@@ -5600,11 +5685,25 @@
           timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         };
 
-        try { await postToSheet(payload); } catch (err) { console.log("Sheet post error:", err); }
-        finally {
+        let orderSubmitted = false;
+        try {
+          await postToSheet(payload);
+          orderSubmitted = true;
+          trackMeta("Purchase", {
+            content_ids: selected.map(p => p.sku),
+            contents: selected.map(p => ({ id: p.sku, quantity: qoQtys[p.id] })),
+            content_type: "product", num_items: selected.reduce((sum, p) => sum + qoQtys[p.id], 0),
+            value: t.grand, currency: "INR"
+          });
+        } catch (err) {
+          console.log("Sheet post error:", err);
+          showQOError("Order submit nahi hua. Please try again or use WhatsApp.");
+        } finally {
           btn.disabled = false;
           btn.querySelector("span").textContent = "Place Order Now";
         }
+
+        if (!orderSubmitted) return;
 
         // Reflect in bag, show success
         cart = selected.map(p => ({ key: p.sku, id: p.id, qty: qoQtys[p.id] }));
@@ -5724,6 +5823,10 @@
 
         try {
           await postToSheet(payload);
+          trackMeta("Lead", {
+            content_name: payload.ghee, content_category: "Contact Form",
+            value: 0, currency: "INR"
+          });
           btn.querySelector("span").textContent = "✓ Order Sent!";
           btn.style.background = "var(--green)";
           btn.style.borderColor = "var(--green)";
@@ -5747,6 +5850,17 @@
         }, 5000);
       }
       $("orderForm").addEventListener("submit", handleSubmit);
+
+      /* =========================================================================
+         28. META PIXEL — WhatsApp clicks
+         ========================================================================= */
+      document.addEventListener("click", e => {
+        const wa = e.target.closest('a[href*="wa.me/"]');
+        if (!wa) return;
+        trackMeta("Contact", {
+          content_name: "WhatsApp", content_category: "WhatsApp Order/Enquiry"
+        });
+      });
 
       /* ---- init cart + cancel button ---- */
       syncBagCount(false);
