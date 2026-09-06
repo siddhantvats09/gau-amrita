@@ -8,31 +8,30 @@
   <link rel="icon" href="favicon.ico" />
   <meta name="description"
     content="Gau Amrita - 100% pure A2 desi ghee made with traditional bilona method. Lab tested, FSSAI certified, farm fresh. Har spoon mein maa ke haathon wali shuddhta." />
-<!-- ============================================================
+  <!-- ============================================================
        META PIXEL - GAU AMRITA
        Pixel ID: 1791861965143770
        ============================================================ -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
 
     fbq('init', '1791861965143770');
     fbq('track', 'PageView');
   </script>
 
   <noscript>
-    <img
-      height="1"
-      width="1"
-      style="display:none"
-      src="https://www.facebook.com/tr?id=1791861965143770&ev=PageView&noscript=1"
-    />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1791861965143770&ev=PageView&noscript=1" />
   </noscript>
   <!-- ============================================================
        END META PIXEL
@@ -52,7 +51,7 @@
       }
     }
   </script>
-  
+
   <!-- ============ 2. FONTS ============ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -843,14 +842,14 @@
       width: 100%;
       aspect-ratio: 4/5;
       overflow: hidden;
-      
+
     }
 
     .hero__img-main img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      
+
     }
 
     .hero__frame {
@@ -868,7 +867,7 @@
       width: 42%;
       aspect-ratio: 3/4;
       overflow: hidden;
-     
+
       box-shadow: 0 30px 60px -40px rgba(0, 0, 0, .35);
     }
 
@@ -876,7 +875,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-     
+
     }
 
     .hero__plate-label {
@@ -1094,7 +1093,7 @@
       width: 78%;
       aspect-ratio: 4/5;
       overflow: hidden;
-      
+
       margin-left: auto;
     }
 
@@ -1102,7 +1101,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-    
+
     }
 
     .story__img-sm {
@@ -1112,7 +1111,7 @@
       width: 42%;
       aspect-ratio: 3/4;
       overflow: hidden;
-     
+
       box-shadow: 0 30px 60px -42px rgba(0, 0, 0, .35);
     }
 
@@ -1120,7 +1119,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-     
+
     }
 
     .story__num {
@@ -2142,7 +2141,7 @@
 
     .cdetail a {
       color: var(--ink);
-      border-bottom: 1px solid var(--gold-line);
+      /* border-bottom: 1px solid var(--gold-line); */
     }
 
     .form-status {
@@ -3243,10 +3242,16 @@
       gap: clamp(12px, 1.4vw, 20px);
       overflow-x: auto;
       overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
+      scroll-snap-type: none;
       padding: 6px 2px 20px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--gold-line) transparent;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .reels__strip::-webkit-scrollbar {
+      display: none;
+      height: 0;
+      width: 0;
     }
 
     .reel {
@@ -3260,13 +3265,12 @@
       box-shadow: 0 26px 50px -38px rgba(44, 24, 16, .55);
     }
 
-    .reel video {
+    .reel__thumb {
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       background: var(--ink);
-      cursor: pointer;
     }
 
     .reel::after {
@@ -3275,6 +3279,38 @@
       inset: 0;
       background: linear-gradient(to top, rgba(44, 24, 16, .55), transparent 38%);
       pointer-events: none;
+    }
+
+    .reel__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1.4px solid var(--gold-soft, #E8C870);
+      background: rgba(44, 24, 16, .38);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .reel__play svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+      margin-left: 2px;
+    }
+
+    .reel__play:hover,
+    .reel__play:focus-visible {
+      transform: translate(-50%, -50%) scale(1.08);
+      background: rgba(44, 24, 16, .6);
     }
 
     .reel__num {
@@ -3341,6 +3377,76 @@
       .reels__nav {
         display: none;
       }
+    }
+
+    /* ---------- Reel lightbox (YouTube / Instagram playback) ---------- */
+    .reel-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px 20px;
+      background: rgba(20, 10, 6, .92);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+
+    .reel-lightbox.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .reel-lightbox__box {
+      position: relative;
+      width: min(400px, 92vw);
+      max-height: 86vh;
+      aspect-ratio: 9/16;
+      background: #000;
+      box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .7);
+      overflow: auto;
+    }
+
+    .reel-lightbox__box iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    #reelLightboxMedia {
+      width: 100%;
+      height: 100%;
+    }
+
+    #reelLightboxMedia blockquote.instagram-media {
+      margin: 0 !important;
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    .reel-lightbox__close {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .4);
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+      font-size: 18px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    body.reel-lock {
+      overflow: hidden;
     }
 
     body.lock {
@@ -4192,21 +4298,35 @@
       <div class="wrap">
         <div class="reels__head">
           <div>
-            <span class="eyebrow reveal">Reels &amp; Reviews</span>
-            <h2 class="reels__title reveal reveal--delay-1">Real reviews,<br><em>in motion.</em></h2>
-          </div>
-          <p class="reels__note reveal reveal--delay-2">24 short reels — customer reviews from real kitchens, farm
-            mornings and the Bilona process. Scroll sideways, tap to play.</p>
-          <div class="reels__nav reveal reveal--delay-2">
-            <button class="btn btn--ghost" id="reelPrev" aria-label="Scroll reels left"><span>←</span></button>
-            <button class="btn btn--ghost" id="reelNext" aria-label="Scroll reels right"><span>→</span></button>
+            <span class="eyebrow reveal">Ghee Facts &amp; Knowledge</span>
+
+            <h2 class="reels__title reveal reveal--delay-1">
+              Know your ghee,<br><em>before you taste it.</em>
+            </h2>
+
+            <p class="reels__note reveal reveal--delay-2">
+              Discover the truth about desi ghee — from traditional Bilona methods and
+              everyday uses to common myths, facts, and simple ways to understand
+              quality ghee. Scroll sideways, tap to explore.
+            </p>
+            <div class="reels__nav reveal reveal--delay-2">
+              <button class="btn btn--ghost" id="reelPrev" aria-label="Scroll reels left"><span>←</span></button>
+              <button class="btn btn--ghost" id="reelNext" aria-label="Scroll reels right"><span>→</span></button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="wrap">
-        <div class="reels__strip" id="reelStrip" aria-label="Customer review reels"></div>
-      </div>
+        <div class="wrap">
+          <div class="reels__strip" id="reelStrip" aria-label="Customer review reels"></div>
+        </div>
     </section>
+
+    <!-- Lightbox used to play the YouTube / Instagram review clip on tap -->
+    <div class="reel-lightbox" id="reelLightbox" aria-hidden="true">
+      <div class="reel-lightbox__box">
+        <button class="reel-lightbox__close" id="reelLightboxClose" aria-label="Close video">✕</button>
+        <div id="reelLightboxMedia"></div>
+      </div>
+    </div>
 
     <!-- ============================================================
      13. WHY — typographic
@@ -4279,8 +4399,7 @@
 
         <div class="farm__wall reveal reveal--delay-1">
           <figure class="fg fg--a">
-            <img src="2a.png"
-              alt="Village dawn at Uccha Majra with Desi cows heading to pasture" loading="lazy" />
+            <img src="2a.png" alt="Village dawn at Uccha Majra with Desi cows heading to pasture" loading="lazy" />
             <figcaption><b>Hamara Gaushala</b><span class="g">Village Uccha Majra · Dawn</span></figcaption>
           </figure>
           <figure class="fg fg--b">
@@ -4292,8 +4411,7 @@
             <figcaption><b>Bilona Churning</b><span class="g">Mathani · Clay Pot</span></figcaption>
           </figure>
           <figure class="fg fg--d">
-            <img src="3.png" alt="Ghee served with fresh rotis and home-cooked food"
-              loading="lazy" />
+            <img src="3.png" alt="Ghee served with fresh rotis and home-cooked food" loading="lazy" />
             <figcaption><b>Bilkul Ghar Jaisa</b><span class="g">From Our Kitchen</span></figcaption>
           </figure>
           <figure class="fg fg--e">
@@ -4446,7 +4564,7 @@
               <div class="cdetail__icon">✉</div>
               <div>
                 <h4>Email Us</h4>
-                <p><a href="mailto:siddhantvats840@gmail.com">siddhantvats840@gmail.com</a></p>
+                <p><a href="mailto:gauamrita@gmail.com">gauamrita@gmail.com</a></p>
               </div>
             </div>
             <div class="cdetail">
@@ -4457,7 +4575,7 @@
               </div>
             </div>
             <div class="cdetail">
-              <div class="cdetail__icon">🏪</div>
+              <div class="cdetail__icon">🛍</div>
               <div>
                 <h4>Our Stores</h4>
                 <p>Haryana — Pataudi · BhoraKalan · Uccha Majra<br />Visit us and taste the difference yourself.</p>
@@ -4726,385 +4844,385 @@
 
       /* ---- 21.2 Product catalogue — SKUs / MRP / prices / discounts exactly as
               listed on the Gau Amrita product grid ---- */
-   const PRODUCTS = [
+      const PRODUCTS = [
 
-  // =========================
-  // A2 COW DESI GHEE
-  // =========================
-
-  
-  {
-    id: 12,
-    sku: "GA-A2COW-350ML",
-    cat: "a2cow",
-    catLabel: "A2 Cow Desi Ghee",
-    name: "A2 Cow Desi Ghee — 350ml",
-    size: "350ml A2 Cow Desi Ghee",
-    price: 1269,
-    mrp: 1339,
-    save: 70,
-    off: 5,
-    img: "cow350.jpg",
-    unit: 0.35,
-    milk: "A2 Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 20,
-    perk: "",
-    ar: "4/5"
-  },
-
-  {
-    id: 0,
-    sku: "GA-A2COW-500ML",
-    cat: "a2cow",
-    catLabel: "A2 Cow Desi Ghee",
-    name: "A2 Cow Desi Ghee — 500ml",
-    size: "500ml A2 Cow Desi Ghee",
-    price: 1599,
-    mrp: 1699,
-    save: 100,
-    off: 6,
-    img: "cow500.jpg",
-    unit: 0.5,
-    milk: "A2 Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 18,
-    perk: "",
-    ar: "4/5"
-  },
-
-  {
-    id: 1,
-    sku: "GA-A2COW-1L",
-    cat: "a2cow",
-    catLabel: "A2 Cow Desi Ghee",
-    name: "A2 Cow Desi Ghee — 1 Liter",
-    size: "1 Liter A2 Cow Desi Ghee",
-    price: 2350,
-    mrp: 2600,
-    save: 250,
-    off: 10,
-    img: "cow1000.jpg",
-    unit: 1,
-    milk: "A2 Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 27,
-    perk: "",
-    ar: "5/6"
-  },
-
-  {
-    id: 6,
-    sku: "GA-A2COW-2L",
-    cat: "a2cow",
-    catLabel: "A2 Cow Desi Ghee",
-    name: "A2 Cow Desi Ghee — 2 Liter",
-    size: "2 Liter A2 Cow Desi Ghee",
-    price: 4549,
-    mrp: 5050,
-    save: 501,
-    off: 10,
-    img: "cow2000.png",
-    unit: 2,
-    milk: "A2 Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 17,
-    perk: "",
-    ar: "4/5"
-  },
-
-  {
-    id: 10,
-    sku: "GA-A2COW-3L",
-    cat: "a2cow",
-    catLabel: "A2 Cow Desi Ghee",
-    name: "A2 Cow Desi Ghee — 3 Liter",
-    size: "3 Liter A2 Cow Desi Ghee",
-    price: 6400,
-    mrp: 7150,
-    save: 750,
-    off: 10,
-    img: "cow3000.png",
-    unit: 3,
-    milk: "A2 Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 12,
-    perk: "",
-    ar: "4/5"
-  },
-
-  {
-    id: 11,
-    sku: "GA-A2COW-5L",
-    cat: "a2cow",
-    catLabel: "A2 Cow Desi Ghee",
-    name: "A2 Cow Desi Ghee — 5 Liter",
-    size: "5 Liter A2 Cow Desi Ghee",
-    price: 9849,
-    mrp: 11350,
-    save: 1501,
-    off: 13,
-    img: "cow5000.png",
-    unit: 5,
-    milk: "A2 Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 9,
-    perk: "",
-    ar: "4/5"
-  },
-  
+        // =========================
+        // A2 COW DESI GHEE
+        // =========================
 
 
-  // =========================
-  // DESI COW GHEE
-  // =========================
+        {
+          id: 12,
+          sku: "GA-A2COW-350ML",
+          cat: "a2cow",
+          catLabel: "A2 Cow Desi Ghee",
+          name: "A2 Cow Desi Ghee — 350ml",
+          size: "350ml A2 Cow Desi Ghee",
+          price: 1269,
+          mrp: 1339,
+          save: 70,
+          off: 5,
+          img: "cow350.jpg",
+          unit: 0.35,
+          milk: "A2 Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 20,
+          perk: "",
+          ar: "4/5"
+        },
 
-  {
-    id: 13,
-    sku: "GA-COW-350ML",
-    cat: "cow",
-    catLabel: "Desi Cow Ghee",
-    name: "Cow Ghee — 350ml",
-    size: "350ml Desi Cow Ghee",
-    price: 629,
-    mrp: 699,
-    save: 70,
-    off: 10,
-    img: "dcow350.png",
-    unit: 0.35,
-    milk: "Desi Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 20,
-    perk: "",
-    ar: "3/4"
-  },
+        {
+          id: 0,
+          sku: "GA-A2COW-500ML",
+          cat: "a2cow",
+          catLabel: "A2 Cow Desi Ghee",
+          name: "A2 Cow Desi Ghee — 500ml",
+          size: "500ml A2 Cow Desi Ghee",
+          price: 1599,
+          mrp: 1699,
+          save: 100,
+          off: 6,
+          img: "cow500.jpg",
+          unit: 0.5,
+          milk: "A2 Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 18,
+          perk: "",
+          ar: "4/5"
+        },
 
-  {
-    id: 2,
-    sku: "GA-COW-500ML",
-    cat: "cow",
-    catLabel: "Desi Cow Ghee",
-    name: "Cow Ghee — 500ml",
-    size: "500ml Desi Cow Ghee",
-    price: 850,
-    mrp: 950,
-    save: 100,
-    off: 10,
-    img: "dcow500.png",
-    unit: 0.5,
-    milk: "Desi Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 19,
-    perk: "",
-    ar: "3/4"
-  },
+        {
+          id: 1,
+          sku: "GA-A2COW-1L",
+          cat: "a2cow",
+          catLabel: "A2 Cow Desi Ghee",
+          name: "A2 Cow Desi Ghee — 1 Liter",
+          size: "1 Liter A2 Cow Desi Ghee",
+          price: 2350,
+          mrp: 2600,
+          save: 250,
+          off: 10,
+          img: "cow1000.jpg",
+          unit: 1,
+          milk: "A2 Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 27,
+          perk: "",
+          ar: "5/6"
+        },
 
-  {
-    id: 3,
-    sku: "GA-COW-1L",
-    cat: "cow",
-    catLabel: "Desi Cow Ghee",
-    name: "Cow Ghee — 1 Liter",
-    size: "1 Liter Desi Cow Ghee",
-    price: 1650,
-    mrp: 1700,
-    save: 50,
-    off: 6,
-    img: "dcow1000.png",
-    unit: 1,
-    milk: "Desi Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 24,
-    perk: "",
-    ar: "4/5"
-  },
+        {
+          id: 6,
+          sku: "GA-A2COW-2L",
+          cat: "a2cow",
+          catLabel: "A2 Cow Desi Ghee",
+          name: "A2 Cow Desi Ghee — 2 Liter",
+          size: "2 Liter A2 Cow Desi Ghee",
+          price: 4549,
+          mrp: 5050,
+          save: 501,
+          off: 10,
+          img: "cow2000.png",
+          unit: 2,
+          milk: "A2 Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 17,
+          perk: "",
+          ar: "4/5"
+        },
 
-  {
-    id: 7,
-    sku: "GA-COW-2L",
-    cat: "cow",
-    catLabel: "Desi Cow Ghee",
-    name: "Cow Ghee — 2 Liter",
-    size: "2 Liter Desi Cow Ghee",
-    price: 3500,
-    mrp: 3750,
-    save: 250,
-    off: 7,
-    img: "dcow2000.png",
-    unit: 2,
-    milk: "Desi Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 20,
-    perk: "",
-    ar: "5/6"
-  },
+        {
+          id: 10,
+          sku: "GA-A2COW-3L",
+          cat: "a2cow",
+          catLabel: "A2 Cow Desi Ghee",
+          name: "A2 Cow Desi Ghee — 3 Liter",
+          size: "3 Liter A2 Cow Desi Ghee",
+          price: 6400,
+          mrp: 7150,
+          save: 750,
+          off: 10,
+          img: "cow3000.png",
+          unit: 3,
+          milk: "A2 Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 12,
+          perk: "",
+          ar: "4/5"
+        },
 
-  {
-    id: 14,
-    sku: "GA-COW-3L",
-    cat: "cow",
-    catLabel: "Desi Cow Ghee",
-    name: "Cow Ghee — 3 Liter",
-    size: "3 Liter Desi Cow Ghee",
-    price: 5147,
-    mrp: 5450,
-    save: 303,
-    off: 6,
-    img: "dcow3000.png",
-    unit: 3,
-    milk: "Desi Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 12,
-    perk: "",
-    ar: "5/6"
-  },
-
-  {
-    id: 9,
-    sku: "GA-COW-5L",
-    cat: "cow",
-    catLabel: "Desi Cow Ghee",
-    name: "Cow Ghee — 5 Liter",
-    size: "5 Liter Desi Cow Ghee",
-    price: 8049,
-    mrp: 8850,
-    save: 801,
-    off: 9,
-    img: "dcow5000.png",
-    unit: 5,
-    milk: "Desi Cow Milk",
-    hindi: "गाय का शुद्ध बिलोना घी",
-    stock: 12,
-    perk: "",
-    ar: "5/6"
-  },
+        {
+          id: 11,
+          sku: "GA-A2COW-5L",
+          cat: "a2cow",
+          catLabel: "A2 Cow Desi Ghee",
+          name: "A2 Cow Desi Ghee — 5 Liter",
+          size: "5 Liter A2 Cow Desi Ghee",
+          price: 9849,
+          mrp: 11350,
+          save: 1501,
+          off: 13,
+          img: "cow5000.png",
+          unit: 5,
+          milk: "A2 Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 9,
+          perk: "",
+          ar: "4/5"
+        },
 
 
-  // =========================
-  // BUFFALO DESI GHEE
-  // =========================
 
-  {
-    id: 15,
-    sku: "GA-BUF-350ML",
-    cat: "buffalo",
-    catLabel: "Buffalo Desi Ghee",
-    name: "Buffalo Ghee — 350ml",
-    size: "350ml Buffalo Desi Ghee",
-    price: 595,
-    mrp: 665,
-    save: 70,
-    off: 11,
-    img: "buf350.jpg",
-    unit: 0.35,
-    milk: "Desi Buffalo Milk",
-    hindi: "भैंस का शुद्ध बिलोना घी",
-    stock: 20,
-    perk: "",
-    ar: "5/7"
-  },
+        // =========================
+        // DESI COW GHEE
+        // =========================
 
-  {
-    id: 4,
-    sku: "GA-BUF-500ML",
-    cat: "buffalo",
-    catLabel: "Buffalo Desi Ghee",
-    name: "Buffalo Ghee — 500ml",
-    size: "500ml Buffalo Desi Ghee",
-    price: 850,
-    mrp: 950,
-    save: 100,
-    off: 11,
-    img: "buf500.jpg",
-    unit: 0.5,
-    milk: "Desi Buffalo Milk",
-    hindi: "भैंस का शुद्ध बिलोना घी",
-    stock: 15,
-    perk: "",
-    ar: "5/7"
-  },
+        {
+          id: 13,
+          sku: "GA-COW-350ML",
+          cat: "cow",
+          catLabel: "Desi Cow Ghee",
+          name: "Cow Ghee — 350ml",
+          size: "350ml Desi Cow Ghee",
+          price: 629,
+          mrp: 699,
+          save: 70,
+          off: 10,
+          img: "dcow350.png",
+          unit: 0.35,
+          milk: "Desi Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 20,
+          perk: "",
+          ar: "3/4"
+        },
 
-  {
-    id: 5,
-    sku: "GA-BUF-1L",
-    cat: "buffalo",
-    catLabel: "Buffalo Desi Ghee",
-    name: "Buffalo Ghee — 1 Liter",
-    size: "1 Liter Buffalo Desi Ghee",
-    price: 1450,
-    mrp: 1550,
-    save: 100,
-    off: 6,
-    img: "buf1000.jpg",
-    unit: 1,
-    milk: "Desi Buffalo Milk",
-    hindi: "भैंस का शुद्ध बिलोना घी",
-    stock: 22,
-    perk: "",
-    ar: "1/1"
-  },
+        {
+          id: 2,
+          sku: "GA-COW-500ML",
+          cat: "cow",
+          catLabel: "Desi Cow Ghee",
+          name: "Cow Ghee — 500ml",
+          size: "500ml Desi Cow Ghee",
+          price: 850,
+          mrp: 950,
+          save: 100,
+          off: 10,
+          img: "dcow500.png",
+          unit: 0.5,
+          milk: "Desi Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 19,
+          perk: "",
+          ar: "3/4"
+        },
 
-  {
-    id: 8,
-    sku: "GA-BUF-2L",
-    cat: "buffalo",
-    catLabel: "Buffalo Desi Ghee",
-    name: "Buffalo Ghee — 2 Liter",
-    size: "2 Liter Buffalo Desi Ghee",
-    price: 3150,
-    mrp: 3450,
-    save: 300,
-    off: 9,
-    img: "buf2000.png",
-    unit: 2,
-    milk: "Desi Buffalo Milk",
-    hindi: "भैंस का शुद्ध बिलोना घी",
-    stock: 21,
-    perk: "",
-    ar: "3/4"
-  },
+        {
+          id: 3,
+          sku: "GA-COW-1L",
+          cat: "cow",
+          catLabel: "Desi Cow Ghee",
+          name: "Cow Ghee — 1 Liter",
+          size: "1 Liter Desi Cow Ghee",
+          price: 1650,
+          mrp: 1700,
+          save: 50,
+          off: 6,
+          img: "dcow1000.png",
+          unit: 1,
+          milk: "Desi Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 24,
+          perk: "",
+          ar: "4/5"
+        },
 
-  {
-    id: 16,
-    sku: "GA-BUF-3L",
-    cat: "buffalo",
-    catLabel: "Buffalo Desi Ghee",
-    name: "Buffalo Ghee — 3 Liter",
-    size: "3 Liter Buffalo Desi Ghee",
-    price: 4700,
-    mrp: 5000,
-    save: 300,
-    off: 6,
-    img: "buf3000.png",
-    unit: 3,
-    milk: "Desi Buffalo Milk",
-    hindi: "भैंस का शुद्ध बिलोना घी",
-    stock: 12,
-    perk: "",
-    ar: "3/4"
-  },
+        {
+          id: 7,
+          sku: "GA-COW-2L",
+          cat: "cow",
+          catLabel: "Desi Cow Ghee",
+          name: "Cow Ghee — 2 Liter",
+          size: "2 Liter Desi Cow Ghee",
+          price: 3500,
+          mrp: 3750,
+          save: 250,
+          off: 7,
+          img: "dcow2000.png",
+          unit: 2,
+          milk: "Desi Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 20,
+          perk: "",
+          ar: "5/6"
+        },
 
-  {
-    id: 11,
-    sku: "GA-BUF-5L",
-    cat: "buffalo",
-    catLabel: "Buffalo Desi Ghee",
-    name: "Buffalo Ghee — 5 Liter",
-    size: "5 Liter Buffalo Desi Ghee",
-    price: 7349,
-    mrp: 8100,
-    save: 751,
-    off: 9,
-    img: "buf5000.png",
-    unit: 5,
-    milk: "Desi Buffalo Milk",
-    hindi: "भैंस का शुद्ध बिलोना घी",
-    stock: 8,
-    perk: "",
-    ar: "3/4"
-  }
+        {
+          id: 14,
+          sku: "GA-COW-3L",
+          cat: "cow",
+          catLabel: "Desi Cow Ghee",
+          name: "Cow Ghee — 3 Liter",
+          size: "3 Liter Desi Cow Ghee",
+          price: 5147,
+          mrp: 5450,
+          save: 303,
+          off: 6,
+          img: "dcow3000.png",
+          unit: 3,
+          milk: "Desi Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 12,
+          perk: "",
+          ar: "5/6"
+        },
 
-];
+        {
+          id: 9,
+          sku: "GA-COW-5L",
+          cat: "cow",
+          catLabel: "Desi Cow Ghee",
+          name: "Cow Ghee — 5 Liter",
+          size: "5 Liter Desi Cow Ghee",
+          price: 8049,
+          mrp: 8850,
+          save: 801,
+          off: 9,
+          img: "dcow5000.png",
+          unit: 5,
+          milk: "Desi Cow Milk",
+          hindi: "गाय का शुद्ध बिलोना घी",
+          stock: 12,
+          perk: "",
+          ar: "5/6"
+        },
+
+
+        // =========================
+        // BUFFALO DESI GHEE
+        // =========================
+
+        {
+          id: 15,
+          sku: "GA-BUF-350ML",
+          cat: "buffalo",
+          catLabel: "Buffalo Desi Ghee",
+          name: "Buffalo Ghee — 350ml",
+          size: "350ml Buffalo Desi Ghee",
+          price: 595,
+          mrp: 665,
+          save: 70,
+          off: 11,
+          img: "buf350.jpg",
+          unit: 0.35,
+          milk: "Desi Buffalo Milk",
+          hindi: "भैंस का शुद्ध बिलोना घी",
+          stock: 20,
+          perk: "",
+          ar: "5/7"
+        },
+
+        {
+          id: 4,
+          sku: "GA-BUF-500ML",
+          cat: "buffalo",
+          catLabel: "Buffalo Desi Ghee",
+          name: "Buffalo Ghee — 500ml",
+          size: "500ml Buffalo Desi Ghee",
+          price: 850,
+          mrp: 950,
+          save: 100,
+          off: 11,
+          img: "buf500.jpg",
+          unit: 0.5,
+          milk: "Desi Buffalo Milk",
+          hindi: "भैंस का शुद्ध बिलोना घी",
+          stock: 15,
+          perk: "",
+          ar: "5/7"
+        },
+
+        {
+          id: 5,
+          sku: "GA-BUF-1L",
+          cat: "buffalo",
+          catLabel: "Buffalo Desi Ghee",
+          name: "Buffalo Ghee — 1 Liter",
+          size: "1 Liter Buffalo Desi Ghee",
+          price: 1450,
+          mrp: 1550,
+          save: 100,
+          off: 6,
+          img: "buf1000.jpg",
+          unit: 1,
+          milk: "Desi Buffalo Milk",
+          hindi: "भैंस का शुद्ध बिलोना घी",
+          stock: 22,
+          perk: "",
+          ar: "1/1"
+        },
+
+        {
+          id: 8,
+          sku: "GA-BUF-2L",
+          cat: "buffalo",
+          catLabel: "Buffalo Desi Ghee",
+          name: "Buffalo Ghee — 2 Liter",
+          size: "2 Liter Buffalo Desi Ghee",
+          price: 3150,
+          mrp: 3450,
+          save: 300,
+          off: 9,
+          img: "buf2000.png",
+          unit: 2,
+          milk: "Desi Buffalo Milk",
+          hindi: "भैंस का शुद्ध बिलोना घी",
+          stock: 21,
+          perk: "",
+          ar: "3/4"
+        },
+
+        {
+          id: 16,
+          sku: "GA-BUF-3L",
+          cat: "buffalo",
+          catLabel: "Buffalo Desi Ghee",
+          name: "Buffalo Ghee — 3 Liter",
+          size: "3 Liter Buffalo Desi Ghee",
+          price: 4700,
+          mrp: 5000,
+          save: 300,
+          off: 6,
+          img: "buf3000.png",
+          unit: 3,
+          milk: "Desi Buffalo Milk",
+          hindi: "भैंस का शुद्ध बिलोना घी",
+          stock: 12,
+          perk: "",
+          ar: "3/4"
+        },
+
+        {
+          id: 11,
+          sku: "GA-BUF-5L",
+          cat: "buffalo",
+          catLabel: "Buffalo Desi Ghee",
+          name: "Buffalo Ghee — 5 Liter",
+          size: "5 Liter Buffalo Desi Ghee",
+          price: 7349,
+          mrp: 8100,
+          save: 751,
+          off: 9,
+          img: "buf5000.png",
+          unit: 5,
+          milk: "Desi Buffalo Milk",
+          hindi: "भैंस का शुद्ध बिलोना घी",
+          stock: 8,
+          perk: "",
+          ar: "3/4"
+        }
+
+      ];
 
 
 
@@ -5867,18 +5985,39 @@
       refreshCancelFloatButton();
 
       /* =========================================================================
-         27b. REELS — 24 vertical review videos (posters until files are added)
+         27b. REELS — customer review videos, pulled from YouTube / Instagram links
+         =========================================================================
+         To add a real review: paste the YouTube or Instagram (reel/post) link into
+         the "url" field below. The platform + thumbnail are detected automatically.
+         Leave "url" empty to show a "link coming soon" placeholder tile.
          ========================================================================= */
-      const REEL_CAPS = [
-        "Sandeep Dahiya · Pataudi",
-        "Poonam Ahlawat · Haily Mandi",
-        "Vikas Malik · Gurgaon",
-        "Balbir Singh · Gurgaon",
-        "Neha Chhillar · BhoraKalan",
-        "Ramesh Yadav · Pataudi",
+      const REELS_DATA = [
+
+        { name: "About Ghee", place: "By GauAmrita", url: "https://www.instagram.com/reel/DcqKE_3JXuB/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" },
+        { name: "Myths about Ghee", place: "It reduces inflammation", url: "https://youtube.com/shorts/sWYXC4muCTY?si=0SpLkgyNy3VxgXH0" },
+        { name: "About Ghee", place: "By GauAmrita", url: "https://www.instagram.com/reel/DcTXP-QJevf/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" },
+        { name: "Ghee is Better than Oils", place: "Use Ghee", url: "https://youtube.com/shorts/H_AGIpvzmsU?si=mNS__mDkbMmljRqH" },
+        { name: "About Ghee", place: "By GauAmrita", url: "https://www.instagram.com/reel/Dck_EQDpCbP/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" },
+        { name: "Ghee is Fat Burner", place: "Good Fat", url: "https://youtube.com/shorts/17-TzGCNsY8?si=SdMfYz_QTvmo1gya" },
+        { name: "About Ghee", place: "By GauAmrita", url: "https://www.instagram.com/reel/DcTXP-QJevf/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" },
+        { name: "Ghee Lubricates Joints", place: "SahdGuru", url: "https://youtube.com/shorts/b0N0QJv-HTg?si=zBWBR3wgTIETfIJN" },
+        { name: "About Ghee", place: "By GauAmrita", url: "https://www.instagram.com/reel/DcqKE_3JXuB/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" },
+        { name: "The Truth About Ghee: Ayurvedic", place: "By GauAmrita", url: "https://youtube.com/shorts/drH275HdyoQ?si=C5NpuErGWGrwIa-u" },
+        { name: "About Ghee", place: "By GauAmrita", url: "https://www.instagram.com/reel/DcyLm29pSGI/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" },
+        { name: "About Ghee", place: "By GauAmrita", url: "https://www.instagram.com/reel/Dc3L2zLJwRl/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" },
+
       ];
-      const REEL_TOTAL = 24;
-      const reelPoster = (i, cap) => "data:image/svg+xml;charset=utf-8," + encodeURIComponent(
+      // Detect YouTube (incl. Shorts / youtu.be) video id from any pasted URL
+      const getYouTubeId = (url) => {
+        const m = String(url || "").match(
+          /(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/
+        );
+        return m ? m[1] : null;
+      };
+
+      const isInstagramUrl = (url) => /instagram\.com\/(reel|p|tv)\//i.test(String(url || ""));
+
+      const reelPlaceholderThumb = (cap) => "data:image/svg+xml;charset=utf-8," + encodeURIComponent(
         `<svg xmlns='http://www.w3.org/2000/svg' width='450' height='800'>` +
         `<rect width='450' height='800' fill='#2C1810'/>` +
         `<circle cx='225' cy='340' r='170' fill='rgba(196,154,60,0.20)'/>` +
@@ -5887,40 +6026,125 @@
         `<rect x='194' y='330' width='62' height='68' rx='6' fill='#2C1810'/>` +
         `<text x='225' y='358' font-family='Georgia,serif' font-size='17' fill='#F0DFAE' text-anchor='middle'>GAU</text>` +
         `<text x='225' y='378' font-family='Georgia,serif' font-size='11' letter-spacing='3' fill='#C49A3C' text-anchor='middle'>AMRITA</text>` +
-        `<text x='225' y='540' font-family='Georgia,serif' font-size='24' letter-spacing='6' fill='#E8C870' text-anchor='middle'>REEL ${pad(i + 1)}</text>` +
-        `<circle cx='225' cy='620' r='34' fill='none' stroke='#E8C870' stroke-width='1.6'/>` +
-        `<path d='M216 605 L248 620 L216 635 Z' fill='#E8C870'/>` +
         `<text x='225' y='712' font-family='Georgia,serif' font-style='italic' font-size='17' fill='#FFFFFF' text-anchor='middle'>${esc(cap.split(" · ")[0])}</text>` +
         `<text x='225' y='738' font-family='sans-serif' font-size='11' letter-spacing='3' fill='#C49A3C' text-anchor='middle'>${esc((cap.split(" · ")[1] || "").toUpperCase())}</text>` +
         `</svg>`);
 
+      const PLAY_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8V4z"/></svg>`;
+
       const reelStrip = $("reelStrip");
-      reelStrip.innerHTML = Array.from({ length: REEL_TOTAL }, (_, i) => {
-        const cap = REEL_CAPS[i % REEL_CAPS.length];
-        const src = "img4/reels/reel-" + pad(i + 1) + ".mp4";
-        return `<figure class="reel reveal">
-      <video preload="metadata" playsinline poster="${reelPoster(i, cap)}" aria-label="Customer review reel ${i + 1} — ${esc(cap)}">
-        <source src="${src}" type="video/mp4" />
-      </video>
+
+      const buildReel = (item, i) => {
+        const cap = `${item.name} · ${item.place}`;
+        const ytId = getYouTubeId(item.url);
+        const type = ytId ? "youtube" : (isInstagramUrl(item.url) ? "instagram" : "");
+        const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumb || reelPlaceholderThumb(cap));
+        const hasLink = !!type;
+        return `<figure class="reel reveal${hasLink ? "" : " novideo"}" data-type="${type}" data-url="${esc(item.url || "")}">
+      <img class="reel__thumb" src="${thumb}" alt="Customer review reel — ${esc(cap)}" loading="lazy" />
+      <button class="reel__play" aria-label="Play review video from ${esc(item.name)}"${hasLink ? "" : " disabled"}>${PLAY_ICON}</button>
       <span class="reel__num">${pad(i + 1)}</span>
-      <span class="reel__soon">add reel-${pad(i + 1)}.mp4</span>
+      <span class="reel__soon">link coming soon</span>
       <figcaption class="reel__cap"><b>Review</b><span>${esc(cap)}</span></figcaption>
     </figure>`;
-      }).join("");
+      };
+
+      reelStrip.innerHTML = REELS_DATA.map(buildReel).join("");
+      const REEL_SET_COUNT = REELS_DATA.length;
       reelStrip.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-      // tap a reel to play; if the file is missing, flag it instead of a dead control bar
+      /* ---- lightbox playback (YouTube embed / Instagram embed) ---- */
+      const lightbox = $("reelLightbox");
+      const lightboxMedia = $("reelLightboxMedia");
+      let igScriptLoaded = false;
+
+      const loadInstagramEmbed = (cb) => {
+        if (window.instgrm) { cb(); return; }
+        if (igScriptLoaded) { setTimeout(() => cb(), 400); return; }
+        igScriptLoaded = true;
+        const s = document.createElement("script");
+        s.src = "https://www.instagram.com/embed.js";
+        s.async = true;
+        s.onload = cb;
+        document.body.appendChild(s);
+      };
+
+      const openReelLightbox = (type, url) => {
+        if (type === "youtube") {
+          const id = getYouTubeId(url);
+          if (!id) return;
+          lightboxMedia.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1" title="Customer review video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+        } else if (type === "instagram") {
+          lightboxMedia.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${esc(url)}" data-instgrm-version="14"></blockquote>`;
+          loadInstagramEmbed(() => window.instgrm && window.instgrm.Embeds.process());
+        } else {
+          return;
+        }
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("reel-lock");
+        pauseAutoScroll(true);
+      };
+
+      const closeReelLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxMedia.innerHTML = "";
+        document.body.classList.remove("reel-lock");
+        pauseAutoScroll(false);
+      };
+
+      $("reelLightboxClose").addEventListener("click", closeReelLightbox);
+      lightbox.addEventListener("click", e => { if (e.target === lightbox) closeReelLightbox(); });
+      document.addEventListener("keydown", e => { if (e.key === "Escape") closeReelLightbox(); });
+
+      // only the small play button opens a reel — tapping elsewhere on the tile does nothing
       reelStrip.addEventListener("click", e => {
-        const v = e.target.closest("video"); if (!v) return;
-        v.controls = true;
-        v.play().catch(() => {
-          v.controls = false;
-          v.closest(".reel").classList.add("novideo");
-        });
+        const btn = e.target.closest(".reel__play");
+        if (!btn || btn.disabled) return;
+        const fig = btn.closest(".reel");
+        openReelLightbox(fig.dataset.type, fig.dataset.url);
       });
 
-      $("reelPrev").addEventListener("click", () => reelStrip.scrollBy({ left: -reelStrip.clientWidth * 0.8, behavior: "smooth" }));
-      $("reelNext").addEventListener("click", () => reelStrip.scrollBy({ left: reelStrip.clientWidth * 0.8, behavior: "smooth" }));
+      /* ---- auto-scrolling carousel, looped seamlessly, no dot indicators ---- */
+      let autoScrollPaused = false;
+      let manualResumeTimer = null;
+      const pauseAutoScroll = (state) => { autoScrollPaused = state; };
+      const pauseThenResume = () => {
+        autoScrollPaused = true;
+        clearTimeout(manualResumeTimer);
+        manualResumeTimer = setTimeout(() => { autoScrollPaused = false; }, 2600);
+      };
+
+      reelStrip.addEventListener("mouseenter", () => pauseAutoScroll(true));
+      reelStrip.addEventListener("mouseleave", () => { if (!lightbox.classList.contains("is-open")) pauseAutoScroll(false); });
+      reelStrip.addEventListener("touchstart", () => pauseAutoScroll(true), { passive: true });
+      reelStrip.addEventListener("touchend", pauseThenResume, { passive: true });
+
+      $("reelPrev").addEventListener("click", () => { pauseThenResume(); reelStrip.scrollBy({ left: -reelStrip.clientWidth * 0.8, behavior: "smooth" }); });
+      $("reelNext").addEventListener("click", () => { pauseThenResume(); reelStrip.scrollBy({ left: reelStrip.clientWidth * 0.8, behavior: "smooth" }); });
+
+      // duplicate the set once so the strip can loop back to start with no visible jump
+      let loopWidth = reelStrip.scrollWidth;
+      reelStrip.insertAdjacentHTML("beforeend", REELS_DATA.map(buildReel).join(""));
+      reelStrip.querySelectorAll(".reel.reveal:nth-child(n+" + (REEL_SET_COUNT + 1) + ")").forEach(el => io.observe(el));
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+      if (!reduceMotion) {
+        const AUTOSCROLL_SPEED = 0.5; // px per frame, gentle continuous drift
+        const tickAutoScroll = () => {
+          if (!autoScrollPaused) {
+            reelStrip.scrollLeft += AUTOSCROLL_SPEED;
+            if (reelStrip.scrollLeft >= loopWidth) {
+              reelStrip.scrollLeft -= loopWidth;
+            }
+          }
+          requestAnimationFrame(tickAutoScroll);
+        };
+        // recalc loop width once layout / images have settled
+        window.addEventListener("load", () => { loopWidth = reelStrip.scrollWidth / 2; });
+        requestAnimationFrame(tickAutoScroll);
+      }
 
       /* =========================================================================
          28. CUSTOM CURSOR (desktop / fine pointer only)
