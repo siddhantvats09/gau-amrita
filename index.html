@@ -3996,6 +3996,245 @@
       height: 100%;
       border: 0;
     }
+
+    /* =========================================================================
+   MOBILE FIX — Product modal + Quick Order modal
+   Only touches phones / small tablets (and short landscape phones);
+   the desktop layout of both modals is unchanged.
+   ========================================================================= */
+
+    /* While a dialog is open, tuck the urgency banner under the dim overlay
+       so it can never sit on top of a dialog's close button */
+    @media (max-width:880px) {
+      body.modal-open .ub {
+        z-index: 1050;
+      }
+    }
+
+    /* ---------- Phones & small tablets ---------- */
+    @media (max-width:780px) {
+
+      .modal,
+      .qo {
+        padding: 12px;
+      }
+
+      /* ---- Product modal ---- */
+      .modal__panel {
+        grid-template-columns: minmax(0, 1fr);
+        /* lets the column shrink to the screen */
+        grid-template-rows: auto auto;
+        max-height: calc(100vh - 24px);
+        max-height: calc(100dvh - 24px);
+        /* real visible height on mobile browsers */
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .modal__media {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        min-height: 0;
+        /* old 300px min-height + 4/3 ratio forced a 400px-wide box */
+        aspect-ratio: 5 / 4;
+        max-height: min(320px, 42vh);
+      }
+
+      .modal__body {
+        grid-column: 1;
+        grid-row: 2;
+        min-width: 0;
+        padding: 22px 18px 24px;
+      }
+
+      .modal__desc {
+        padding-bottom: 20px;
+      }
+
+      .modal__row {
+        margin-top: 22px;
+      }
+
+      .modal__ctas {
+        padding-top: 26px;
+      }
+
+      .modal__ctas .btn {
+        min-width: 0;
+        flex: 1 1 100%;
+        /* full-width, easy to tap */
+      }
+
+      /* close button stays visible while the modal scrolls */
+      .modal__close {
+        position: sticky;
+        top: 0;
+        right: auto;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        justify-self: end;
+        align-self: start;
+        margin: 12px 12px 0 0;
+      }
+
+      /* ---- Quick Order modal ---- */
+      .qo__panel {
+        max-height: calc(100vh - 24px);
+        max-height: calc(100dvh - 24px);
+        padding: 18px 16px 22px;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* close button stays visible while the (long) product list scrolls */
+      .qo__close {
+        position: sticky;
+        top: 0;
+        right: auto;
+        margin: 0 -4px -42px auto;
+      }
+
+      .qo__badge {
+        max-width: calc(100% - 52px);
+        padding: 6px 12px;
+        letter-spacing: .16em;
+      }
+
+      .qo__title {
+        margin-top: 16px;
+      }
+
+      /* stop iOS Safari zooming the page when a field is focused */
+      .qo__form .field {
+        font-size: 16px;
+      }
+
+      .qo__summary {
+        padding: 14px;
+      }
+
+      .qo__summary-row span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .qo__summary-row strong {
+        white-space: nowrap;
+      }
+    }
+
+    /* ---------- Quick Order product rows on narrow phones ----------
+       image | name + details
+             | price ........ qty stepper                                     */
+    @media (max-width:560px) {
+      .qo-item {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 6px 12px;
+        padding: 14px 0;
+        align-items: start;
+      }
+
+      .qo-item__img {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        width: 52px;
+        height: 66px;
+      }
+
+      .qo-item>div:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+      }
+
+      .qo-item__right {
+        grid-column: 2;
+        grid-row: 2;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px 10px;
+      }
+
+      .qo-item__price {
+        text-align: left;
+      }
+
+      .qo-item__name {
+        font-size: 17px;
+      }
+
+      .qo-item__right .qty {
+        margin-left: auto;
+      }
+
+      .qty--sm button {
+        width: 36px;
+        height: 36px;
+      }
+
+      .qty--sm span {
+        min-width: 30px;
+      }
+    }
+
+    /* ---------- Short landscape phones (e.g. 844×390) ---------- */
+    @media (min-width:781px) and (max-height:520px) {
+      .modal__panel {
+        max-height: calc(100vh - 24px);
+        max-height: calc(100dvh - 24px);
+        overscroll-behavior: contain;
+      }
+
+      .modal__media {
+        grid-column: 1;
+        grid-row: 1;
+        min-height: 0;
+        position: sticky;
+        top: 0;
+        align-self: start;
+        height: calc(100vh - 24px);
+        height: calc(100dvh - 24px);
+        /* image stays in view while details scroll */
+      }
+
+      .modal__body {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+      }
+
+      .modal__close {
+        position: sticky;
+        top: 0;
+        right: auto;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        align-self: start;
+        margin: 12px 12px 0 0;
+      }
+
+      .modal,
+      .qo {
+        padding: 12px;
+      }
+
+      .qo__panel {
+        max-height: calc(100vh - 24px);
+        max-height: calc(100dvh - 24px);
+        overscroll-behavior: contain;
+      }
+
+      .qo__close {
+        position: sticky;
+        top: 0;
+        right: auto;
+        margin: 0 -18px -42px auto;
+      }
+    }
   </style>
 </head>
 
@@ -4318,6 +4557,7 @@
         <div class="wrap">
           <div class="reels__strip" id="reelStrip" aria-label="Customer review reels"></div>
         </div>
+      </div>
     </section>
 
     <!-- Lightbox used to play the YouTube / Instagram review clip on tap -->
@@ -4844,7 +5084,7 @@
 
       /* ---- 21.2 Product catalogue — SKUs / MRP / prices / discounts exactly as
               listed on the Gau Amrita product grid ---- */
-      [
+      const PRODUCTS = [
         {
           "id": 12,
           "sku": "GA-A2COW-350ML",
@@ -5169,7 +5409,7 @@
           "ar": "3/4"
         },
         {
-          "id": 11,
+          "id": 17,
           "sku": "GA-BUF-5L",
           "cat": "buffalo",
           "catLabel": "Buffalo Desi Ghee",
@@ -5187,14 +5427,19 @@
           "perk": "",
           "ar": "3/4"
         }
-      ]
+      ];
 
 
 
 
       const byId = id => PRODUCTS.find(p => p.id === id);
       const variantsOf = cat => PRODUCTS.filter(p => p.cat === cat).sort((a, b) => (a.unit - b.unit) || (a.mrp - b.mrp));
-      const sizeShort = p => p.size.split(" ")[0];
+      const sizeShort = p => {
+        const m = String(p.size).match(/^(\d+(?:\.\d+)?)\s*(ml|liters?|litres?|l|kg|gm?)\b/i);
+        if (!m) return String(p.size).split(" ")[0];
+        const u = m[2].toLowerCase();
+        return m[1] + (/^(liters?|litres?|l)$/.test(u) ? "L" : u);
+      };
 
       const inr = n => "₹" + n.toLocaleString("en-IN");
       const pad = n => String(n).padStart(2, "0");
@@ -5216,7 +5461,8 @@
         `</svg>`);
       document.addEventListener('error', e => {
         const t = e.target;
-        if (t && t.tagName === 'IMG' && !t.dataset.fb) { t.dataset.fb = '1'; t.src = ph(t.alt || 'GAU AMRITA'); }
+        // swap in the placeholder once per failed src (never loops: the placeholder itself is a data: URI)
+        if (t && t.tagName === 'IMG' && !String(t.getAttribute('src') || '').startsWith('data:')) { t.src = ph(t.alt || 'GAU AMRITA'); }
       }, true);
 
       /* =========================================================================
@@ -5293,7 +5539,7 @@
     <button class="artwork reveal" data-id="${p.id}" data-cat="${p.cat}" aria-label="View ${p.name}, ${inr(p.price)}">
       <span class="artwork__media" style="aspect-ratio:${p.ar}">
         <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" />
-        <span class="artwork__num">${pad(i + 1)} <span>/ 12</span></span>
+        <span class="artwork__num">${pad(i + 1)} <span>/ ${PRODUCTS.length}</span></span>
         <span class="artwork__off">${p.off}% OFF</span>
         <span class="artwork__perk">${p.perk}</span>
         <span class="artwork__overlay">
@@ -5362,7 +5608,7 @@
       function fillModal(p) {
         activeProduct = p;
         const idx = PRODUCTS.indexOf(p) + 1;
-        $("modalNum").innerHTML = `${pad(idx)} <span>/ 12</span>`;
+        $("modalNum").innerHTML = `${pad(idx)} <span>/ ${PRODUCTS.length}</span>`;
         $("modalImg").src = p.img; $("modalImg").alt = `${p.name} — pure bilona ghee jar`;
         $("modalCat").textContent = p.catLabel;
         $("modalName").innerHTML = esc(p.name).replace("Ghee", "<em>Ghee</em>");
@@ -5404,12 +5650,12 @@
       function showModal(el) {
         el.classList.add("open"); el.setAttribute("aria-hidden", "false");
         overlay.classList.add("open");
-        document.body.classList.add("lock");
+        document.body.classList.add("lock", "modal-open");
       }
       function hideModals() {
         [modal, drawer, qo].forEach(el => { el.classList.remove("open"); el.setAttribute("aria-hidden", "true"); });
         overlay.classList.remove("open");
-        document.body.classList.remove("lock");
+        document.body.classList.remove("lock", "modal-open");
         if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
       }
 
@@ -5440,6 +5686,11 @@
          ========================================================================= */
       let cart = [];
       try { cart = JSON.parse(localStorage.getItem("ga_cart") || "[]"); } catch (e) { cart = []; }
+      // re-link saved items to the live catalogue by SKU (drops stale / unknown items)
+      cart = (Array.isArray(cart) ? cart : []).map(i => {
+        const p = PRODUCTS.find(x => x.sku === (i && i.key));
+        return p ? { key: p.sku, id: p.id, qty: Math.max(1, Number(i.qty) || 1) } : null;
+      }).filter(Boolean);
       const saveCart = () => { try { localStorage.setItem("ga_cart", JSON.stringify(cart)); } catch (e) { } };
 
       const drawerBody = $("drawerBody"), drawerFoot = $("drawerFoot");
