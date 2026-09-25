@@ -4448,7 +4448,7 @@
         <div class="filters reveal reveal--delay-2" id="filters" role="tablist"
           aria-label="Filter collection by category">
           <button class="filter active" data-cat="all" role="tab" aria-selected="true">All</button>
-          <button class="filter" data-cat="cow" role="tab">Desi Cow Ghee</button>
+          <button class="filter" data-cat="cow" role="tab">Cow Desi Ghee</button>
           <button class="filter" data-cat="buffalo" role="tab">Buffalo Desi Ghee</button>
           <button class="filter" data-cat="a2cow" role="tab">A2 Cow Ghee</button>
         </div>
@@ -5490,7 +5490,7 @@ const PRODUCTS = [
         return [list.find(v => v.unit === 1), list.find(v => v.unit === 3)].filter(Boolean);
       });
       /* ---- variants shown in the quick-order modal that opens on page load ---- */
-      const QO_VARIANTS = PRODUCTS.filter(p => [0.5, 1, 5].includes(p.unit));
+      const QO_VARIANTS = PRODUCTS.filter(p => [0.5, 1].includes(p.unit));
       const sizeShort = p => {
         const m = String(p.size).match(/^(\d+(?:\.\d+)?)\s*(ml|liters?|litres?|l|kg|gm?)\b/i);
         if (!m) return String(p.size).split(" ")[0];
