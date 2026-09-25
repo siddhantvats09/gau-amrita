@@ -292,7 +292,7 @@
     /* =========================================================================
    5. CUSTOM CURSOR (desktop, fine-pointer only)
    ========================================================================= */
-    .cursor {
+    /* .cursor {
       position: fixed;
       top: 0;
       left: 0;
@@ -313,9 +313,9 @@
 
     .cursor.is-on {
       opacity: .9;
-    }
+    } */
 
-    .cursor__label {
+    /* .cursor__label {
       font-size: 9px;
       letter-spacing: .22em;
       text-transform: uppercase;
@@ -324,14 +324,14 @@
       transition: opacity .35s var(--ease);
       white-space: nowrap;
       font-weight: 600;
-    }
+    } */
 
-    .cursor.is-active {
+    /* .cursor.is-active {
       width: 84px;
       height: 84px;
       background: var(--pink);
       border-color: var(--pink);
-    }
+    } */
 
     .cursor.is-active .cursor__label {
       opacity: 1;
@@ -1261,6 +1261,35 @@
       display: none;
     }
 
+    .artwork__hit {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    .artwork__variant {
+      margin-top: 8px;
+      font-family: var(--sans);
+      font-size: 11.5px;
+      letter-spacing: .04em;
+      color: var(--ink-mid);
+      background: var(--pink-soft);
+      border: 1px solid var(--gold-line);
+      padding: 6px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      max-width: 100%;
+    }
+
+    .artwork__variant:focus-visible {
+      outline: 1.5px solid var(--gold);
+      outline-offset: 2px;
+    }
+
     .artwork__media {
       position: relative;
       width: 100%;
@@ -1277,7 +1306,7 @@
     }
 
     .artwork:hover .artwork__media img,
-    .artwork:focus-visible .artwork__media img {
+    .artwork__hit:focus-visible .artwork__media img {
       filter: brightness(1.04);
     }
 
@@ -1361,7 +1390,7 @@
     }
 
     .artwork:hover .artwork__overlay,
-    .artwork:focus-visible .artwork__overlay {
+    .artwork__hit:focus-visible .artwork__overlay {
       opacity: 1;
       transform: none;
     }
@@ -1377,7 +1406,7 @@
       color: #fff;
       border: 1px solid rgba(255, 255, 255, .6);
       padding: 11px 16px;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(6px);
       transition: background .4s var(--ease), color .4s var(--ease);
     }
 
@@ -4247,8 +4276,7 @@
 
   <!-- urgency banner (Gau Amrita offer line) -->
   <div class="ub" id="ub" role="status">
-    <span>🔥 <strong>Limited Stock</strong> — only for first 2000 customers · <strong>Upto 70% off</strong> on delivery
-      charges &nbsp;|&nbsp; Order more, save more on delivery!</span>
+    <span>🔥 <strong>Limited Stock</strong> — only for first 2000 customers &nbsp;|&nbsp; Order direct from farm, fast delivery!</span>
     <button class="ub__close" id="ubClose" aria-label="Dismiss offer banner">✕</button>
   </div>
 
@@ -4982,7 +5010,7 @@
           </svg>
           <span>Order via WhatsApp</span>
         </a>
-        <p class="drawer__note">Upto 70% off on delivery charges · Order more, save more.</p>
+        <p class="drawer__note">Fast doorstep delivery · Order more, save more.</p>
       </div>
     </div>
   </aside>
@@ -5000,7 +5028,7 @@
       <div id="qoBody">
         <span class="qo__badge"><span class="qo__dot"></span> Limited Stock Available</span>
         <h2 class="qo__title" id="qoTitle">Order Pure Ghee<br>— <em>Direct from Farm.</em></h2>
-        <p class="qo__sub">Delivered to your door in 2–4 days · Upto 70% off on delivery charges</p>
+        <p class="qo__sub">Delivered to your door in 2–4 days</p>
 
         <span class="qo__label">Select Products &amp; Quantity</span>
         <div id="qoProducts"></div>
@@ -5029,7 +5057,7 @@
             Or message us on WhatsApp
           </a>
           <div class="qo__trust">
-            <span>✓ FSSAI Certified</span><span>✓ 100% Pure</span><span>✓ Upto 70% Off Delivery</span><span>✓ Secure
+            <span>✓ FSSAI Certified</span><span>✓ 100% Pure</span><span>✓ Fast Delivery</span><span>✓ Secure
               Payment</span>
           </div>
         </div>
@@ -5084,356 +5112,385 @@
 
       /* ---- 21.2 Product catalogue — SKUs / MRP / prices / discounts exactly as
               listed on the Gau Amrita product grid ---- */
-      const PRODUCTS = [
-        {
-          "id": 12,
-          "sku": "GA-A2COW-350ML",
-          "cat": "a2cow",
-          "catLabel": "A2 Cow Desi Ghee",
-          "name": "A2 Cow Desi Ghee — 350ml",
-          "size": "350ml A2 Cow Desi Ghee",
-          "price": 1269,
-          "mrp": 1339,
-          "save": 70,
-          "off": 5,
-          "img": "cow350.jpg",
-          "unit": 0.35,
-          "milk": "A2 Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 20,
-          "perk": "",
-          "ar": "4/5"
-        },
-        {
-          "id": 0,
-          "sku": "GA-A2COW-500ML",
-          "cat": "a2cow",
-          "catLabel": "A2 Cow Desi Ghee",
-          "name": "A2 Cow Desi Ghee — 500ml",
-          "size": "500ml A2 Cow Desi Ghee",
-          "price": 1599,
-          "mrp": 1699,
-          "save": 100,
-          "off": 6,
-          "img": "cow500.jpg",
-          "unit": 0.5,
-          "milk": "A2 Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 18,
-          "perk": "",
-          "ar": "4/5"
-        },
-        {
-          "id": 1,
-          "sku": "GA-A2COW-1L",
-          "cat": "a2cow",
-          "catLabel": "A2 Cow Desi Ghee",
-          "name": "A2 Cow Desi Ghee — 1 Liter",
-          "size": "1 Liter A2 Cow Desi Ghee",
-          "price": 2350,
-          "mrp": 2600,
-          "save": 250,
-          "off": 10,
-          "img": "cow1000.jpg",
-          "unit": 1,
-          "milk": "A2 Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 27,
-          "perk": "",
-          "ar": "5/6"
-        },
-        {
-          "id": 6,
-          "sku": "GA-A2COW-2L",
-          "cat": "a2cow",
-          "catLabel": "A2 Cow Desi Ghee",
-          "name": "A2 Cow Desi Ghee — 2 Liter",
-          "size": "2 Liter A2 Cow Desi Ghee",
-          "price": 4549,
-          "mrp": 5050,
-          "save": 501,
-          "off": 10,
-          "img": "cow2000.png",
-          "unit": 2,
-          "milk": "A2 Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 17,
-          "perk": "",
-          "ar": "4/5"
-        },
-        {
-          "id": 10,
-          "sku": "GA-A2COW-3L",
-          "cat": "a2cow",
-          "catLabel": "A2 Cow Desi Ghee",
-          "name": "A2 Cow Desi Ghee — 3 Liter",
-          "size": "3 Liter A2 Cow Desi Ghee",
-          "price": 6400,
-          "mrp": 7150,
-          "save": 750,
-          "off": 10,
-          "img": "cow3000.png",
-          "unit": 3,
-          "milk": "A2 Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 12,
-          "perk": "",
-          "ar": "4/5"
-        },
-        {
-          "id": 11,
-          "sku": "GA-A2COW-5L",
-          "cat": "a2cow",
-          "catLabel": "A2 Cow Desi Ghee",
-          "name": "A2 Cow Desi Ghee — 5 Liter",
-          "size": "5 Liter A2 Cow Desi Ghee",
-          "price": 9849,
-          "mrp": 11350,
-          "save": 1501,
-          "off": 13,
-          "img": "cow5000.png",
-          "unit": 5,
-          "milk": "A2 Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 9,
-          "perk": "",
-          "ar": "4/5"
-        },
-        {
-          "id": 13,
-          "sku": "GA-COW-350ML",
-          "cat": "cow",
-          "catLabel": "Desi Cow Ghee",
-          "name": "Cow Ghee — 350ml",
-          "size": "350ml Desi Cow Ghee",
-          "price": 829,
-          "mrp": 699,
-          "save": 70,
-          "off": 10,
-          "img": "dcow350.png",
-          "unit": 0.35,
-          "milk": "Desi Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 20,
-          "perk": "",
-          "ar": "3/4"
-        },
-        {
-          "id": 2,
-          "sku": "GA-COW-500ML",
-          "cat": "cow",
-          "catLabel": "Desi Cow Ghee",
-          "name": "Cow Ghee — 500ml",
-          "size": "500ml Desi Cow Ghee",
-          "price": 1050,
-          "mrp": 950,
-          "save": 100,
-          "off": 10,
-          "img": "dcow500.png",
-          "unit": 0.5,
-          "milk": "Desi Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 19,
-          "perk": "",
-          "ar": "3/4"
-        },
-        {
-          "id": 3,
-          "sku": "GA-COW-1L",
-          "cat": "cow",
-          "catLabel": "Desi Cow Ghee",
-          "name": "Cow Ghee — 1 Liter",
-          "size": "1 Liter Desi Cow Ghee",
-          "price": 1850,
-          "mrp": 1700,
-          "save": 50,
-          "off": 6,
-          "img": "dcow1000.png",
-          "unit": 1,
-          "milk": "Desi Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 24,
-          "perk": "",
-          "ar": "4/5"
-        },
-        {
-          "id": 7,
-          "sku": "GA-COW-2L",
-          "cat": "cow",
-          "catLabel": "Desi Cow Ghee",
-          "name": "Cow Ghee — 2 Liter",
-          "size": "2 Liter Desi Cow Ghee",
-          "price": 3700,
-          "mrp": 3750,
-          "save": 250,
-          "off": 7,
-          "img": "dcow2000.png",
-          "unit": 2,
-          "milk": "Desi Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 20,
-          "perk": "",
-          "ar": "5/6"
-        },
-        {
-          "id": 14,
-          "sku": "GA-COW-3L",
-          "cat": "cow",
-          "catLabel": "Desi Cow Ghee",
-          "name": "Cow Ghee — 3 Liter",
-          "size": "3 Liter Desi Cow Ghee",
-          "price": 5347,
-          "mrp": 5450,
-          "save": 303,
-          "off": 6,
-          "img": "dcow3000.png",
-          "unit": 3,
-          "milk": "Desi Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 12,
-          "perk": "",
-          "ar": "5/6"
-        },
-        {
-          "id": 9,
-          "sku": "GA-COW-5L",
-          "cat": "cow",
-          "catLabel": "Desi Cow Ghee",
-          "name": "Cow Ghee — 5 Liter",
-          "size": "5 Liter Desi Cow Ghee",
-          "price": 8249,
-          "mrp": 8850,
-          "save": 801,
-          "off": 9,
-          "img": "dcow5000.png",
-          "unit": 5,
-          "milk": "Desi Cow Milk",
-          "hindi": "गाय का शुद्ध बिलोना घी",
-          "stock": 12,
-          "perk": "",
-          "ar": "5/6"
-        },
-        {
-          "id": 15,
-          "sku": "GA-BUF-350ML",
-          "cat": "buffalo",
-          "catLabel": "Buffalo Desi Ghee",
-          "name": "Buffalo Ghee — 350ml",
-          "size": "350ml Buffalo Desi Ghee",
-          "price": 795,
-          "mrp": 665,
-          "save": 70,
-          "off": 11,
-          "img": "buf350.jpg",
-          "unit": 0.35,
-          "milk": "Desi Buffalo Milk",
-          "hindi": "भैंस का शुद्ध बिलोना घी",
-          "stock": 20,
-          "perk": "",
-          "ar": "5/7"
-        },
-        {
-          "id": 4,
-          "sku": "GA-BUF-500ML",
-          "cat": "buffalo",
-          "catLabel": "Buffalo Desi Ghee",
-          "name": "Buffalo Ghee — 500ml",
-          "size": "500ml Buffalo Desi Ghee",
-          "price": 1050,
-          "mrp": 950,
-          "save": 100,
-          "off": 11,
-          "img": "buf500.jpg",
-          "unit": 0.5,
-          "milk": "Desi Buffalo Milk",
-          "hindi": "भैंस का शुद्ध बिलोना घी",
-          "stock": 15,
-          "perk": "",
-          "ar": "5/7"
-        },
-        {
-          "id": 5,
-          "sku": "GA-BUF-1L",
-          "cat": "buffalo",
-          "catLabel": "Buffalo Desi Ghee",
-          "name": "Buffalo Ghee — 1 Liter",
-          "size": "1 Liter Buffalo Desi Ghee",
-          "price": 1650,
-          "mrp": 1550,
-          "save": 100,
-          "off": 6,
-          "img": "buf1000.jpg",
-          "unit": 1,
-          "milk": "Desi Buffalo Milk",
-          "hindi": "भैंस का शुद्ध बिलोना घी",
-          "stock": 22,
-          "perk": "",
-          "ar": "1/1"
-        },
-        {
-          "id": 8,
-          "sku": "GA-BUF-2L",
-          "cat": "buffalo",
-          "catLabel": "Buffalo Desi Ghee",
-          "name": "Buffalo Ghee — 2 Liter",
-          "size": "2 Liter Buffalo Desi Ghee",
-          "price": 3350,
-          "mrp": 3450,
-          "save": 300,
-          "off": 9,
-          "img": "buf2000.png",
-          "unit": 2,
-          "milk": "Desi Buffalo Milk",
-          "hindi": "भैंस का शुद्ध बिलोना घी",
-          "stock": 21,
-          "perk": "",
-          "ar": "3/4"
-        },
-        {
-          "id": 16,
-          "sku": "GA-BUF-3L",
-          "cat": "buffalo",
-          "catLabel": "Buffalo Desi Ghee",
-          "name": "Buffalo Ghee — 3 Liter",
-          "size": "3 Liter Buffalo Desi Ghee",
-          "price": 4900,
-          "mrp": 5000,
-          "save": 300,
-          "off": 6,
-          "img": "buf3000.png",
-          "unit": 3,
-          "milk": "Desi Buffalo Milk",
-          "hindi": "भैंस का शुद्ध बिलोना घी",
-          "stock": 12,
-          "perk": "",
-          "ar": "3/4"
-        },
-        {
-          "id": 17,
-          "sku": "GA-BUF-5L",
-          "cat": "buffalo",
-          "catLabel": "Buffalo Desi Ghee",
-          "name": "Buffalo Ghee — 5 Liter",
-          "size": "5 Liter Buffalo Desi Ghee",
-          "price": 7549,
-          "mrp": 8100,
-          "save": 751,
-          "off": 9,
-          "img": "buf5000.png",
-          "unit": 5,
-          "milk": "Desi Buffalo Milk",
-          "hindi": "भैंस का शुद्ध बिलोना घी",
-          "stock": 8,
-          "perk": "",
-          "ar": "3/4"
-        }
-      ];
+const PRODUCTS = [
+  // =========================
+  // PREMIUM A2 COW DESI GHEE
+  // =========================
+
+  {
+    "id": 12,
+    "sku": "GA-A2COW-350ML",
+    "cat": "a2cow",
+    "catLabel": "Premium A2 Cow Desi Ghee",
+    "name": "Premium A2 Cow Desi Ghee — 350ml",
+    "size": "350ml Premium A2 Cow Desi Ghee",
+    "price": 1269,
+    "mrp": 1339,
+    "save": 70,
+    "off": 5,
+    "img": "cow350.jpg",
+    "unit": 0.35,
+    "milk": "A2 Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 20,
+    "perk": "",
+    "ar": "4/5"
+  },
+  {
+    "id": 0,
+    "sku": "GA-A2COW-500ML",
+    "cat": "a2cow",
+    "catLabel": "Premium A2 Cow Desi Ghee",
+    "name": "Premium A2 Cow Desi Ghee — 500ml",
+    "size": "500ml Premium A2 Cow Desi Ghee",
+    "price": 1599,
+    "mrp": 1699,
+    "save": 100,
+    "off": 6,
+    "img": "cow500.jpg",
+    "unit": 0.5,
+    "milk": "A2 Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 18,
+    "perk": "",
+    "ar": "4/5"
+  },
+  {
+    "id": 1,
+    "sku": "GA-A2COW-1L",
+    "cat": "a2cow",
+    "catLabel": "Premium A2 Cow Desi Ghee",
+    "name": "Premium A2 Cow Desi Ghee — 1 Liter",
+    "size": "1 Liter Premium A2 Cow Desi Ghee",
+    "price": 2350,
+    "mrp": 2600,
+    "save": 250,
+    "off": 10,
+    "img": "cow1000.jpg",
+    "unit": 1,
+    "milk": "A2 Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 27,
+    "perk": "",
+    "ar": "5/6"
+  },
+  {
+    "id": 6,
+    "sku": "GA-A2COW-2L",
+    "cat": "a2cow",
+    "catLabel": "Premium A2 Cow Desi Ghee",
+    "name": "Premium A2 Cow Desi Ghee — 2 Liter",
+    "size": "2 Liter Premium A2 Cow Desi Ghee",
+    "price": 4549,
+    "mrp": 5050,
+    "save": 501,
+    "off": 10,
+    "img": "cow2000.png",
+    "unit": 2,
+    "milk": "A2 Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 17,
+    "perk": "",
+    "ar": "4/5"
+  },
+  {
+    "id": 10,
+    "sku": "GA-A2COW-3L",
+    "cat": "a2cow",
+    "catLabel": "Premium A2 Cow Desi Ghee",
+    "name": "Premium A2 Cow Desi Ghee — 3 Liter",
+    "size": "3 Liter Premium A2 Cow Desi Ghee",
+    "price": 6400,
+    "mrp": 7150,
+    "save": 750,
+    "off": 10,
+    "img": "cow3000.png",
+    "unit": 3,
+    "milk": "A2 Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 12,
+    "perk": "",
+    "ar": "4/5"
+  },
+  {
+    "id": 11,
+    "sku": "GA-A2COW-5L",
+    "cat": "a2cow",
+    "catLabel": "Premium A2 Cow Desi Ghee",
+    "name": "Premium A2 Cow Desi Ghee — 5 Liter",
+    "size": "5 Liter Premium A2 Cow Desi Ghee",
+    "price": 9849,
+    "mrp": 11350,
+    "save": 1501,
+    "off": 13,
+    "img": "cow5000.png",
+    "unit": 5,
+    "milk": "A2 Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 9,
+    "perk": "",
+    "ar": "4/5"
+  },
+
+  // =========================
+  // COW DESI GHEE
+  // PRICE REDUCED BY ₹200
+  // =========================
+
+  {
+    "id": 13,
+    "sku": "GA-COW-350ML",
+    "cat": "cow",
+    "catLabel": "Cow Desi Ghee",
+    "name": "Cow Desi Ghee — 350ml",
+    "size": "350ml Cow Desi Ghee",
+    "price": 629,
+    "mrp": 699,
+    "save": 70,
+    "off": 10,
+    "img": "dcow350.png",
+    "unit": 0.35,
+    "milk": "Desi Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 20,
+    "perk": "",
+    "ar": "3/4"
+  },
+  {
+    "id": 2,
+    "sku": "GA-COW-500ML",
+    "cat": "cow",
+    "catLabel": "Cow Desi Ghee",
+    "name": "Cow Desi Ghee — 500ml",
+    "size": "500ml Cow Desi Ghee",
+    "price": 900,
+    "mrp": 950,
+    "save": 50,
+    "off": 10,
+    "img": "dcow500.png",
+    "unit": 0.5,
+    "milk": "Desi Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 19,
+    "perk": "",
+    "ar": "3/4"
+  },
+  {
+    "id": 3,
+    "sku": "GA-COW-1L",
+    "cat": "cow",
+    "catLabel": "Cow Desi Ghee",
+    "name": "Cow Desi Ghee — 1 Liter",
+    "size": "1 Liter Cow Desi Ghee",
+    "price": 1650,
+    "mrp": 1700,
+    "save": 50,
+    "off": 6,
+    "img": "dcow1000.png",
+    "unit": 1,
+    "milk": "Desi Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 24,
+    "perk": "",
+    "ar": "4/5"
+  },
+  {
+    "id": 7,
+    "sku": "GA-COW-2L",
+    "cat": "cow",
+    "catLabel": "Cow Desi Ghee",
+    "name": "Cow Desi Ghee — 2 Liter",
+    "size": "2 Liter Cow Desi Ghee",
+    "price": 3500,
+    "mrp": 3750,
+    "save": 250,
+    "off": 7,
+    "img": "dcow2000.png",
+    "unit": 2,
+    "milk": "Desi Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 20,
+    "perk": "",
+    "ar": "5/6"
+  },
+  {
+    "id": 14,
+    "sku": "GA-COW-3L",
+    "cat": "cow",
+    "catLabel": "Cow Desi Ghee",
+    "name": "Cow Desi Ghee — 3 Liter",
+    "size": "3 Liter Cow Desi Ghee",
+    "price": 5147,
+    "mrp": 5450,
+    "save": 303,
+    "off": 6,
+    "img": "dcow3000.png",
+    "unit": 3,
+    "milk": "Desi Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 12,
+    "perk": "",
+    "ar": "5/6"
+  },
+  {
+    "id": 9,
+    "sku": "GA-COW-5L",
+    "cat": "cow",
+    "catLabel": "Cow Desi Ghee",
+    "name": "Cow Desi Ghee — 5 Liter",
+    "size": "5 Liter Cow Desi Ghee",
+    "price": 8049,
+    "mrp": 8850,
+    "save": 801,
+    "off": 9,
+    "img": "dcow5000.png",
+    "unit": 5,
+    "milk": "Desi Cow Milk",
+    "hindi": "गाय का शुद्ध बिलोना घी",
+    "stock": 12,
+    "perk": "",
+    "ar": "5/6"
+  },
+
+  // =========================
+  // BUFFALO DESI GHEE
+  // =========================
+
+  {
+    "id": 15,
+    "sku": "GA-BUF-350ML",
+    "cat": "buffalo",
+    "catLabel": "Buffalo Desi Ghee",
+    "name": "Buffalo Desi Ghee — 350ml",
+    "size": "350ml Buffalo Desi Ghee",
+    "price": 595,
+    "mrp": 665,
+    "save": 70,
+    "off": 11,
+    "img": "buf350.jpg",
+    "unit": 0.35,
+    "milk": "Desi Buffalo Milk",
+    "hindi": "भैंस का शुद्ध बिलोना घी",
+    "stock": 20,
+    "perk": "",
+    "ar": "5/7"
+  },
+  {
+    "id": 4,
+    "sku": "GA-BUF-500ML",
+    "cat": "buffalo",
+    "catLabel": "Buffalo Desi Ghee",
+    "name": "Buffalo Desi Ghee — 500ml",
+    "size": "500ml Buffalo Desi Ghee",
+    "price": 850,
+    "mrp": 950,
+    "save": 100,
+    "off": 11,
+    "img": "buf500.jpg",
+    "unit": 0.5,
+    "milk": "Desi Buffalo Milk",
+    "hindi": "भैंस का शुद्ध बिलोना घी",
+    "stock": 15,
+    "perk": "",
+    "ar": "5/7"
+  },
+  {
+    "id": 5,
+    "sku": "GA-BUF-1L",
+    "cat": "buffalo",
+    "catLabel": "Buffalo Desi Ghee",
+    "name": "Buffalo Desi Ghee — 1 Liter",
+    "size": "1 Liter Buffalo Desi Ghee",
+    "price": 1450,
+    "mrp": 1550,
+    "save": 100,
+    "off": 6,
+    "img": "buf1000.jpg",
+    "unit": 1,
+    "milk": "Desi Buffalo Milk",
+    "hindi": "भैंस का शुद्ध बिलोना घी",
+    "stock": 22,
+    "perk": "",
+    "ar": "1/1"
+  },
+  {
+    "id": 8,
+    "sku": "GA-BUF-2L",
+    "cat": "buffalo",
+    "catLabel": "Buffalo Desi Ghee",
+    "name": "Buffalo Desi Ghee — 2 Liter",
+    "size": "2 Liter Buffalo Desi Ghee",
+    "price": 3150,
+    "mrp": 3450,
+    "save": 300,
+    "off": 9,
+    "img": "buf2000.png",
+    "unit": 2,
+    "milk": "Desi Buffalo Milk",
+    "hindi": "भैंस का शुद्ध बिलोना घी",
+    "stock": 21,
+    "perk": "",
+    "ar": "3/4"
+  },
+  {
+    "id": 16,
+    "sku": "GA-BUF-3L",
+    "cat": "buffalo",
+    "catLabel": "Buffalo Desi Ghee",
+    "name": "Buffalo Desi Ghee — 3 Liter",
+    "size": "3 Liter Buffalo Desi Ghee",
+    "price": 4700,
+    "mrp": 5000,
+    "save": 300,
+    "off": 6,
+    "img": "buf3000.png",
+    "unit": 3,
+    "milk": "Desi Buffalo Milk",
+    "hindi": "भैंस का शुद्ध बिलोना घी",
+    "stock": 12,
+    "perk": "",
+    "ar": "3/4"
+  },
+  {
+    "id": 17,
+    "sku": "GA-BUF-5L",
+    "cat": "buffalo",
+    "catLabel": "Buffalo Desi Ghee",
+    "name": "Buffalo Desi Ghee — 5 Liter",
+    "size": "5 Liter Buffalo Desi Ghee",
+    "price": 7349,
+    "mrp": 8100,
+    "save": 751,
+    "off": 9,
+    "img": "buf5000.png",
+    "unit": 5,
+    "milk": "Desi Buffalo Milk",
+    "hindi": "भैंस का शुद्ध बिलोना घी",
+    "stock": 8,
+    "perk": "",
+    "ar": "3/4"
+  }
+];
 
 
 
+
+      /* ---- Display ghee jars in kg, the way customers actually ask for them
+              (350ml / 500ml stay as-is; 1L/2L/3L/5L read as 1kg/2kg/3kg/5kg) ---- */
+      PRODUCTS.forEach(p => {
+        p.name = p.name.replace(/(\d+)\s*Liters?\b/i, (m, n) => `${n}kg`);
+        p.size = p.size.replace(/(\d+)\s*Liters?\b/i, (m, n) => `${n}kg`);
+      });
 
       const byId = id => PRODUCTS.find(p => p.id === id);
       const variantsOf = cat => PRODUCTS.filter(p => p.cat === cat).sort((a, b) => (a.unit - b.unit) || (a.mrp - b.mrp));
+      /* ---- default cards shown on the products grid: just the 1kg & 3kg jar of each category ---- */
+      const CARD_DEFAULTS = ["a2cow", "cow", "buffalo"].flatMap(cat => {
+        const list = variantsOf(cat);
+        return [list.find(v => v.unit === 1), list.find(v => v.unit === 3)].filter(Boolean);
+      });
+      /* ---- variants shown in the quick-order modal that opens on page load ---- */
+      const QO_VARIANTS = PRODUCTS.filter(p => [0.5, 1, 5].includes(p.unit));
       const sizeShort = p => {
         const m = String(p.size).match(/^(\d+(?:\.\d+)?)\s*(ml|liters?|litres?|l|kg|gm?)\b/i);
         if (!m) return String(p.size).split(" ")[0];
@@ -5468,14 +5525,9 @@
       /* =========================================================================
          21.4 Gau Amrita commerce helpers — delivery, phone, sheet POST
          ========================================================================= */
-      // Delivery: ₹120 per unit; 50% off ≥₹6000, 35% off ≥₹3000, 20% off ≥₹2000
+      // Delivery: flat ₹120 per unit — no discount on delivery charges
       const DELIVERY_PER_UNIT = 120;
-      const getDeliveryDiscountPercent = subtotal => {
-        if (subtotal >= 6000) return 50;
-        if (subtotal >= 3000) return 35;
-        if (subtotal >= 2000) return 20;
-        return 0;
-      };
+      const getDeliveryDiscountPercent = () => 0;
       const calculateDelivery = (subtotal, totalQty) => {
         const baseDelivery = totalQty * DELIVERY_PER_UNIT;
         const discountPercent = subtotal > 0 ? getDeliveryDiscountPercent(subtotal) : 0;
@@ -5535,23 +5587,50 @@
          ========================================================================= */
       const gallery = document.getElementById("gallery");
 
-      gallery.innerHTML = PRODUCTS.map((p, i) => `
-    <button class="artwork reveal" data-id="${p.id}" data-cat="${p.cat}" aria-label="View ${p.name}, ${inr(p.price)}">
-      <span class="artwork__media" style="aspect-ratio:${p.ar}">
-        <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" />
-        <span class="artwork__num">${pad(i + 1)} <span>/ ${PRODUCTS.length}</span></span>
-        <span class="artwork__off">${p.off}% OFF</span>
-        <span class="artwork__perk">${p.perk}</span>
-        <span class="artwork__overlay">
-          <span class="artwork__view">View Jar →</span>
+      gallery.innerHTML = CARD_DEFAULTS.map((p, i) => `
+    <div class="artwork reveal" data-id="${p.id}" data-cat="${p.cat}">
+      <button class="artwork__hit" data-id="${p.id}" aria-label="View ${p.name}, ${inr(p.price)}">
+        <span class="artwork__media" style="aspect-ratio:${p.ar}">
+          <img src="${p.img}" alt="${p.name}" loading="lazy" decoding="async" />
+          <span class="artwork__num">${pad(i + 1)} <span>/ ${CARD_DEFAULTS.length}</span></span>
+          <span class="artwork__off">${p.off}% OFF</span>
+          <span class="artwork__perk">${p.perk}</span>
+          <span class="artwork__overlay">
+            <span class="artwork__view">View Jar →</span>
+          </span>
         </span>
-      </span>
+      </button>
       <span class="artwork__meta">
-        <span><span class="artwork__name">${p.name}</span><span class="artwork__cat">${p.catLabel}</span></span>
+        <span>
+          <span class="artwork__name">${p.name}</span>
+          <span class="artwork__cat">${p.catLabel}</span>
+          <select class="artwork__variant" aria-label="Select size for ${p.catLabel}">
+            ${variantsOf(p.cat).map(v => `<option value="${v.id}"${v.id === p.id ? " selected" : ""}>${sizeShort(v)}</option>`).join("")}
+          </select>
+        </span>
         <span class="artwork__price"><s>${inr(p.mrp)}</s>${inr(p.price)}<span class="artwork__save">Save ${inr(p.save)}</span></span>
       </span>
-    </button>
+    </div>
   `).join("");
+
+      /* ---- variant dropdown on a card: swap image + price in place, no modal ---- */
+      gallery.addEventListener("change", e => {
+        const sel = e.target.closest(".artwork__variant");
+        if (!sel) return;
+        const card = sel.closest(".artwork");
+        const v = byId(Number(sel.value));
+        if (!v || !card) return;
+        card.dataset.id = v.id;
+        const hit = card.querySelector(".artwork__hit");
+        hit.dataset.id = v.id;
+        hit.setAttribute("aria-label", `View ${v.name}, ${inr(v.price)}`);
+        const img = card.querySelector(".artwork__media img");
+        img.src = v.img; img.alt = v.name;
+        card.querySelector(".artwork__off").textContent = `${v.off}% OFF`;
+        card.querySelector(".artwork__perk").textContent = v.perk;
+        card.querySelector(".artwork__name").textContent = v.name;
+        card.querySelector(".artwork__price").innerHTML = `<s>${inr(v.mrp)}</s>${inr(v.price)}<span class="artwork__save">Save ${inr(v.save)}</span>`;
+      });
 
       /* ---- 21.6 Reveal-on-scroll (one observer, reused) ---- */
       const io = new IntersectionObserver((entries) => {
@@ -5660,8 +5739,10 @@
       }
 
       gallery.addEventListener("click", e => {
-        const card = e.target.closest(".artwork");
-        if (card) openModal(Number(card.dataset.id), card);
+        const hit = e.target.closest(".artwork__hit");
+        if (!hit) return;
+        const card = hit.closest(".artwork");
+        openModal(Number(card.dataset.id), hit);
       });
 
       $("modalClose").addEventListener("click", hideModals);
@@ -5758,20 +5839,11 @@
         $("grandTotal").textContent = inr(t.grand);
 
         const delivLine = $("delivLine"), freeHint = $("freeHint"), delivVal = $("delivVal");
-        delivLine.querySelector("span").textContent = t.info.discountPercent > 0
-          ? `⛟ Delivery (${t.info.discountPercent}% off)` : "⛟ Delivery";
-        delivLine.querySelector("span").className = t.info.discountPercent > 0 ? "green" : "";
+        delivLine.querySelector("span").textContent = "⛟ Delivery";
+        delivLine.querySelector("span").className = "";
         delivVal.textContent = inr(t.delivery);
-        delivVal.className = t.info.discountPercent > 0 ? "green" : "";
-        if (t.subtotal > 0 && t.info.discountPercent > 0) {
-          freeHint.textContent = `🎉 You got ${t.info.discountPercent}% off on delivery charges!`;
-          freeHint.style.display = "block"; freeHint.className = "drawer__hint green";
-        } else if (t.subtotal > 0) {
-          freeHint.textContent = `Add ₹${(2000 - t.subtotal).toLocaleString("en-IN")} more to get 30% off on delivery charges (upto 70% off!)`;
-          freeHint.style.display = "block"; freeHint.className = "drawer__hint";
-        } else {
-          freeHint.style.display = "none";
-        }
+        delivVal.className = "";
+        freeHint.style.display = "none";
 
         const waMsg = cart.map(i => { const p = byId(i.id); return `${p.name} [SKU: ${p.sku}] x${i.qty} (₹${(p.price * i.qty).toLocaleString("en-IN")})`; }).join(", ") + ` | Total: ₹${t.grand.toLocaleString("en-IN")}`;
         $("cartWaBtn").href = "https://wa.me/917988618771?text=" + encodeURIComponent("Hello! I want to order: " + waMsg);
@@ -5845,7 +5917,7 @@
           sku: cart.map(i => byId(i.id).sku).join(", "),
           qty: cart.map(i => `${byId(i.id).size} x${i.qty}`).join(", "),
           price: `₹${t.subtotal.toLocaleString("en-IN")} + ₹${t.delivery} delivery = ₹${t.grand.toLocaleString("en-IN")}`,
-          message: `Cart Order: ${orderLines} | Delivery: ₹${t.delivery}${t.info.discountPercent > 0 ? ` (${t.info.discountPercent}% off, base ₹${t.info.baseDelivery})` : ""} | Total: ₹${t.grand}`,
+          message: `Cart Order: ${orderLines} | Delivery: ₹${t.delivery} | Total: ₹${t.grand}`,
           source: "Cart Checkout",
           timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         };
@@ -5889,9 +5961,9 @@
          24. QUICK ORDER MODAL — multi-product + qty (auto-opens, like Gau Amrita)
          ========================================================================= */
       const qoQtys = {};
-      PRODUCTS.forEach(p => { qoQtys[p.id] = 0; });
+      QO_VARIANTS.forEach(p => { qoQtys[p.id] = 0; });
 
-      $("qoProducts").innerHTML = PRODUCTS.map(p => `
+      $("qoProducts").innerHTML = QO_VARIANTS.map(p => `
     <div class="qo-item" data-id="${p.id}">
       <img class="qo-item__img" src="${p.img}" alt="${p.name}" loading="lazy" />
       <div>
@@ -5924,13 +5996,13 @@
 
       function qoTotals() {
         let subtotal = 0, units = 0;
-        PRODUCTS.forEach(p => { if (qoQtys[p.id] > 0) { subtotal += p.price * qoQtys[p.id]; units += p.unit * qoQtys[p.id]; } });
+        QO_VARIANTS.forEach(p => { if (qoQtys[p.id] > 0) { subtotal += p.price * qoQtys[p.id]; units += p.unit * qoQtys[p.id]; } });
         const d = calculateDelivery(subtotal, units);
         return { subtotal, units, delivery: d.finalDelivery, grand: subtotal + d.finalDelivery, info: d };
       }
 
       function syncQO() {
-        PRODUCTS.forEach(p => {
+        QO_VARIANTS.forEach(p => {
           const val = $("qoQty-" + p.id);
           if (val) val.textContent = qoQtys[p.id];
           const card = document.querySelector(`.qo-item[data-id="${p.id}"]`);
@@ -5939,23 +6011,16 @@
         const t = qoTotals();
         const box = $("qoSummary"), lines = $("qoSummaryLines"), hint = $("qoHint");
         if (t.subtotal > 0) {
-          let html = PRODUCTS.filter(p => qoQtys[p.id] > 0).map(p =>
+          let html = QO_VARIANTS.filter(p => qoQtys[p.id] > 0).map(p =>
             `<div class="qo__summary-row"><span>${p.name} <span style="opacity:.55;font-size:.8em">[${p.sku}]</span> × ${qoQtys[p.id]}</span><strong>${inr(p.price * qoQtys[p.id])}</strong></div>`
           ).join("");
-          html += `<div class="qo__summary-row"><span class="${t.info.discountPercent > 0 ? 'green' : ''}">⛟ Delivery${t.info.discountPercent > 0 ? ` (${t.info.discountPercent}% off)` : ""}</span><strong class="${t.info.discountPercent > 0 ? 'green' : ''}">${inr(t.delivery)}</strong></div>`;
-          if (t.info.discountPercent > 0) {
-            hint.textContent = `🎉 You got ${t.info.discountPercent}% off on delivery charges!`;
-            hint.className = "qo__hint green";
-          } else {
-            hint.textContent = `Add ₹${(2000 - t.subtotal).toLocaleString("en-IN")} more to get 30% off on delivery charges (upto 70% off!)`;
-            hint.className = "qo__hint warm";
-          }
-          hint.style.display = "";
+          html += `<div class="qo__summary-row"><span>⛟ Delivery</span><strong>${inr(t.delivery)}</strong></div>`;
+          hint.style.display = "none";
           lines.innerHTML = html;
           $("qoTotal").textContent = inr(t.grand);
           box.style.display = "block";
 
-          const waMsg = PRODUCTS.filter(p => qoQtys[p.id] > 0).map(p => `${p.name} [SKU: ${p.sku}] x${qoQtys[p.id]} (₹${(p.price * qoQtys[p.id]).toLocaleString("en-IN")})`).join(", ") + ` | Delivery: ₹${t.delivery} | Total: ₹${t.grand.toLocaleString("en-IN")}`;
+          const waMsg = QO_VARIANTS.filter(p => qoQtys[p.id] > 0).map(p => `${p.name} [SKU: ${p.sku}] x${qoQtys[p.id]} (₹${(p.price * qoQtys[p.id]).toLocaleString("en-IN")})`).join(", ") + ` | Delivery: ₹${t.delivery} | Total: ₹${t.grand.toLocaleString("en-IN")}`;
           $("qoWaLink").href = "https://wa.me/917988618771?text=" + encodeURIComponent("Hello! I want to order: " + waMsg);
         } else {
           box.style.display = "none";
@@ -5987,7 +6052,7 @@
           showQOError("Kripya apna naam, phone number aur address bharein.");
           return;
         }
-        const selected = PRODUCTS.filter(p => qoQtys[p.id] > 0);
+        const selected = QO_VARIANTS.filter(p => qoQtys[p.id] > 0);
         if (!selected.length) {
           showQOError("Kripya kam se kam ek product select karein aur quantity badhaayein.");
           return;
@@ -6013,7 +6078,7 @@
           sku: selected.map(p => p.sku).join(", "),
           qty: selected.map(p => `${p.size} x${qoQtys[p.id]}`).join(", "),
           price: `₹${t.subtotal.toLocaleString("en-IN")} + ₹${t.delivery} delivery = ₹${t.grand.toLocaleString("en-IN")}`,
-          message: `Order: ${orderLines} | Delivery: ₹${t.delivery}${t.info.discountPercent > 0 ? ` (${t.info.discountPercent}% off, base ₹${t.info.baseDelivery})` : ""} | Total: ₹${t.grand}`,
+          message: `Order: ${orderLines} | Delivery: ₹${t.delivery} | Total: ₹${t.grand}`,
           source: "Quick Order Modal",
           timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         };
