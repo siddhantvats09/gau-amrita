@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gau Amrita – Shuddh Desi Ghee | Pure Bilona A2 Ghee</title>
   <link rel="icon" href="favicon.ico" />
+  <meta name="theme-color" content="#2C1810" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gau Amrita – Shuddh Desi Bilona Ghee" />
+  <meta property="og:description" content="Pure A2 bilona ghee, lab tested & FSSAI certified. Direct from farm to your door." />
+  <link rel="preload" as="image" href="buf5000.webp" fetchpriority="high" />
   <meta name="description"
     content="Gau Amrita - 100% pure A2 desi ghee made with traditional bilona method. Lab tested, FSSAI certified, farm fresh. Har spoon mein maa ke haathon wali shuddhta." />
   <!-- ============================================================
@@ -21,7 +26,9 @@
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
       t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
+      var go = function () { if (go.d) return; go.d = 1; s.parentNode.insertBefore(t, s); };
+      f.addEventListener('load', function () { setTimeout(go, 2500); });
+      ['scroll', 'pointerdown', 'keydown'].forEach(function (ev) { f.addEventListener(ev, go, { once: true, passive: true }); });
     }(window, document, 'script',
       'https://connect.facebook.net/en_US/fbevents.js');
 
@@ -55,9 +62,7 @@
   <!-- ============ 2. FONTS ============ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&family=Pinyon+Script&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap"
-    rel="stylesheet" />
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Manrope:wght@400;500;600&family=Pinyon+Script&family=Noto+Serif+Devanagari:wght@400;500&display=swap" />
 
   <style>
     /* =========================================================================
@@ -4265,6 +4270,41 @@
       }
     }
   </style>
+<style>
+/* ---- speed ---- */
+.story,.archive,.why,.about,.farm,.film,.social,.contact,.final,.footer{content-visibility:auto;contain-intrinsic-size:auto 700px}
+.reveal{transition:opacity .6s var(--ease),transform .6s var(--ease);will-change:auto}
+section[id]{scroll-margin-top:70px}
+.yt-facade{position:absolute;inset:0;width:100%;height:100%;padding:0;background:#000;cursor:pointer}
+.yt-facade img{width:100%;height:100%;object-fit:cover}
+.yt-play{position:absolute;top:50%;left:50%;width:68px;height:68px;margin:-34px;border-radius:50%;background:rgba(44,24,16,.72);border:1.5px solid var(--gold-soft)}
+.yt-play::after{content:"";position:absolute;left:27px;top:22px;border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent}
+/* ---- conversion: tighter page, shop closer to hero ---- */
+.hero{min-height:auto;padding:130px var(--gut) 56px}
+.hero__meta{margin-top:28px}
+.hero__trust{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;margin-top:22px;font-size:12px;font-weight:500;color:var(--ink-mid)}
+.scroll-cue{display:none}
+.collection{padding-top:clamp(50px,6vw,80px)}
+.proof{padding:clamp(50px,7vw,90px) 0}
+.proof__num{font-size:clamp(72px,12vw,150px)}
+.story,.archive,.why,.about,.farm,.film,.contact{padding-block:clamp(60px,8vw,110px)}
+.artwork__add{width:100%;justify-content:center;margin-top:14px;padding:14px 16px}
+@media (max-width:880px){.hero__copy{order:1}.hero__visual{order:2;max-width:300px}.hero{padding-top:110px}}
+</style>
+<style>
+/* ---- testimonial slider ---- */
+.revs{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:8px 2px 14px;margin:-8px -2px 0}
+.revs::-webkit-scrollbar{display:none}
+.rev{flex:0 0 calc((100% - 40px) / 3);min-width:0;scroll-snap-align:start}
+.revs__nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px}
+.revs__btn{width:46px;height:46px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:18px;background:var(--white);transition:background .3s,border-color .3s}
+.revs__btn:hover{background:var(--pink);border-color:var(--gold-line)}
+.revs__dots{display:flex;gap:8px}
+.revs__dot{width:8px;height:8px;padding:0;border-radius:50%;background:var(--line);transition:background .3s,transform .3s}
+.revs__dot.on{background:var(--gold);transform:scale(1.3)}
+@media (max-width:880px){.rev{flex-basis:calc((100% - 20px) / 2)}}
+@media (max-width:560px){.revs{gap:14px}.rev{flex-basis:86%;min-height:0}.revs__btn{width:40px;height:40px}}
+</style>
 </head>
 
 <body id="top">
@@ -4272,11 +4312,11 @@
   <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- custom cursor -->
-  <div class="cursor" aria-hidden="true"><span class="cursor__label">View</span></div>
+  
 
   <!-- urgency banner (Gau Amrita offer line) -->
   <div class="ub" id="ub" role="status">
-    <span>🔥 <strong>Limited Stock</strong> — only for first 2000 customers &nbsp;|&nbsp; Order direct from farm, fast delivery!</span>
+    <span>🔥 <strong>Limited Stock</strong> — only for first 500 customers</span>
     <button class="ub__close" id="ubClose" aria-label="Dismiss offer banner">✕</button>
   </div>
 
@@ -4365,9 +4405,10 @@
           <p class="hero__poetry reveal reveal--delay-1">हर चम्मच में माँ के हाथों वाली शुद्धता।<br />फार्म से सीधा आपके
             घर तक — बिना मिलावट।</p>
           <div class="hero__ctas reveal reveal--delay-2">
-            <button class="btn" data-order><span>अभी ऑर्डर करें · Order Now</span></button>
-            <a href="#archive" class="btn btn--ghost"><span>शुद्धता देखें · The Process</span></a>
+            <button class="btn btn--dark" data-order><span>अभी ऑर्डर करें · Order Now</span></button>
+            <a href="#collection" class="btn btn--ghost"><span>See Prices · Shop</span></a>
           </div>
+          <!-- <ul class="hero__trust reveal reveal--delay-2"><li>✓ FSSAI Certified</li><li>✓ Lab Tested</li><li>✓ Delivery in 2–4 days</li><li>✓ Order on WhatsApp</li></ul>
           <div class="hero__meta reveal reveal--delay-3">
             <span><b>100%</b> Pure A2</span>
             <span class="dot"></span>
@@ -4376,14 +4417,14 @@
             <span><b>10K+</b> Happy families</span>
             <span class="dot"></span>
             <span>Lab tested</span>
-          </div>
+          </div> -->
         </div>
 
         <div class="hero__visual reveal reveal--delay-1">
           <span class="hero__tag">liquid gold</span>
           <div class="hero__img-main">
             <div class="hero__frame" aria-hidden="true"></div>
-            <img src="buf5000.webp" alt="Gau Amrita jar of pure A2 bilona ghee" loading="eager" />
+            <img src="buf5000.webp" alt="Gau Amrita jar of pure A2 bilona ghee" loading="eager" fetchpriority="high" decoding="async" width="800" height="1000" />
           </div>
           <div class="hero__plate">
             <img src="buf1000.webp" alt="A2 Gir Cow Ghee 500gm jar" loading="lazy" />
@@ -4409,6 +4450,101 @@
     <!-- ============================================================
      9. BRAND STORY — Hamara Ghee
      ============================================================ -->
+    <section class="collection" id="collection">
+      <div class="wrap">
+        <div class="collection__head">
+          <span class="eyebrow center reveal">हमारा संग्रह · Hamara Collection</span>
+          <h2 class="collection__title reveal reveal--delay-1">Choose Your<br><em>Golden Ghee.</em></h2>
+          <p class="collection__sub reveal reveal--delay-2"><span class="hindi">तीन अनोखी श्रेणियाँ — हर परिवार के लिए
+              एक खास घी।</span>Three categories, four sizes each — crafted for every family's need. Tap a jar to choose yours.<br><b>Home Delivery · 2–4 days · Direct from farm.</b></p>
+        </div>
+
+        <div class="filters reveal reveal--delay-2" id="filters" role="tablist"
+          aria-label="Filter collection by category">
+          <button class="filter active" data-cat="all" role="tab" aria-selected="true">All</button>
+          <button class="filter" data-cat="cow" role="tab">Cow Desi Ghee</button>
+          <button class="filter" data-cat="buffalo" role="tab">Buffalo Desi Ghee</button>
+          <button class="filter" data-cat="a2cow" role="tab">A2 Cow Ghee</button>
+        </div>
+
+        <div class="gallery" id="gallery" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="social" id="reviews">
+      <div class="wrap">
+        <div class="social__head">
+          <div>
+            <!-- <span class="eyebrow reveal">Hamare Pariwar</span> -->
+            <h2 class="social__title reveal reveal--delay-1">Log Kya <em>Bol Rahe Hain.</em><span>Real reviews from real
+                kitchens — from our family to yours.</span></h2>
+          </div>
+          <a href="https://wa.me/917988618771" target="_blank" rel="noopener"
+            class="btn btn--gold reveal reveal--delay-2"><span>Order on WhatsApp</span></a>
+        </div>
+        <div class="revs reveal reveal--delay-1">
+          <div class="rev">
+            <div class="rev__stars">★★★★☆</div>
+            <p class="rev__text">"Bhai sach bolu toh pehli baar online ghee mangaya tha darr darr ke. Par iska taste
+              ekdum gaon wala nikla. Roti pe lagake khaya toh maa yaad aa gayi."</p>
+            <div class="rev__name">Sandeep Dahiya</div>
+            <div class="rev__loc">Pataudi, Haryana</div>
+            <span class="rev__tag">Verified Buyer</span>
+          </div>
+          <div class="rev">
+            <div class="rev__stars">★★★★⯪</div>
+            <p class="rev__text">"Mere bachche market wala ghee khana hi band kar diye the. Iska paratha banaya toh 2
+              aur maang liye. Smell bhi bilkul fresh desi wali hai."</p>
+            <div class="rev__name">Poonam Ahlawat</div>
+            <div class="rev__loc">Haily Mandi, Haryana</div>
+            <span class="rev__tag">Family Pack</span>
+          </div>
+          <div class="rev">
+            <div class="rev__stars">★★★★★</div>
+            <p class="rev__text">"Gym karta hoon aur diet pe dhyaan rehta hai. Yeh ghee coffee mein use kar raha hoon
+              kaafi time se. Heavy bhi nahi lagta aur quality top hai."</p>
+            <div class="rev__name">Vikas Malik</div>
+            <div class="rev__loc">Gurgaon, Haryana</div>
+            <span class="rev__tag">Fitness Lover</span>
+          </div>
+          <div class="rev">
+            <div class="rev__stars">★★★★☆</div>
+            <p class="rev__text">"Hamare time pe ghar mein aisa hi bilona ghee banta tha. Aajkal waise taste milta hi
+              nahi. Isme wahi purani wali khushboo aur swaad mila."</p>
+            <div class="rev__name">Balbir Singh</div>
+            <div class="rev__loc">Gurgaon, Haryana</div>
+            <span class="rev__tag">65 Years Old</span>
+          </div>
+          <div class="rev">
+            <div class="rev__stars">★★★★⯪</div>
+            <p class="rev__text">"Packaging dekh ke hi premium feel aa gaya tha. Wedding gift hampers mein use kiya tha
+              aur sab guests ne specially poocha kaha se liya."</p>
+            <div class="rev__name">Neha Chhillar</div>
+            <div class="rev__loc">BhoraKalan, Haryana</div>
+            <span class="rev__tag">Wedding Order</span>
+          </div>
+          <div class="rev">
+            <div class="rev__stars">★★★★☆</div>
+            <p class="rev__text">"Roz subah garam doodh mein ek chamach leta hoon. Taste bhi badhiya hai aur digestion
+              mein bhi farak feel hua. Pure lagta hai asli mein."</p>
+            <div class="rev__name">Ramesh Yadav</div>
+            <div class="rev__loc">Pataudi, Haryana</div>
+            <span class="rev__tag">Daily User</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="wrap">
+        <span class="eyebrow center reveal">Hamare Pariwar</span>
+        <div class="proof__num reveal reveal--delay-1"><em>10K</em>+</div>
+        <div class="proof__label reveal reveal--delay-2">खुश परिवार · happy families</div>
+        <div class="proof__line reveal reveal--delay-2"><span>From our village to thousands of kitchens — and
+            counting.</span></div>
+      </div>
+    </section>
+
     <section class="story" id="story">
       <div class="wrap story__grid">
         <div class="story__copy">
@@ -4435,39 +4571,11 @@
     <!-- ============================================================
      10. COLLECTION (category nav + gallery injected by JS)
      ============================================================ -->
-    <section class="collection" id="collection">
-      <div class="wrap">
-        <div class="collection__head">
-          <span class="eyebrow center reveal">हमारा संग्रह · Hamara Collection</span>
-          <h2 class="collection__title reveal reveal--delay-1">Choose Your<br><em>Golden Ghee.</em></h2>
-          <p class="collection__sub reveal reveal--delay-2"><span class="hindi">तीन अनोखी श्रेणियाँ — हर परिवार के लिए
-              एक खास घी।</span>Three categories, four sizes each — crafted for every family's need. Tap a jar to choose
-            yours.</p>
-        </div>
-
-        <div class="filters reveal reveal--delay-2" id="filters" role="tablist"
-          aria-label="Filter collection by category">
-          <button class="filter active" data-cat="all" role="tab" aria-selected="true">All</button>
-          <button class="filter" data-cat="cow" role="tab">Cow Desi Ghee</button>
-          <button class="filter" data-cat="buffalo" role="tab">Buffalo Desi Ghee</button>
-          <button class="filter" data-cat="a2cow" role="tab">A2 Cow Ghee</button>
-        </div>
-
-        <div class="gallery" id="gallery" aria-live="polite"></div>
-      </div>
-    </section>
+    
     <!-- ============================================================
      11. SOCIAL PROOF — 10K+ happy families
      ============================================================ -->
-    <section class="proof">
-      <div class="wrap">
-        <span class="eyebrow center reveal">Hamare Pariwar</span>
-        <div class="proof__num reveal reveal--delay-1"><em>10K</em>+</div>
-        <div class="proof__label reveal reveal--delay-2">खुश परिवार · happy families</div>
-        <div class="proof__line reveal reveal--delay-2"><span>From our village to thousands of kitchens — and
-            counting.</span></div>
-      </div>
-    </section>
+    
 
     <!-- ============================================================
      12. ARCHIVE — The Sacred 6-Step Process (Bilona Vidhi)
@@ -4537,13 +4645,7 @@
         <div class="film__frame reveal reveal--delay-1" id="filmFrame">
           <span class="film__badge">Gau Amrita · Farm Film</span>
           <div class="film__inset" aria-hidden="true"></div>
-          <div class="film__yt">
-            <iframe src="https://www.youtube.com/embed/iIr2E7hfvno?si=0AcUvR0W6AavUwr8"
-              title="The Bilona process — from farm to jar" loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
+          <div class="film__yt"><button class="yt-facade" id="ytFacade" type="button" aria-label="Play farm film"><img src="https://i.ytimg.com/vi/iIr2E7hfvno/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /><span class="yt-play"></span></button></div>
         </div>
 
         <!-- <div class="film__meta reveal reveal--delay-2">
@@ -4697,69 +4799,7 @@
     <!-- ============================================================
      15. REVIEWS — Log Kya Bol Rahe Hain
      ============================================================ -->
-    <section class="social" id="reviews">
-      <div class="wrap">
-        <div class="social__head">
-          <div>
-            <span class="eyebrow reveal">Hamare Pariwar</span>
-            <h2 class="social__title reveal reveal--delay-1">Log Kya <em>Bol Rahe Hain.</em><span>Real reviews from real
-                kitchens — from our family to yours.</span></h2>
-          </div>
-          <a href="https://wa.me/917988618771" target="_blank" rel="noopener"
-            class="btn btn--gold reveal reveal--delay-2"><span>Order on WhatsApp</span></a>
-        </div>
-        <div class="revs reveal reveal--delay-1">
-          <div class="rev">
-            <div class="rev__stars">★★★★☆</div>
-            <p class="rev__text">"Bhai sach bolu toh pehli baar online ghee mangaya tha darr darr ke. Par iska taste
-              ekdum gaon wala nikla. Roti pe lagake khaya toh maa yaad aa gayi."</p>
-            <div class="rev__name">Sandeep Dahiya</div>
-            <div class="rev__loc">Pataudi, Haryana</div>
-            <span class="rev__tag">Verified Buyer</span>
-          </div>
-          <div class="rev">
-            <div class="rev__stars">★★★★⯪</div>
-            <p class="rev__text">"Mere bachche market wala ghee khana hi band kar diye the. Iska paratha banaya toh 2
-              aur maang liye. Smell bhi bilkul fresh desi wali hai."</p>
-            <div class="rev__name">Poonam Ahlawat</div>
-            <div class="rev__loc">Haily Mandi, Haryana</div>
-            <span class="rev__tag">Family Pack</span>
-          </div>
-          <div class="rev">
-            <div class="rev__stars">★★★★★</div>
-            <p class="rev__text">"Gym karta hoon aur diet pe dhyaan rehta hai. Yeh ghee coffee mein use kar raha hoon
-              kaafi time se. Heavy bhi nahi lagta aur quality top hai."</p>
-            <div class="rev__name">Vikas Malik</div>
-            <div class="rev__loc">Gurgaon, Haryana</div>
-            <span class="rev__tag">Fitness Lover</span>
-          </div>
-          <div class="rev">
-            <div class="rev__stars">★★★★☆</div>
-            <p class="rev__text">"Hamare time pe ghar mein aisa hi bilona ghee banta tha. Aajkal waise taste milta hi
-              nahi. Isme wahi purani wali khushboo aur swaad mila."</p>
-            <div class="rev__name">Balbir Singh</div>
-            <div class="rev__loc">Gurgaon, Haryana</div>
-            <span class="rev__tag">65 Years Old</span>
-          </div>
-          <div class="rev">
-            <div class="rev__stars">★★★★⯪</div>
-            <p class="rev__text">"Packaging dekh ke hi premium feel aa gaya tha. Wedding gift hampers mein use kiya tha
-              aur sab guests ne specially poocha kaha se liya."</p>
-            <div class="rev__name">Neha Chhillar</div>
-            <div class="rev__loc">BhoraKalan, Haryana</div>
-            <span class="rev__tag">Wedding Order</span>
-          </div>
-          <div class="rev">
-            <div class="rev__stars">★★★★☆</div>
-            <p class="rev__text">"Roz subah garam doodh mein ek chamach leta hoon. Taste bhi badhiya hai aur digestion
-              mein bhi farak feel hua. Pure lagta hai asli mein."</p>
-            <div class="rev__name">Ramesh Yadav</div>
-            <div class="rev__loc">Pataudi, Haryana</div>
-            <span class="rev__tag">Daily User</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- ============================================================
      15b. CONTACT — Sampark Karein (order / enquiry form -> Google Sheet)
@@ -5594,6 +5634,7 @@ const PRODUCTS = [
         </span>
         <span class="artwork__price"><s>${inr(p.mrp)}</s>${inr(p.price)}<span class="artwork__save">Save ${inr(p.save)}</span></span>
       </span>
+      <button class="btn btn--dark artwork__add" type="button"><span>Add to Bag</span></button>
     </div>
   `).join("");
 
@@ -5723,6 +5764,8 @@ const PRODUCTS = [
       }
 
       gallery.addEventListener("click", e => {
+        const add = e.target.closest(".artwork__add");
+        if (add) { const p = byId(Number(add.closest(".artwork").dataset.id)); if (p) { addToCart(p, 1); openDrawer(); } return; }
         const hit = e.target.closest(".artwork__hit");
         if (!hit) return;
         const card = hit.closest(".artwork");
@@ -6096,7 +6139,11 @@ const PRODUCTS = [
       });
 
       // Auto-open on page load (Gau Amrita behaviour)
-      window.addEventListener("load", () => { setTimeout(() => openQO(), 1200); });
+      document.addEventListener("mouseleave", e => {
+        if (e.clientY > 0 || document.querySelector(".modal.open,.qo.open,.drawer.open")) return;
+        try { if (sessionStorage.getItem("ga_exit")) return; sessionStorage.setItem("ga_exit", "1"); } catch (_) { return; }
+        openQO();
+      });
 
       /* =========================================================================
          25. CANCEL ORDER — WhatsApp self-service, 2-day window (localStorage)
@@ -6394,11 +6441,13 @@ const PRODUCTS = [
       reelStrip.insertAdjacentHTML("beforeend", REELS_DATA.map(buildReel).join(""));
       reelStrip.querySelectorAll(".reel.reveal:nth-child(n+" + (REEL_SET_COUNT + 1) + ")").forEach(el => io.observe(el));
 
+      let reelsVisible = false;
+      new IntersectionObserver(es => { reelsVisible = es[0].isIntersecting; }).observe(reelStrip);
       const reduceMotion = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
       if (!reduceMotion) {
         const AUTOSCROLL_SPEED = 0.5; // px per frame, gentle continuous drift
         const tickAutoScroll = () => {
-          if (!autoScrollPaused) {
+          if (!autoScrollPaused && reelsVisible) {
             reelStrip.scrollLeft += AUTOSCROLL_SPEED;
             if (reelStrip.scrollLeft >= loopWidth) {
               reelStrip.scrollLeft -= loopWidth;
@@ -6414,22 +6463,45 @@ const PRODUCTS = [
       /* =========================================================================
          28. CUSTOM CURSOR (desktop / fine pointer only)
          ========================================================================= */
-      const fine = window.matchMedia("(pointer:fine)").matches;
-      const reduce = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
-      if (fine && !reduce) {
-        const cursor = document.querySelector(".cursor");
-        let cx = 0, cy = 0, tx = 0, ty = 0, on = false;
-        window.addEventListener("mousemove", e => { tx = e.clientX; ty = e.clientY; if (!on) { on = true; cursor.classList.add("is-on"); } });
-        const loop = () => {
-          cx += (tx - cx) * 0.18; cy += (ty - cy) * 0.18;
-          cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%,-50%)`;
-          requestAnimationFrame(loop);
+      $("ytFacade").addEventListener("click", function () {
+        this.parentNode.innerHTML = '<iframe src="https://www.youtube.com/embed/iIr2E7hfvno?autoplay=1&rel=0" title="The Bilona process — from farm to jar" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      });
+
+      (() => {
+        const track = document.querySelector(".revs");
+        if (!track) return;
+        const cards = [...track.children];
+        const nav = document.createElement("div");
+        nav.className = "revs__nav";
+        nav.innerHTML = '<button class="revs__btn" type="button" aria-label="Previous reviews">←</button><div class="revs__dots"></div><button class="revs__btn" type="button" aria-label="Next reviews">→</button>';
+        track.insertAdjacentElement("afterend", nav);
+        const [prev, , next] = nav.children, dotsEl = nav.children[1];
+        let paused = false, perView = 3;
+        const step = () => cards[0].getBoundingClientRect().width + (parseFloat(getComputedStyle(track).columnGap) || 0);
+        const maxIdx = () => Math.max(0, Math.round((track.scrollWidth - track.clientWidth) / step()));
+        const cur = () => Math.min(maxIdx(), Math.round(track.scrollLeft / step()));
+        const go = i => track.scrollTo({ left: Math.max(0, Math.min(i, maxIdx())) * step(), behavior: "smooth" });
+        const buildDots = () => {
+          dotsEl.innerHTML = Array.from({ length: maxIdx() + 1 }, (_, i) => `<button class="revs__dot" type="button" aria-label="Go to review ${i + 1}"></button>`).join("");
+          mark();
         };
-        loop();
-        document.addEventListener("mouseover", e => {
-          cursor.classList.toggle("is-active", !!e.target.closest(".artwork, .rev, .exh"));
-        });
-      }
+        const mark = () => { const c = cur(); [...dotsEl.children].forEach((d, i) => d.classList.toggle("on", i === c)); };
+        dotsEl.addEventListener("click", e => { const i = [...dotsEl.children].indexOf(e.target.closest(".revs__dot")); if (i > -1) { paused = true; go(i); } });
+        prev.addEventListener("click", () => { paused = true; go(cur() - 1); });
+        next.addEventListener("click", () => { paused = true; go(cur() + 1); });
+        let t; track.addEventListener("scroll", () => { cancelAnimationFrame(t); t = requestAnimationFrame(mark); }, { passive: true });
+        window.addEventListener("resize", buildDots);
+        buildDots(); window.addEventListener("load", buildDots);
+        /* autoplay: only while on screen, stops once the visitor touches it */
+        track.addEventListener("pointerdown", () => { paused = true; }, { passive: true });
+        track.addEventListener("mouseenter", () => { paused = true; });
+        track.addEventListener("mouseleave", () => { paused = false; });
+        let seen = false;
+        new IntersectionObserver(es => { seen = es[0].isIntersecting; }, { threshold: .3 }).observe(track);
+        if (!matchMedia("(prefers-reduced-motion:reduce)").matches) {
+          setInterval(() => { if (paused || !seen) return; cur() >= maxIdx() ? go(0) : go(cur() + 1); }, 5000);
+        }
+      })();
 
       /* ---- year ---- */
       $("year").textContent = new Date().getFullYear();
